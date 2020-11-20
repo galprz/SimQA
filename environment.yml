@@ -1,0 +1,27 @@
+name: SimQA-code
+channels:
+  - pytorch
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.7
+  - pytorch=1.5
+  - matplotlib
+  - pandas
+  - torchtext
+  - matplotlib
+  - cudatoolkit
+  - jupyter
+  - jupyterlab
+  - ipython
+  - tqdm
+  - requests
+  - tensorboard
+  - tensorboardX
+  - nltk
+  - pip:
+    - antlr4-python3-runtime
+    - transformers
+    - gensim
+    - spacy
+    - OpenNMT-py
