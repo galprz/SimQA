@@ -8,14 +8,9 @@ import onmt
 import torch
 import traceback
 import numpy as np
-
-from grammer.tokenizer import SimCodeTokenizer
-from grammer.utils import execute_and_compute_state_score
-from grammer.utils import convert_tokens_to_code
-from torch.nn.utils.rnn import pad_sequence, pad_packed_sequence, pack_padded_sequence
+from torch.nn.utils.rnn import pad_sequence
 import torch.nn.functional as F
 
-from reward import local_reward, checkpoints_reward, state_transition_reward
 
 
 def tile(a, dim, n_tile):

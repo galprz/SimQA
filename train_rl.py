@@ -78,7 +78,7 @@ if __name__ == "__main__":
     writer = SummaryWriter(comment="-argmax")
     fmt = "%(asctime)-15s %(levelname)s %(message)s"
     logging.basicConfig(format=fmt, level=logging.INFO)
-    vocab_fields = torch.load(f"vocabulary/{mode}/processed/SimQA.vocab.pt")
+    vocab_fields = torch.load(f"data/{mode}/processed/SimQA.vocab.pt")
 
     src_text_field = vocab_fields["src"].base_field
     src_vocab = src_text_field.vocab
