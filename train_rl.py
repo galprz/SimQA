@@ -1,3 +1,4 @@
+import argparse
 from functools import partial
 
 import torch
@@ -7,7 +8,7 @@ import onmt.utils
 from tensorboardX import SummaryWriter
 import onmt.translate
 from metrics import BleuScore, CorrectAnswersScore, BleuAndStateScore
-from reward import  blue_and_same_state_score
+from reward import blue_and_same_state_score
 from trainer import SimStateScoreTrainer
 from onmt.utils.loss import NMTLossCompute
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -20,8 +21,7 @@ def freeze(model):
         param.requires_grad = False
     model.eval()
 
-mode="v1"
-
+#mode="v2"
 def load_model(path):
     emb_size = 200
     encoder_embeddings = onmt.modules.Embeddings(
@@ -75,6 +75,9 @@ def load_model(path):
     return model
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--data_version", help="The data version (v1/v2)")
+    mode = parser.parse_known_args()[0].data_version
     writer = SummaryWriter(comment="-argmax")
     fmt = "%(asctime)-15s %(levelname)s %(message)s"
     logging.basicConfig(format=fmt, level=logging.INFO)
