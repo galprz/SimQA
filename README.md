@@ -3,6 +3,8 @@ This is the code for the SimQA paper
 # Dataset
 This paper use a unique dataset that was labeled by chemists.
 You need to extract the zip file to the root folder to run the scripts
+download the zip from here
+https://drive.google.com/drive/folders/16XJkKMJj-cPqw_msczG1VZ7fOPOwgKnh?usp=sharing
 # The MLE model
 To run re-train the mle models run the train mle v1/v2 scripts
 To train & evaluate the model using the  reinforcement-learning algorithm and the Q semantic + syntactic reward
