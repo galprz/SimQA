@@ -131,7 +131,7 @@ if __name__ == "__main__":
 
     saved_model = Path.cwd().joinpath(f"checkpoints")
     saved_model.mkdir(exist_ok=True, parents=True)
-    saved_mode_model = saved_model.joinpath(f"{opts.mode}")
+    saved_mode_model = saved_model.joinpath(f"MLE_{opts.mode}")
 
     trainer = SimMLETrainer(
         model=model,

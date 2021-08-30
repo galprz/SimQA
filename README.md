@@ -38,7 +38,7 @@ Arguments:
 8. `--report-every` Number of steps between reports.
 9. `--save-every` Number of steps between saving models.
 
-Saved models will be under `checkpoints/<mode>_step_<i * save-every>`, for `0 <= i < <train-steps> // <save-every>`.
+Saved models will be under `checkpoints/MLE_<mode>_step_<i * save-every>`, for `0 <= i < <train-steps> // <save-every>`.
 
 ## The RL model
 To train and evaluate the model using the reinforcement-learning algorithm and the Q semantic + syntactic reward, run:
