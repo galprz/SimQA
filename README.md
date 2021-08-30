@@ -23,24 +23,25 @@ This is the code for the SimQA paper.
 This paper uses a unique dataset that was labeled by chemists, and it's located in `data` directory.
 
 ## The MLE model
-To re-train the MLE models, run the train mle v1/v2 scripts:
+To re-train the MLE models, run:
 ```shell
 python train_mle.py 
 ```
 Arguments:
-1. `--train-batch-size`: Batch size for training.
-2. `--valid-batch-size`: Batch size for validation.
-3. `--train-steps`: Number of training steps.
-4. `--valid-steps`: Number of steps between evaluations on the validation set.
-5. `--learning-rate`: Model's learning rate.
-6. `--max-grad-norm`: Maximal gradients norm. Gradient above this threshold will be clipped.
-7. `--report-every`: Number of steps between reports.
-8. `--save-every`: Number of steps between saving models.
+1. `--mode` Version of the data (v1/v2).
+2. `--train-batch-size` Batch size for training.
+3. `--valid-batch-size` Batch size for validation.
+4. `--train-steps` Number of training steps.
+5. `--valid-steps` Number of steps between evaluations on the validation set.
+6. `--learning-rate` Model's learning rate.
+7. `--max-grad-norm` Maximal gradients norm. Gradient above this threshold will be clipped.
+8. `--report-every` Number of steps between reports.
+9. `--save-every` Number of steps between saving models.
+
+Saved models will be under `checkpoints/<mode>_step_<i * save-every>`, for `0 <= i < <train-steps> // <save-every>`.
 
 ## The RL model
-To train & evaluate the model using the reinforcement-learning algorithm and the Q semantic + syntactic reward,
-download the pre-trained model from [here](https://drive.google.com/file/d/1z3wrQZe0V5HSXSiXyiIza36w-2zf6mmB/view?usp=sharing),
-and place it in the root folder of the project. Then, run the following command:
+To train and evaluate the model using the reinforcement-learning algorithm and the Q semantic + syntactic reward, run:
 ```shell
-python train_rl --data_version=v1
+python train_rl.py --data_version=v1
 ```
