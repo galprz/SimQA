@@ -35,7 +35,7 @@ if __name__ == "__main__":
     parser.add_argument("--max-grad-norm", type=float, default=2.0)
 
     parser.add_argument("--report-every", type=int, default=10)
-    parser.add_argument("--save-every", type=int, default=1)
+    parser.add_argument("--save-every", type=int, default=1000)
 
     opts = parser.parse_args()
 
