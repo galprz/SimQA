@@ -34,7 +34,7 @@ class Sim2TokensListener(SimCodeListener):
         super().enterCondition_expression(ctx)
 
     def exitCondition_expression(self, ctx: SimCodeParser.Condition_expressionContext):
-        self._tokens += [")","{"]
+        self._tokens += [")", "{"]
         super().exitCondition_expression(ctx)
 
     def enterReturn_stmt(self, ctx: SimCodeParser.Return_stmtContext):
@@ -55,4 +55,3 @@ class Sim2TokensListener(SimCodeListener):
     def enterNumeric_expression(self, ctx: SimCodeParser.Numeric_expressionContext):
         self._tokens += self._seprate_to_tokens(ctx.children[:5])
         super().enterNumeric_expression(ctx)
-

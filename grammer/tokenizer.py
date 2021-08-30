@@ -5,6 +5,7 @@ from grammer.code.SimCodeParser import SimCodeParser
 from grammer.src.SimTokensListener import Sim2TokensListener
 from grammer.utils import wrap_body, get_vocab, normalize_sim_code
 
+
 class SimCodeTokenizer:
     def __init__(self):
         vocab = get_vocab()
@@ -24,7 +25,7 @@ class SimCodeTokenizer:
         new_tokens = []
 
         for token in tokens:
-            if token not in self.stoi :
+            if token not in self.stoi:
                 for char in token:
                     assert char in self.stoi, f"token {char} is not in stoi dictionary"
                     new_tokens.append(char)
