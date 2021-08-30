@@ -25,4 +25,4 @@ dependencies:
     - transformers
     - gensim
     - spacy
-    - OpenNMT-py
+    - OpenNMT-py==1.2.0
