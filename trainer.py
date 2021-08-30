@@ -116,12 +116,14 @@ class SimMLETrainer(Trainer):
             logger.info("Start training loop without validation...")
         else:
             logger.info("Start training loop and validate every %d steps...", valid_steps)
+
         if stats_cls is None:
             total_stats = onmt.utils.Statistics()
             report_stats = onmt.utils.Statistics()
         else:
             total_stats = stats_cls()
             report_stats = stats_cls()
+
         self._start_report_manager(start_time=total_stats.start_time)
         all_metrics = {}
         for i, (batches, normalization) in enumerate(self._accum_batches(train_iter)):
