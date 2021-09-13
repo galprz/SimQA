@@ -1,2 +1,4 @@
-checkpoints
-runs
+*.pyc_
+__pycache__
+#checkpoints
+#runs
