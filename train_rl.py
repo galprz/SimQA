@@ -131,7 +131,9 @@ if __name__ == "__main__":
         criterion=nn.NLLLoss(ignore_index=tgt_padding, reduction="sum"), generator=model.generator
     )
     torch_optimizer = torch.optim.Adam(model.parameters(), lr=opts.learning_rate)
-    optim = onmt.utils.optimizers.Optimizer(torch_optimizer, learning_rate=opts.learning_rate, max_grad_norm=opts.max_grad_norm)
+    optim = onmt.utils.optimizers.Optimizer(
+        torch_optimizer, learning_rate=opts.learning_rate, max_grad_norm=opts.max_grad_norm
+    )
 
     train_iter = onmt.inputters.inputter.DatasetLazyIter(
         dataset_paths=[train_data_file],

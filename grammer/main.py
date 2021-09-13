@@ -8,9 +8,10 @@ from grammer.tokenizer import SimCodeTokenizer
 from grammer.utils import format_simcode, execute_simcode, wrap_body, add_state_to_code, extract_execution_code_block
 from reward import checkpoints_reward
 
+
 if __name__ == "__main__":
     sim_code = """
-   func simulation(){
+    func simulation(){
         a=1;
         b=2;
         return a;
@@ -18,11 +19,11 @@ if __name__ == "__main__":
     """
     ref_code = """
     func simulation(){
-         a=1;
-         b=2;
-         return a;
-     }
-     """
+        a=1;
+        b=2;
+        return a;
+    }
+    """
     print(add_state_to_code("a=1,b=2", "a=a*b;"))
     tokenizer = SimCodeTokenizer()
     tokens = tokenizer.tokenize(sim_code)
