@@ -5,6 +5,7 @@ import onmt.utils.loss
 import torch
 import torch.nn as nn
 
+from lookahead import Lookahead
 from metrics import BleuScore, CorrectAnswersScore
 from pathlib import Path
 from tensorboardX import SummaryWriter
@@ -33,6 +34,10 @@ if __name__ == "__main__":
 
     parser.add_argument("--learning-rate", type=float, default=0.001)
     parser.add_argument("--max-grad-norm", type=float, default=2.0)
+
+    parser.add_argument("--lookahead", action="store_true", default=False)
+    parser.add_argument("--lookahead-steps", type=int, default=10)
+    parser.add_argument("--lookahead-alpha", type=float, default=0.001)
 
     parser.add_argument("--report-every", type=int, default=10)
     parser.add_argument("--save-every", type=int, default=1000)
@@ -101,6 +106,8 @@ if __name__ == "__main__":
     )
 
     torch_optimizer = torch.optim.Adam(model.parameters(), lr=opts.learning_rate)
+    if opts.lookahead:
+        torch_optimizer = Lookahead(torch_optimizer, la_steps=opts.lookahead_steps, la_alpha=opts.lookahead_alpha)
     optim = onmt.utils.optimizers.Optimizer(
         torch_optimizer, learning_rate=opts.learning_rate, max_grad_norm=opts.max_grad_norm
     )
