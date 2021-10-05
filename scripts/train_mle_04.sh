@@ -1,4 +1,4 @@
-train_mle_03.sh#!/bin/bash
+#!/bin/bash
 
 # Setup env
 cd ..
