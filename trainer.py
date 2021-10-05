@@ -83,6 +83,7 @@ class SimMLETrainer(Trainer):
         self.translator = translator
         self.translation_builder = translation_builder
         self.score_fn = score_fn
+        self.lookahead = self.model_saver.model_opt["lookahead"]
 
     def train(
         self,
@@ -192,6 +193,9 @@ class SimMLETrainer(Trainer):
         Returns:
             :obj:`nmt.Statistics`: validation loss statistics
         """
+        if self.lookahead:
+            self.optim._backup_and_load_cache()
+
         valid_model = self.model
         if moving_average:
             # swap model params w/ moving average
@@ -255,6 +259,9 @@ class SimMLETrainer(Trainer):
 
         # Set model back to training mode.
         valid_model.train()
+
+        if self.lookahead:
+            self.optim._clear_and_load_backup()
 
         return stats
 

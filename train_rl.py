@@ -87,6 +87,8 @@ def load_model(model_path: Union[str, Path], embeddings_path: Union[str, Path]):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog="Train RL")
 
+    parser.add_argument("--name", type=str, default="")
+
     parser.add_argument("--mode", type=str, default="v1", choices=("v1, v2"))
 
     parser.add_argument("--train-batch-size", type=int, default=16)
@@ -209,9 +211,9 @@ if __name__ == "__main__":
     state_score_matric = BleuAndStateScore(tgt_vocab, 0.8)
     metrics = [BleuScore(), CorrectAnswersScore(tgt_vocab)]
 
-    saved_model = Path.cwd().joinpath(f"checkpoints")
+    saved_model = Path.cwd().joinpath(f"checkpoints/RL/{opts.mode}")
     saved_model.mkdir(exist_ok=True, parents=True)
-    saved_mode_model = saved_model.joinpath(f"RL_{opts.mode}")
+    saved_mode_model = saved_model.joinpath(f"{opts.name}")
 
     trainer = SimStateScoreTrainer(
         argmax_model=argmax_model,

@@ -24,6 +24,8 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(prog="Train MLE")
 
+    parser.add_argument("--name", type=str, default="")
+
     parser.add_argument("--mode", type=str, default="v1", choices=("v1, v2"))
 
     parser.add_argument("--train-batch-size", type=int, default=32)
@@ -136,9 +138,9 @@ if __name__ == "__main__":
         pool_factor=8192,
     )
 
-    saved_model = Path.cwd().joinpath(f"checkpoints")
+    saved_model = Path.cwd().joinpath(f"checkpoints/MLE/{opts.mode}")
     saved_model.mkdir(exist_ok=True, parents=True)
-    saved_mode_model = saved_model.joinpath(f"MLE_{opts.mode}")
+    saved_mode_model = saved_model.joinpath(f"{opts.name}")
 
     trainer = SimMLETrainer(
         model=model,
