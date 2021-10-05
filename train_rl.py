@@ -90,6 +90,7 @@ if __name__ == "__main__":
     parser.add_argument("--name", type=str, default="")
 
     parser.add_argument("--mode", type=str, default="v1", choices=("v1, v2"))
+    parser.add_argument("--model-path", type=str, required=True)
 
     parser.add_argument("--train-batch-size", type=int, default=16)
     parser.add_argument("--valid-batch-size", type=int, default=64)
@@ -110,7 +111,7 @@ if __name__ == "__main__":
     vocab_data_file = f"data/{opts.mode}/processed/SimQA.vocab.pt"
     train_data_file = f"data/{opts.mode}/processed/SimQA.train.0.pt"
     valid_data_file = f"data/{opts.mode}/processed/SimQA.valid.0.pt"
-    model_path = f"models/{opts.mode}/model.pt"
+    model_path = f"{opts.model_path}"
     embeddings_path = f"models/{opts.mode}/src.embeddings.pt"
 
     vocab_fields = torch.load(vocab_data_file)
