@@ -1,4 +1,4 @@
 *.pyc_
 __pycache__
-checkpoints
-runs
+checkpoints/
+runs/
