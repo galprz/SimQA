@@ -1,0 +1,1175 @@
+hello from Python 3.7.11 in /home/nitai/miniconda3/envs/SimQA-code/bin/python
+running train_mle.py experiments
+2021-10-05 14:02:40,280 INFO Running on device=`cuda` (device_id=0)
+2021-10-05 14:02:43,599 INFO Start training loop and validate every 1000 steps...
+2021-10-05 14:02:43,599 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:02:43,658 INFO number of examples: 3029
+2021-10-05 14:02:54,332 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:02:54,391 INFO number of examples: 3029
+2021-10-05 14:02:54,986 INFO Step 100/10000; acc:  64.74; ppl:  3.45; xent: 1.24; lr: 0.00100; 58630/12616 tok/s;     11 sec
+2021-10-05 14:03:04,884 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:03:04,946 INFO number of examples: 3029
+2021-10-05 14:03:06,128 INFO Step 200/10000; acc:  80.78; ppl:  1.80; xent: 0.59; lr: 0.00100; 60020/12926 tok/s;     23 sec
+2021-10-05 14:03:15,456 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:03:15,513 INFO number of examples: 3029
+2021-10-05 14:03:17,239 INFO Step 300/10000; acc:  81.42; ppl:  1.74; xent: 0.55; lr: 0.00100; 59896/12892 tok/s;     34 sec
+2021-10-05 14:03:26,026 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:03:26,086 INFO number of examples: 3029
+2021-10-05 14:03:28,280 INFO Step 400/10000; acc:  82.17; ppl:  1.69; xent: 0.53; lr: 0.00100; 59675/12939 tok/s;     45 sec
+2021-10-05 14:03:36,569 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:03:36,693 INFO number of examples: 3029
+2021-10-05 14:03:39,361 INFO Step 500/10000; acc:  83.39; ppl:  1.64; xent: 0.49; lr: 0.00100; 59716/12882 tok/s;     56 sec
+2021-10-05 14:03:47,181 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:03:47,241 INFO number of examples: 3029
+2021-10-05 14:03:50,524 INFO Step 600/10000; acc:  85.24; ppl:  1.56; xent: 0.44; lr: 0.00100; 60111/12854 tok/s;     67 sec
+2021-10-05 14:03:57,768 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:03:57,823 INFO number of examples: 3029
+2021-10-05 14:04:01,643 INFO Step 700/10000; acc:  87.21; ppl:  1.48; xent: 0.39; lr: 0.00100; 59768/12892 tok/s;     78 sec
+2021-10-05 14:04:08,341 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:04:08,400 INFO number of examples: 3029
+2021-10-05 14:04:12,817 INFO Step 800/10000; acc:  89.06; ppl:  1.40; xent: 0.34; lr: 0.00100; 59857/12885 tok/s;     89 sec
+2021-10-05 14:04:18,934 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:04:19,057 INFO number of examples: 3029
+2021-10-05 14:04:24,045 INFO Step 900/10000; acc:  90.92; ppl:  1.33; xent: 0.29; lr: 0.00100; 59412/12781 tok/s;    100 sec
+2021-10-05 14:04:29,576 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:04:29,632 INFO number of examples: 3029
+2021-10-05 14:04:35,158 INFO Step 1000/10000; acc:  92.96; ppl:  1.25; xent: 0.23; lr: 0.00100; 59720/12887 tok/s;    112 sec
+2021-10-05 14:04:35,164 INFO MLE pre-trained model validation:
+2021-10-05 14:04:35,165 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:04:35,174 INFO number of examples: 534
+/home/nitai/miniconda3/envs/SimQA-code/lib/python3.7/site-packages/onmt/translate/beam_search.py:209: UserWarning: An output with one or more elements was resized since it had shape [480], which does not match the required output shape [16, 30].This behavior is deprecated, and in a future PyTorch release outputs will not be resized unless they have zero elements. You can explicitly reuse an out tensor t by resizing it, inplace, to zero elements with t.resize_(0). (Triggered internally at  /pytorch/aten/src/ATen/native/Resize.cpp:23.)
+  torch.mul(self.topk_scores, length_penalty, out=self.topk_log_probs)
+/home/nitai/miniconda3/envs/SimQA-code/lib/python3.7/site-packages/torch/_tensor.py:575: UserWarning: floor_divide is deprecated, and will be removed in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values.
+To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor'). (Triggered internally at  /pytorch/aten/src/ATen/native/BinaryOps.cpp:467.)
+  return torch.floor_divide(self, other)
+/home/nitai/miniconda3/envs/SimQA-code/lib/python3.7/site-packages/onmt/translate/beam_search.py:209: UserWarning: An output with one or more elements was resized since it had shape [180], which does not match the required output shape [6, 30].This behavior is deprecated, and in a future PyTorch release outputs will not be resized unless they have zero elements. You can explicitly reuse an out tensor t by resizing it, inplace, to zero elements with t.resize_(0). (Triggered internally at  /pytorch/aten/src/ATen/native/Resize.cpp:23.)
+  torch.mul(self.topk_scores, length_penalty, out=self.topk_log_probs)
+2021-10-05 14:05:10,135 INFO Validation metrics: Bleu: 0.9292,Correct answers 0.2525, State transitions score: 0.3042
+2021-10-05 14:05:10,139 INFO Validation perplexity: 1.18267
+2021-10-05 14:05:10,139 INFO Validation accuracy: 94.7792
+2021-10-05 14:05:10,155 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_05_la_1.00_step_1000.pt
+2021-10-05 14:05:15,346 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:05:15,402 INFO number of examples: 3029
+2021-10-05 14:05:21,531 INFO Step 1100/10000; acc:  94.75; ppl:  1.18; xent: 0.17; lr: 0.00100; 14357/3083 tok/s;    158 sec
+2021-10-05 14:05:25,993 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:05:26,049 INFO number of examples: 3029
+2021-10-05 14:05:32,660 INFO Step 1200/10000; acc:  95.93; ppl:  1.14; xent: 0.13; lr: 0.00100; 59617/12876 tok/s;    169 sec
+2021-10-05 14:05:36,601 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:05:36,660 INFO number of examples: 3029
+2021-10-05 14:05:43,763 INFO Step 1300/10000; acc:  96.87; ppl:  1.11; xent: 0.10; lr: 0.00100; 59545/12887 tok/s;    180 sec
+2021-10-05 14:05:47,219 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:05:47,275 INFO number of examples: 3029
+2021-10-05 14:05:54,983 INFO Step 1400/10000; acc:  97.41; ppl:  1.09; xent: 0.08; lr: 0.00100; 59684/12902 tok/s;    191 sec
+2021-10-05 14:05:57,833 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:05:57,893 INFO number of examples: 3029
+2021-10-05 14:06:06,109 INFO Step 1500/10000; acc:  97.86; ppl:  1.07; xent: 0.07; lr: 0.00100; 60033/12946 tok/s;    203 sec
+2021-10-05 14:06:08,386 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:06:08,509 INFO number of examples: 3029
+2021-10-05 14:06:17,417 INFO Step 1600/10000; acc:  98.17; ppl:  1.06; xent: 0.06; lr: 0.00100; 59132/12623 tok/s;    214 sec
+2021-10-05 14:06:19,031 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:06:19,081 INFO number of examples: 3029
+2021-10-05 14:06:28,515 INFO Step 1700/10000; acc:  98.35; ppl:  1.05; xent: 0.05; lr: 0.00100; 59679/12912 tok/s;    225 sec
+2021-10-05 14:06:29,619 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:06:29,680 INFO number of examples: 3029
+2021-10-05 14:06:39,667 INFO Step 1800/10000; acc:  98.59; ppl:  1.05; xent: 0.05; lr: 0.00100; 59915/12852 tok/s;    236 sec
+2021-10-05 14:06:40,198 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:06:40,249 INFO number of examples: 3029
+2021-10-05 14:06:50,765 INFO Step 1900/10000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00100; 59817/12870 tok/s;    247 sec
+2021-10-05 14:06:50,766 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:06:50,888 INFO number of examples: 3029
+2021-10-05 14:07:01,441 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:07:01,495 INFO number of examples: 3029
+2021-10-05 14:07:02,089 INFO Step 2000/10000; acc:  98.83; ppl:  1.04; xent: 0.04; lr: 0.00100; 58960/12687 tok/s;    258 sec
+2021-10-05 14:07:02,096 INFO MLE pre-trained model validation:
+2021-10-05 14:07:02,096 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:07:02,105 INFO number of examples: 534
+2021-10-05 14:07:37,825 INFO Validation metrics: Bleu: 0.9773,Correct answers 0.6863, State transitions score: 0.7275
+2021-10-05 14:07:37,829 INFO Validation perplexity: 1.04707
+2021-10-05 14:07:37,829 INFO Validation accuracy: 98.7814
+2021-10-05 14:07:37,845 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_05_la_1.00_step_2000.pt
+2021-10-05 14:07:47,935 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:07:48,076 INFO number of examples: 3029
+2021-10-05 14:07:49,261 INFO Step 2100/10000; acc:  98.93; ppl:  1.03; xent: 0.03; lr: 0.00100; 14175/3053 tok/s;    306 sec
+2021-10-05 14:07:58,572 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:07:58,624 INFO number of examples: 3029
+2021-10-05 14:08:00,350 INFO Step 2200/10000; acc:  99.03; ppl:  1.03; xent: 0.03; lr: 0.00100; 60017/12918 tok/s;    317 sec
+2021-10-05 14:08:09,124 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:08:09,186 INFO number of examples: 3029
+2021-10-05 14:08:11,397 INFO Step 2300/10000; acc:  99.11; ppl:  1.03; xent: 0.03; lr: 0.00100; 59644/12932 tok/s;    328 sec
+2021-10-05 14:08:19,711 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:08:19,766 INFO number of examples: 3029
+2021-10-05 14:08:22,448 INFO Step 2400/10000; acc:  99.15; ppl:  1.03; xent: 0.03; lr: 0.00100; 59877/12917 tok/s;    339 sec
+2021-10-05 14:08:30,279 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:08:30,331 INFO number of examples: 3029
+2021-10-05 14:08:33,633 INFO Step 2500/10000; acc:  99.18; ppl:  1.03; xent: 0.03; lr: 0.00100; 59993/12829 tok/s;    350 sec
+2021-10-05 14:08:40,889 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:08:41,011 INFO number of examples: 3029
+2021-10-05 14:08:44,814 INFO Step 2600/10000; acc:  99.27; ppl:  1.02; xent: 0.02; lr: 0.00100; 59435/12821 tok/s;    361 sec
+2021-10-05 14:08:51,530 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:08:51,586 INFO number of examples: 3029
+2021-10-05 14:08:56,006 INFO Step 2700/10000; acc:  99.30; ppl:  1.02; xent: 0.02; lr: 0.00100; 59755/12863 tok/s;    372 sec
+2021-10-05 14:09:02,142 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:09:02,199 INFO number of examples: 3029
+2021-10-05 14:09:07,173 INFO Step 2800/10000; acc:  99.34; ppl:  1.02; xent: 0.02; lr: 0.00100; 59737/12851 tok/s;    384 sec
+2021-10-05 14:09:12,716 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:09:12,772 INFO number of examples: 3029
+2021-10-05 14:09:18,278 INFO Step 2900/10000; acc:  99.39; ppl:  1.02; xent: 0.02; lr: 0.00100; 59761/12896 tok/s;    395 sec
+2021-10-05 14:09:23,306 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:09:23,427 INFO number of examples: 3029
+2021-10-05 14:09:29,499 INFO Step 3000/10000; acc:  99.44; ppl:  1.02; xent: 0.02; lr: 0.00100; 59340/12744 tok/s;    406 sec
+2021-10-05 14:09:29,505 INFO MLE pre-trained model validation:
+2021-10-05 14:09:29,506 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:09:29,518 INFO number of examples: 534
+2021-10-05 14:10:05,564 INFO Validation metrics: Bleu: 0.9794,Correct answers 0.7102, State transitions score: 0.7488
+2021-10-05 14:10:05,567 INFO Validation perplexity: 1.04459
+2021-10-05 14:10:05,568 INFO Validation accuracy: 98.965
+2021-10-05 14:10:05,589 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_05_la_1.00_step_3000.pt
+2021-10-05 14:10:10,321 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:10:10,377 INFO number of examples: 3029
+2021-10-05 14:10:17,007 INFO Step 3100/10000; acc:  99.41; ppl:  1.02; xent: 0.02; lr: 0.00100; 13963/3016 tok/s;    453 sec
+2021-10-05 14:10:20,961 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:10:21,014 INFO number of examples: 3029
+2021-10-05 14:10:28,090 INFO Step 3200/10000; acc:  99.46; ppl:  1.02; xent: 0.02; lr: 0.00100; 59657/12911 tok/s;    464 sec
+2021-10-05 14:10:31,549 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:10:31,674 INFO number of examples: 3029
+2021-10-05 14:10:39,371 INFO Step 3300/10000; acc:  99.50; ppl:  1.02; xent: 0.02; lr: 0.00100; 59361/12833 tok/s;    476 sec
+2021-10-05 14:10:42,225 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:10:42,285 INFO number of examples: 3029
+2021-10-05 14:10:50,583 INFO Step 3400/10000; acc:  99.53; ppl:  1.02; xent: 0.02; lr: 0.00100; 59569/12846 tok/s;    487 sec
+2021-10-05 14:10:52,868 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:10:52,921 INFO number of examples: 3029
+2021-10-05 14:11:01,822 INFO Step 3500/10000; acc:  99.57; ppl:  1.01; xent: 0.01; lr: 0.00100; 59497/12701 tok/s;    498 sec
+2021-10-05 14:11:03,448 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:11:03,504 INFO number of examples: 3029
+2021-10-05 14:11:12,926 INFO Step 3600/10000; acc:  99.59; ppl:  1.01; xent: 0.01; lr: 0.00100; 59652/12906 tok/s;    509 sec
+2021-10-05 14:11:14,020 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:11:14,073 INFO number of examples: 3029
+2021-10-05 14:11:24,090 INFO Step 3700/10000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00100; 59843/12837 tok/s;    520 sec
+2021-10-05 14:11:24,610 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:11:24,733 INFO number of examples: 3029
+2021-10-05 14:11:35,330 INFO Step 3800/10000; acc:  99.60; ppl:  1.01; xent: 0.01; lr: 0.00100; 59058/12707 tok/s;    532 sec
+2021-10-05 14:11:35,332 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:11:35,387 INFO number of examples: 3029
+2021-10-05 14:11:45,956 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:11:46,009 INFO number of examples: 3029
+2021-10-05 14:11:46,600 INFO Step 3900/10000; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00100; 59246/12749 tok/s;    543 sec
+2021-10-05 14:11:56,564 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:11:56,626 INFO number of examples: 3029
+2021-10-05 14:11:57,812 INFO Step 4000/10000; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00100; 59642/12845 tok/s;    554 sec
+2021-10-05 14:11:57,819 INFO MLE pre-trained model validation:
+2021-10-05 14:11:57,820 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:11:57,830 INFO number of examples: 534
+2021-10-05 14:12:33,914 INFO Validation metrics: Bleu: 0.9855,Correct answers 0.7574, State transitions score: 0.7956
+2021-10-05 14:12:33,917 INFO Validation perplexity: 1.04019
+2021-10-05 14:12:33,917 INFO Validation accuracy: 99.2697
+2021-10-05 14:12:33,939 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_05_la_1.00_step_4000.pt
+2021-10-05 14:12:43,485 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:12:43,611 INFO number of examples: 3029
+2021-10-05 14:12:45,338 INFO Step 4100/10000; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00100; 14003/3014 tok/s;    602 sec
+2021-10-05 14:12:54,115 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:12:54,172 INFO number of examples: 3029
+2021-10-05 14:12:56,378 INFO Step 4200/10000; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00100; 59679/12940 tok/s;    613 sec
+2021-10-05 14:13:04,722 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:13:04,780 INFO number of examples: 3029
+2021-10-05 14:13:07,472 INFO Step 4300/10000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00100; 59648/12867 tok/s;    624 sec
+2021-10-05 14:13:15,338 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:13:15,395 INFO number of examples: 3029
+2021-10-05 14:13:18,681 INFO Step 4400/10000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00100; 59862/12801 tok/s;    635 sec
+2021-10-05 14:13:25,893 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:13:26,023 INFO number of examples: 3029
+2021-10-05 14:13:29,823 INFO Step 4500/10000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00100; 59645/12866 tok/s;    646 sec
+2021-10-05 14:13:36,529 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:13:36,586 INFO number of examples: 3029
+2021-10-05 14:13:40,988 INFO Step 4600/10000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00100; 59903/12894 tok/s;    657 sec
+2021-10-05 14:13:47,085 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:13:47,142 INFO number of examples: 3029
+2021-10-05 14:13:52,133 INFO Step 4700/10000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00100; 59856/12876 tok/s;    669 sec
+2021-10-05 14:13:57,705 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:13:57,763 INFO number of examples: 3029
+2021-10-05 14:14:03,278 INFO Step 4800/10000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00100; 59540/12848 tok/s;    680 sec
+2021-10-05 14:14:08,318 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:14:08,458 INFO number of examples: 3029
+2021-10-05 14:14:14,522 INFO Step 4900/10000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00100; 59221/12719 tok/s;    691 sec
+2021-10-05 14:14:18,962 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:14:19,019 INFO number of examples: 3029
+2021-10-05 14:14:25,598 INFO Step 5000/10000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00100; 59892/12936 tok/s;    702 sec
+2021-10-05 14:14:25,605 INFO MLE pre-trained model validation:
+2021-10-05 14:14:25,605 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:14:25,619 INFO number of examples: 534
+2021-10-05 14:15:01,606 INFO Validation metrics: Bleu: 0.9850,Correct answers 0.7525, State transitions score: 0.7904
+2021-10-05 14:15:01,610 INFO Validation perplexity: 1.04814
+2021-10-05 14:15:01,611 INFO Validation accuracy: 99.2655
+2021-10-05 14:15:01,630 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_05_la_1.00_step_5000.pt
+2021-10-05 14:15:05,761 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:15:05,819 INFO number of examples: 3029
+2021-10-05 14:15:12,864 INFO Step 5100/10000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00100; 13987/3027 tok/s;    749 sec
+2021-10-05 14:15:16,298 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:15:16,425 INFO number of examples: 3029
+2021-10-05 14:15:24,062 INFO Step 5200/10000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00100; 59802/12928 tok/s;    760 sec
+2021-10-05 14:15:26,908 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:15:26,963 INFO number of examples: 3029
+2021-10-05 14:15:35,188 INFO Step 5300/10000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00100; 60031/12945 tok/s;    772 sec
+2021-10-05 14:15:37,481 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:15:37,534 INFO number of examples: 3029
+2021-10-05 14:15:46,396 INFO Step 5400/10000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00100; 59653/12734 tok/s;    783 sec
+2021-10-05 14:15:48,041 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:15:48,098 INFO number of examples: 3029
+2021-10-05 14:15:57,522 INFO Step 5500/10000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00100; 59534/12881 tok/s;    794 sec
+2021-10-05 14:15:58,621 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:15:58,740 INFO number of examples: 3029
+2021-10-05 14:16:08,739 INFO Step 5600/10000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00100; 59568/12778 tok/s;    805 sec
+2021-10-05 14:16:09,265 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:16:09,322 INFO number of examples: 3029
+2021-10-05 14:16:19,844 INFO Step 5700/10000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00100; 59775/12861 tok/s;    816 sec
+2021-10-05 14:16:19,845 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:16:19,908 INFO number of examples: 3029
+2021-10-05 14:16:30,403 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:16:30,456 INFO number of examples: 3029
+2021-10-05 14:16:31,051 INFO Step 5800/10000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00100; 59579/12821 tok/s;    827 sec
+2021-10-05 14:16:40,971 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:16:41,113 INFO number of examples: 3029
+2021-10-05 14:16:42,304 INFO Step 5900/10000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00100; 59422/12797 tok/s;    839 sec
+2021-10-05 14:16:51,594 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:16:51,654 INFO number of examples: 3029
+2021-10-05 14:16:53,399 INFO Step 6000/10000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 59984/12911 tok/s;    850 sec
+2021-10-05 14:16:53,405 INFO MLE pre-trained model validation:
+2021-10-05 14:16:53,406 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:16:53,416 INFO number of examples: 534
+2021-10-05 14:17:29,314 INFO Validation metrics: Bleu: 0.9873,Correct answers 0.7757, State transitions score: 0.8129
+2021-10-05 14:17:29,318 INFO Validation perplexity: 1.04102
+2021-10-05 14:17:29,318 INFO Validation accuracy: 99.3156
+2021-10-05 14:17:29,338 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_05_la_1.00_step_6000.pt
+2021-10-05 14:17:38,320 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:17:38,379 INFO number of examples: 3029
+2021-10-05 14:17:40,589 INFO Step 6100/10000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 13961/3027 tok/s;    897 sec
+2021-10-05 14:17:48,882 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:17:48,994 INFO number of examples: 3029
+2021-10-05 14:17:51,688 INFO Step 6200/10000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 59622/12861 tok/s;    908 sec
+2021-10-05 14:17:59,522 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:17:59,574 INFO number of examples: 3029
+2021-10-05 14:18:02,852 INFO Step 6300/10000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 60109/12853 tok/s;    919 sec
+2021-10-05 14:18:10,086 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:18:10,144 INFO number of examples: 3029
+2021-10-05 14:18:13,962 INFO Step 6400/10000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 59819/12904 tok/s;    930 sec
+2021-10-05 14:18:20,679 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:18:20,742 INFO number of examples: 3029
+2021-10-05 14:18:25,162 INFO Step 6500/10000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 59715/12854 tok/s;    942 sec
+2021-10-05 14:18:31,279 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:18:31,408 INFO number of examples: 3029
+2021-10-05 14:18:36,408 INFO Step 6600/10000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00100; 59317/12760 tok/s;    953 sec
+2021-10-05 14:18:41,971 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:18:42,028 INFO number of examples: 3029
+2021-10-05 14:18:47,503 INFO Step 6700/10000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 59814/12907 tok/s;    964 sec
+2021-10-05 14:18:52,508 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:18:52,565 INFO number of examples: 3029
+2021-10-05 14:18:58,608 INFO Step 6800/10000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 59954/12876 tok/s;    975 sec
+2021-10-05 14:19:03,048 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:19:03,110 INFO number of examples: 3029
+2021-10-05 14:19:09,701 INFO Step 6900/10000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 59804/12917 tok/s;    986 sec
+2021-10-05 14:19:13,623 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:19:13,741 INFO number of examples: 3029
+2021-10-05 14:19:20,820 INFO Step 7000/10000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 59462/12869 tok/s;    997 sec
+2021-10-05 14:19:20,827 INFO MLE pre-trained model validation:
+2021-10-05 14:19:20,828 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:19:20,837 INFO number of examples: 534
+2021-10-05 14:19:56,683 INFO Validation metrics: Bleu: 0.9874,Correct answers 0.7960, State transitions score: 0.8260
+2021-10-05 14:19:56,687 INFO Validation perplexity: 1.0463
+2021-10-05 14:19:56,687 INFO Validation accuracy: 99.3031
+2021-10-05 14:19:56,703 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_05_la_1.00_step_7000.pt
+2021-10-05 14:20:00,281 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:20:00,414 INFO number of examples: 3029
+2021-10-05 14:20:08,092 INFO Step 7100/10000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 14166/3062 tok/s;   1044 sec
+2021-10-05 14:20:10,929 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:20:10,984 INFO number of examples: 3029
+2021-10-05 14:20:19,192 INFO Step 7200/10000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 60173/12976 tok/s;   1056 sec
+2021-10-05 14:20:21,458 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:20:21,519 INFO number of examples: 3029
+2021-10-05 14:20:30,397 INFO Step 7300/10000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 59674/12739 tok/s;   1067 sec
+2021-10-05 14:20:32,012 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:20:32,070 INFO number of examples: 3029
+2021-10-05 14:20:41,433 INFO Step 7400/10000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00100; 60015/12985 tok/s;   1078 sec
+2021-10-05 14:20:42,530 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:20:42,663 INFO number of examples: 3029
+2021-10-05 14:20:52,612 INFO Step 7500/10000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 59772/12821 tok/s;   1089 sec
+2021-10-05 14:20:53,129 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:20:53,181 INFO number of examples: 3029
+2021-10-05 14:21:03,697 INFO Step 7600/10000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 59883/12884 tok/s;   1100 sec
+2021-10-05 14:21:03,698 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:21:03,752 INFO number of examples: 3029
+2021-10-05 14:21:14,265 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:21:14,322 INFO number of examples: 3029
+2021-10-05 14:21:14,917 INFO Step 7700/10000; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 59507/12805 tok/s;   1111 sec
+2021-10-05 14:21:24,822 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:21:24,945 INFO number of examples: 3029
+2021-10-05 14:21:26,141 INFO Step 7800/10000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 59577/12831 tok/s;   1123 sec
+2021-10-05 14:21:35,470 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:21:35,530 INFO number of examples: 3029
+2021-10-05 14:21:37,272 INFO Step 7900/10000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 59792/12870 tok/s;   1134 sec
+2021-10-05 14:21:46,027 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:21:46,084 INFO number of examples: 3029
+2021-10-05 14:21:48,280 INFO Step 8000/10000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 59849/12977 tok/s;   1145 sec
+2021-10-05 14:21:48,287 INFO MLE pre-trained model validation:
+2021-10-05 14:21:48,288 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:21:48,297 INFO number of examples: 534
+2021-10-05 14:22:24,048 INFO Validation metrics: Bleu: 0.9889,Correct answers 0.7960, State transitions score: 0.8259
+2021-10-05 14:22:45,507 INFO Validation perplexity: 1.04001
+2021-10-05 14:22:45,507 INFO Validation accuracy: 99.4366
+2021-10-05 14:22:45,534 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_05_la_1.00_step_8000.pt
+2021-10-05 14:22:55,720 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:22:55,851 INFO number of examples: 3029
+2021-10-05 14:22:58,516 INFO Step 8100/10000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 9421/2032 tok/s;   1215 sec
+2021-10-05 14:23:06,300 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:23:06,359 INFO number of examples: 3029
+2021-10-05 14:23:09,636 INFO Step 8200/10000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 60342/12903 tok/s;   1226 sec
+2021-10-05 14:23:16,829 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:23:16,890 INFO number of examples: 3029
+2021-10-05 14:23:20,692 INFO Step 8300/10000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 60108/12966 tok/s;   1237 sec
+2021-10-05 14:23:27,355 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:23:27,410 INFO number of examples: 3029
+2021-10-05 14:23:31,789 INFO Step 8400/10000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00100; 60266/12973 tok/s;   1248 sec
+2021-10-05 14:23:37,856 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:23:37,994 INFO number of examples: 3029
+2021-10-05 14:23:42,950 INFO Step 8500/10000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 59773/12858 tok/s;   1259 sec
+2021-10-05 14:23:48,469 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:23:48,522 INFO number of examples: 3029
+2021-10-05 14:23:54,003 INFO Step 8600/10000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 60036/12955 tok/s;   1270 sec
+2021-10-05 14:23:59,002 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:23:59,058 INFO number of examples: 3029
+2021-10-05 14:24:05,081 INFO Step 8700/10000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 60108/12909 tok/s;   1281 sec
+2021-10-05 14:24:09,523 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:24:09,581 INFO number of examples: 3029
+2021-10-05 14:24:16,123 INFO Step 8800/10000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00100; 60080/12976 tok/s;   1293 sec
+2021-10-05 14:24:20,050 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:24:20,109 INFO number of examples: 3029
+2021-10-05 14:24:27,192 INFO Step 8900/10000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00100; 59726/12926 tok/s;   1304 sec
+2021-10-05 14:24:30,627 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:24:30,741 INFO number of examples: 3029
+2021-10-05 14:24:38,423 INFO Step 9000/10000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 59628/12890 tok/s;   1315 sec
+2021-10-05 14:24:38,431 INFO MLE pre-trained model validation:
+2021-10-05 14:24:38,432 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:24:38,443 INFO number of examples: 534
+2021-10-05 14:25:14,859 INFO Validation metrics: Bleu: 0.9893,Correct answers 0.8015, State transitions score: 0.8266
+2021-10-05 14:25:14,862 INFO Validation perplexity: 1.04714
+2021-10-05 14:25:14,862 INFO Validation accuracy: 99.3824
+2021-10-05 14:25:14,882 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_05_la_1.00_step_9000.pt
+2021-10-05 14:25:17,887 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:25:17,944 INFO number of examples: 3029
+2021-10-05 14:25:26,244 INFO Step 9100/10000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 13966/3012 tok/s;   1363 sec
+2021-10-05 14:25:28,541 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:25:28,677 INFO number of examples: 3029
+2021-10-05 14:25:37,647 INFO Step 9200/10000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 58637/12517 tok/s;   1374 sec
+2021-10-05 14:25:39,276 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:25:39,329 INFO number of examples: 3029
+2021-10-05 14:25:48,695 INFO Step 9300/10000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00100; 59954/12972 tok/s;   1385 sec
+2021-10-05 14:25:49,789 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:25:49,847 INFO number of examples: 3029
+2021-10-05 14:25:59,816 INFO Step 9400/10000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00100; 60077/12887 tok/s;   1396 sec
+2021-10-05 14:26:00,335 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:26:00,391 INFO number of examples: 3029
+2021-10-05 14:26:10,881 INFO Step 9500/10000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00100; 59989/12907 tok/s;   1407 sec
+2021-10-05 14:26:10,883 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:26:11,006 INFO number of examples: 3029
+2021-10-05 14:26:21,492 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:26:21,548 INFO number of examples: 3029
+2021-10-05 14:26:22,139 INFO Step 9600/10000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00100; 59311/12763 tok/s;   1419 sec
+2021-10-05 14:26:32,029 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:26:32,084 INFO number of examples: 3029
+2021-10-05 14:26:33,284 INFO Step 9700/10000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 59998/12921 tok/s;   1430 sec
+2021-10-05 14:26:42,633 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:26:42,688 INFO number of examples: 3029
+2021-10-05 14:26:44,423 INFO Step 9800/10000; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 59743/12859 tok/s;   1441 sec
+2021-10-05 14:26:53,176 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:26:53,318 INFO number of examples: 3029
+2021-10-05 14:26:55,502 INFO Step 9900/10000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00100; 59472/12895 tok/s;   1452 sec
+2021-10-05 14:27:03,758 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:27:03,831 INFO number of examples: 3029
+2021-10-05 14:27:06,495 INFO Step 10000/10000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00100; 60198/12986 tok/s;   1463 sec
+2021-10-05 14:27:06,501 INFO MLE pre-trained model validation:
+2021-10-05 14:27:06,502 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:27:06,516 INFO number of examples: 534
+2021-10-05 14:27:42,422 INFO Validation metrics: Bleu: 0.9893,Correct answers 0.7990, State transitions score: 0.8261
+2021-10-05 14:27:42,425 INFO Validation perplexity: 1.04294
+2021-10-05 14:27:42,425 INFO Validation accuracy: 99.4241
+2021-10-05 14:27:42,441 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_05_la_1.00_step_10000.pt
+2021-10-05 14:27:46,825 INFO Running on device=`cuda` (device_id=0)
+2021-10-05 14:27:50,602 INFO Start training loop and validate every 1000 steps...
+2021-10-05 14:27:50,602 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:27:50,660 INFO number of examples: 3029
+2021-10-05 14:28:01,460 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:28:01,519 INFO number of examples: 3029
+2021-10-05 14:28:02,042 INFO Step 100/10000; acc:  64.23; ppl:  3.50; xent: 1.25; lr: 0.00100; 57915/12583 tok/s;     11 sec
+2021-10-05 14:28:11,985 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:28:12,048 INFO number of examples: 3029
+2021-10-05 14:28:13,058 INFO Step 200/10000; acc:  80.41; ppl:  1.82; xent: 0.60; lr: 0.00100; 59922/13021 tok/s;     22 sec
+2021-10-05 14:28:22,515 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:28:22,575 INFO number of examples: 3029
+2021-10-05 14:28:24,100 INFO Step 300/10000; acc:  81.28; ppl:  1.75; xent: 0.56; lr: 0.00100; 60098/12972 tok/s;     33 sec
+2021-10-05 14:28:33,070 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:28:33,126 INFO number of examples: 3029
+2021-10-05 14:28:35,143 INFO Step 400/10000; acc:  82.08; ppl:  1.70; xent: 0.53; lr: 0.00100; 59923/12904 tok/s;     45 sec
+2021-10-05 14:28:43,666 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:28:43,800 INFO number of examples: 3029
+2021-10-05 14:28:46,459 INFO Step 500/10000; acc:  82.96; ppl:  1.65; xent: 0.50; lr: 0.00100; 59164/12712 tok/s;     56 sec
+2021-10-05 14:28:54,362 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:28:54,412 INFO number of examples: 3029
+2021-10-05 14:28:57,613 INFO Step 600/10000; acc:  84.34; ppl:  1.59; xent: 0.46; lr: 0.00100; 60027/12841 tok/s;     67 sec
+2021-10-05 14:29:04,882 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:29:04,939 INFO number of examples: 3029
+2021-10-05 14:29:08,641 INFO Step 700/10000; acc:  86.37; ppl:  1.51; xent: 0.41; lr: 0.00100; 59999/12925 tok/s;     78 sec
+2021-10-05 14:29:15,403 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:29:15,468 INFO number of examples: 3029
+2021-10-05 14:29:19,770 INFO Step 800/10000; acc:  88.25; ppl:  1.43; xent: 0.36; lr: 0.00100; 60264/12896 tok/s;     89 sec
+2021-10-05 14:29:25,951 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:29:26,067 INFO number of examples: 3029
+2021-10-05 14:29:30,955 INFO Step 900/10000; acc:  89.42; ppl:  1.39; xent: 0.33; lr: 0.00100; 59735/12855 tok/s;    100 sec
+2021-10-05 14:29:36,530 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:29:36,594 INFO number of examples: 3029
+2021-10-05 14:29:42,046 INFO Step 1000/10000; acc:  90.40; ppl:  1.35; xent: 0.30; lr: 0.00100; 59961/12923 tok/s;    111 sec
+2021-10-05 14:29:42,054 INFO MLE pre-trained model validation:
+2021-10-05 14:29:42,055 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:29:42,064 INFO number of examples: 534
+/home/nitai/miniconda3/envs/SimQA-code/lib/python3.7/site-packages/onmt/translate/beam_search.py:209: UserWarning: An output with one or more elements was resized since it had shape [480], which does not match the required output shape [16, 30].This behavior is deprecated, and in a future PyTorch release outputs will not be resized unless they have zero elements. You can explicitly reuse an out tensor t by resizing it, inplace, to zero elements with t.resize_(0). (Triggered internally at  /pytorch/aten/src/ATen/native/Resize.cpp:23.)
+  torch.mul(self.topk_scores, length_penalty, out=self.topk_log_probs)
+/home/nitai/miniconda3/envs/SimQA-code/lib/python3.7/site-packages/torch/_tensor.py:575: UserWarning: floor_divide is deprecated, and will be removed in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values.
+To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor'). (Triggered internally at  /pytorch/aten/src/ATen/native/BinaryOps.cpp:467.)
+  return torch.floor_divide(self, other)
+/home/nitai/miniconda3/envs/SimQA-code/lib/python3.7/site-packages/onmt/translate/beam_search.py:209: UserWarning: An output with one or more elements was resized since it had shape [180], which does not match the required output shape [6, 30].This behavior is deprecated, and in a future PyTorch release outputs will not be resized unless they have zero elements. You can explicitly reuse an out tensor t by resizing it, inplace, to zero elements with t.resize_(0). (Triggered internally at  /pytorch/aten/src/ATen/native/Resize.cpp:23.)
+  torch.mul(self.topk_scores, length_penalty, out=self.topk_log_probs)
+2021-10-05 14:30:16,411 INFO Validation metrics: Bleu: 0.8715,Correct answers 0.1134, State transitions score: 0.1614
+2021-10-05 14:30:16,415 INFO Validation perplexity: 1.3355
+2021-10-05 14:30:16,415 INFO Validation accuracy: 90.919
+2021-10-05 14:30:16,437 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_10_la_1.00_step_1000.pt
+2021-10-05 14:30:21,834 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:30:21,889 INFO number of examples: 3029
+2021-10-05 14:30:28,006 INFO Step 1100/10000; acc:  91.35; ppl:  1.31; xent: 0.27; lr: 0.00100; 14552/3124 tok/s;    157 sec
+2021-10-05 14:30:32,472 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:30:32,524 INFO number of examples: 3029
+2021-10-05 14:30:39,207 INFO Step 1200/10000; acc:  92.45; ppl:  1.27; xent: 0.24; lr: 0.00100; 59601/12762 tok/s;    169 sec
+2021-10-05 14:30:43,019 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:30:43,082 INFO number of examples: 3029
+2021-10-05 14:30:50,258 INFO Step 1300/10000; acc:  93.61; ppl:  1.23; xent: 0.20; lr: 0.00100; 59978/12985 tok/s;    180 sec
+2021-10-05 14:30:53,587 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:30:53,640 INFO number of examples: 3029
+2021-10-05 14:31:01,424 INFO Step 1400/10000; acc:  94.80; ppl:  1.18; xent: 0.17; lr: 0.00100; 60025/12884 tok/s;    191 sec
+2021-10-05 14:31:04,137 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:31:04,192 INFO number of examples: 3029
+2021-10-05 14:31:12,613 INFO Step 1500/10000; acc:  95.74; ppl:  1.15; xent: 0.14; lr: 0.00100; 60022/12914 tok/s;    202 sec
+2021-10-05 14:31:14,697 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:31:14,825 INFO number of examples: 3029
+2021-10-05 14:31:23,799 INFO Step 1600/10000; acc:  96.55; ppl:  1.12; xent: 0.11; lr: 0.00100; 59447/12802 tok/s;    213 sec
+2021-10-05 14:31:25,348 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:31:25,399 INFO number of examples: 3029
+2021-10-05 14:31:34,839 INFO Step 1700/10000; acc:  97.10; ppl:  1.10; xent: 0.09; lr: 0.00100; 59964/12919 tok/s;    224 sec
+2021-10-05 14:31:35,916 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:31:35,973 INFO number of examples: 3029
+2021-10-05 14:31:46,016 INFO Step 1800/10000; acc:  97.53; ppl:  1.08; xent: 0.08; lr: 0.00100; 59681/12854 tok/s;    235 sec
+2021-10-05 14:31:46,503 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:31:46,560 INFO number of examples: 3029
+2021-10-05 14:31:57,077 INFO Step 1900/10000; acc:  97.93; ppl:  1.07; xent: 0.07; lr: 0.00100; 59750/12943 tok/s;    246 sec
+2021-10-05 14:31:57,078 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:31:57,208 INFO number of examples: 3029
+2021-10-05 14:32:07,697 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:32:07,752 INFO number of examples: 3029
+2021-10-05 14:32:08,271 INFO Step 2000/10000; acc:  98.16; ppl:  1.06; xent: 0.06; lr: 0.00100; 59188/12860 tok/s;    258 sec
+2021-10-05 14:32:08,278 INFO MLE pre-trained model validation:
+2021-10-05 14:32:08,279 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:32:08,288 INFO number of examples: 534
+2021-10-05 14:32:44,077 INFO Validation metrics: Bleu: 0.9710,Correct answers 0.5907, State transitions score: 0.6405
+2021-10-05 14:32:44,080 INFO Validation perplexity: 1.07977
+2021-10-05 14:32:44,081 INFO Validation accuracy: 98.0344
+2021-10-05 14:32:44,101 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_10_la_1.00_step_2000.pt
+2021-10-05 14:32:54,221 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:32:54,278 INFO number of examples: 3029
+2021-10-05 14:32:55,365 INFO Step 2100/10000; acc:  98.33; ppl:  1.05; xent: 0.05; lr: 0.00100; 14015/3045 tok/s;    305 sec
+2021-10-05 14:33:04,820 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:33:04,877 INFO number of examples: 3029
+2021-10-05 14:33:06,420 INFO Step 2200/10000; acc:  98.52; ppl:  1.05; xent: 0.05; lr: 0.00100; 60028/12957 tok/s;    316 sec
+2021-10-05 14:33:15,348 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:33:15,405 INFO number of examples: 3029
+2021-10-05 14:33:17,396 INFO Step 2300/10000; acc:  98.66; ppl:  1.05; xent: 0.04; lr: 0.00100; 60286/12982 tok/s;    327 sec
+2021-10-05 14:33:25,841 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:33:25,894 INFO number of examples: 3029
+2021-10-05 14:33:28,498 INFO Step 2400/10000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00100; 60303/12957 tok/s;    338 sec
+2021-10-05 14:33:36,361 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:33:36,419 INFO number of examples: 3029
+2021-10-05 14:33:39,609 INFO Step 2500/10000; acc:  98.85; ppl:  1.04; xent: 0.04; lr: 0.00100; 60260/12891 tok/s;    349 sec
+2021-10-05 14:33:46,867 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:33:46,990 INFO number of examples: 3029
+2021-10-05 14:33:50,702 INFO Step 2600/10000; acc:  98.97; ppl:  1.03; xent: 0.03; lr: 0.00100; 59652/12850 tok/s;    360 sec
+2021-10-05 14:33:57,477 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:33:57,535 INFO number of examples: 3029
+2021-10-05 14:34:01,869 INFO Step 2700/10000; acc:  99.01; ppl:  1.03; xent: 0.03; lr: 0.00100; 60054/12852 tok/s;    371 sec
+2021-10-05 14:34:08,068 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:34:08,128 INFO number of examples: 3029
+2021-10-05 14:34:13,028 INFO Step 2800/10000; acc:  99.00; ppl:  1.03; xent: 0.03; lr: 0.00100; 59876/12885 tok/s;    382 sec
+2021-10-05 14:34:18,638 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:34:18,691 INFO number of examples: 3029
+2021-10-05 14:34:24,132 INFO Step 2900/10000; acc:  99.11; ppl:  1.03; xent: 0.03; lr: 0.00100; 59891/12908 tok/s;    394 sec
+2021-10-05 14:34:29,127 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:34:29,255 INFO number of examples: 3029
+2021-10-05 14:34:35,231 INFO Step 3000/10000; acc:  99.18; ppl:  1.03; xent: 0.03; lr: 0.00100; 60257/12935 tok/s;    405 sec
+2021-10-05 14:34:35,239 INFO MLE pre-trained model validation:
+2021-10-05 14:34:35,239 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:34:35,251 INFO number of examples: 534
+2021-10-05 14:35:11,087 INFO Validation metrics: Bleu: 0.9799,Correct answers 0.6642, State transitions score: 0.7128
+2021-10-05 14:35:11,091 INFO Validation perplexity: 1.05808
+2021-10-05 14:35:11,091 INFO Validation accuracy: 98.6771
+2021-10-05 14:35:11,110 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_10_la_1.00_step_3000.pt
+2021-10-05 14:35:15,854 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:35:15,910 INFO number of examples: 3029
+2021-10-05 14:35:22,597 INFO Step 3100/10000; acc:  99.25; ppl:  1.03; xent: 0.02; lr: 0.00100; 14094/3018 tok/s;    452 sec
+2021-10-05 14:35:26,414 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:35:26,466 INFO number of examples: 3029
+2021-10-05 14:35:33,651 INFO Step 3200/10000; acc:  99.28; ppl:  1.02; xent: 0.02; lr: 0.00100; 59963/12982 tok/s;    463 sec
+2021-10-05 14:35:36,969 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:35:37,031 INFO number of examples: 3029
+2021-10-05 14:35:44,770 INFO Step 3300/10000; acc:  99.27; ppl:  1.02; xent: 0.02; lr: 0.00100; 60279/12938 tok/s;    474 sec
+2021-10-05 14:35:47,473 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:35:47,526 INFO number of examples: 3029
+2021-10-05 14:35:55,881 INFO Step 3400/10000; acc:  99.36; ppl:  1.02; xent: 0.02; lr: 0.00100; 60441/13004 tok/s;    485 sec
+2021-10-05 14:35:57,985 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:35:58,098 INFO number of examples: 3029
+2021-10-05 14:36:07,048 INFO Step 3500/10000; acc:  99.32; ppl:  1.02; xent: 0.02; lr: 0.00100; 59548/12823 tok/s;    496 sec
+2021-10-05 14:36:08,587 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:36:08,647 INFO number of examples: 3029
+2021-10-05 14:36:18,070 INFO Step 3600/10000; acc:  99.37; ppl:  1.02; xent: 0.02; lr: 0.00100; 60069/12942 tok/s;    507 sec
+2021-10-05 14:36:19,117 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:36:19,170 INFO number of examples: 3029
+2021-10-05 14:36:29,117 INFO Step 3700/10000; acc:  99.44; ppl:  1.02; xent: 0.02; lr: 0.00100; 60386/13006 tok/s;    519 sec
+2021-10-05 14:36:29,593 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:36:29,650 INFO number of examples: 3029
+2021-10-05 14:36:40,119 INFO Step 3800/10000; acc:  99.48; ppl:  1.02; xent: 0.02; lr: 0.00100; 60067/13012 tok/s;    530 sec
+2021-10-05 14:36:40,120 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:36:40,242 INFO number of examples: 3029
+2021-10-05 14:36:50,719 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:36:50,772 INFO number of examples: 3029
+2021-10-05 14:36:51,295 INFO Step 3900/10000; acc:  99.46; ppl:  1.02; xent: 0.02; lr: 0.00100; 59287/12882 tok/s;    541 sec
+2021-10-05 14:37:01,147 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:37:01,204 INFO number of examples: 3029
+2021-10-05 14:37:02,199 INFO Step 4000/10000; acc:  99.48; ppl:  1.02; xent: 0.02; lr: 0.00100; 60529/13153 tok/s;    552 sec
+2021-10-05 14:37:02,206 INFO MLE pre-trained model validation:
+2021-10-05 14:37:02,206 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:37:02,215 INFO number of examples: 534
+2021-10-05 14:37:38,443 INFO Validation metrics: Bleu: 0.9832,Correct answers 0.7371, State transitions score: 0.7663
+2021-10-05 14:37:38,447 INFO Validation perplexity: 1.05873
+2021-10-05 14:37:38,447 INFO Validation accuracy: 98.819
+2021-10-05 14:37:38,463 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_10_la_1.00_step_4000.pt
+2021-10-05 14:37:48,153 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:37:48,303 INFO number of examples: 3029
+2021-10-05 14:37:49,850 INFO Step 4100/10000; acc:  99.47; ppl:  1.02; xent: 0.02; lr: 0.00100; 13926/3006 tok/s;    599 sec
+2021-10-05 14:37:58,866 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:37:58,920 INFO number of examples: 3029
+2021-10-05 14:38:00,949 INFO Step 4200/10000; acc:  99.53; ppl:  1.02; xent: 0.02; lr: 0.00100; 59620/12839 tok/s;    610 sec
+2021-10-05 14:38:09,496 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:38:09,558 INFO number of examples: 3029
+2021-10-05 14:38:12,203 INFO Step 4300/10000; acc:  99.55; ppl:  1.01; xent: 0.01; lr: 0.00100; 59490/12782 tok/s;    622 sec
+2021-10-05 14:38:20,150 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:38:20,212 INFO number of examples: 3029
+2021-10-05 14:38:23,443 INFO Step 4400/10000; acc:  99.53; ppl:  1.02; xent: 0.02; lr: 0.00100; 59567/12742 tok/s;    633 sec
+2021-10-05 14:38:30,757 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:38:30,815 INFO number of examples: 3029
+2021-10-05 14:38:34,562 INFO Step 4500/10000; acc:  99.58; ppl:  1.01; xent: 0.01; lr: 0.00100; 59511/12820 tok/s;    644 sec
+2021-10-05 14:38:41,433 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:38:41,562 INFO number of examples: 3029
+2021-10-05 14:38:45,878 INFO Step 4600/10000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00100; 59265/12683 tok/s;    655 sec
+2021-10-05 14:38:52,098 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:38:52,156 INFO number of examples: 3029
+2021-10-05 14:38:57,090 INFO Step 4700/10000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00100; 59594/12824 tok/s;    666 sec
+2021-10-05 14:39:02,703 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:39:02,759 INFO number of examples: 3029
+2021-10-05 14:39:08,233 INFO Step 4800/10000; acc:  99.56; ppl:  1.01; xent: 0.01; lr: 0.00100; 59678/12862 tok/s;    678 sec
+2021-10-05 14:39:13,315 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:39:13,372 INFO number of examples: 3029
+2021-10-05 14:39:19,405 INFO Step 4900/10000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00100; 59867/12851 tok/s;    689 sec
+2021-10-05 14:39:23,848 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:39:23,963 INFO number of examples: 3029
+2021-10-05 14:39:30,590 INFO Step 5000/10000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00100; 59686/12780 tok/s;    700 sec
+2021-10-05 14:39:30,598 INFO MLE pre-trained model validation:
+2021-10-05 14:39:30,598 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:39:30,614 INFO number of examples: 534
+2021-10-05 14:40:07,047 INFO Validation metrics: Bleu: 0.9835,Correct answers 0.7230, State transitions score: 0.7652
+2021-10-05 14:40:07,051 INFO Validation perplexity: 1.05811
+2021-10-05 14:40:07,051 INFO Validation accuracy: 98.9483
+2021-10-05 14:40:07,069 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_10_la_1.00_step_5000.pt
+2021-10-05 14:40:11,078 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:40:11,134 INFO number of examples: 3029
+2021-10-05 14:40:18,395 INFO Step 5100/10000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00100; 13864/3002 tok/s;    748 sec
+2021-10-05 14:40:21,753 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:40:21,814 INFO number of examples: 3029
+2021-10-05 14:40:29,633 INFO Step 5200/10000; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00100; 59640/12801 tok/s;    759 sec
+2021-10-05 14:40:32,383 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:40:32,525 INFO number of examples: 3029
+2021-10-05 14:40:40,978 INFO Step 5300/10000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00100; 59196/12736 tok/s;    770 sec
+2021-10-05 14:40:43,093 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:40:43,146 INFO number of examples: 3029
+2021-10-05 14:40:52,174 INFO Step 5400/10000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00100; 59394/12790 tok/s;    782 sec
+2021-10-05 14:40:53,742 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:40:53,801 INFO number of examples: 3029
+2021-10-05 14:41:03,306 INFO Step 5500/10000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00100; 59477/12814 tok/s;    793 sec
+2021-10-05 14:41:04,358 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:41:04,417 INFO number of examples: 3029
+2021-10-05 14:41:14,454 INFO Step 5600/10000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00100; 59832/12887 tok/s;    804 sec
+2021-10-05 14:41:14,943 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:41:14,996 INFO number of examples: 3029
+2021-10-05 14:41:25,540 INFO Step 5700/10000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00100; 59615/12914 tok/s;    815 sec
+2021-10-05 14:41:25,541 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:41:25,657 INFO number of examples: 3029
+2021-10-05 14:41:36,222 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:41:36,279 INFO number of examples: 3029
+2021-10-05 14:41:36,815 INFO Step 5800/10000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00100; 58764/12768 tok/s;    826 sec
+2021-10-05 14:41:46,841 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:41:46,900 INFO number of examples: 3029
+2021-10-05 14:41:47,903 INFO Step 5900/10000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00100; 59529/12936 tok/s;    837 sec
+2021-10-05 14:41:57,342 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:41:57,406 INFO number of examples: 3029
+2021-10-05 14:41:58,929 INFO Step 6000/10000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00100; 60185/12991 tok/s;    848 sec
+2021-10-05 14:41:58,936 INFO MLE pre-trained model validation:
+2021-10-05 14:41:58,937 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:41:58,947 INFO number of examples: 534
+2021-10-05 14:42:35,197 INFO Validation metrics: Bleu: 0.9857,Correct answers 0.7316, State transitions score: 0.7702
+2021-10-05 14:42:35,201 INFO Validation perplexity: 1.05961
+2021-10-05 14:42:35,201 INFO Validation accuracy: 99.036
+2021-10-05 14:42:35,222 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_10_la_1.00_step_6000.pt
+2021-10-05 14:42:44,391 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:42:44,544 INFO number of examples: 3029
+2021-10-05 14:42:46,558 INFO Step 6100/10000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00100; 13892/2992 tok/s;    896 sec
+2021-10-05 14:42:54,997 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:43:21,535 INFO number of examples: 3029
+2021-10-05 14:43:24,222 INFO Step 6200/10000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00100; 17774/3819 tok/s;    934 sec
+2021-10-05 14:43:32,104 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:43:32,167 INFO number of examples: 3029
+2021-10-05 14:43:35,388 INFO Step 6300/10000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00100; 59962/12827 tok/s;    945 sec
+2021-10-05 14:43:42,682 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:43:42,745 INFO number of examples: 3029
+2021-10-05 14:43:46,473 INFO Step 6400/10000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00100; 59698/12860 tok/s;    956 sec
+2021-10-05 14:43:53,270 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:43:53,324 INFO number of examples: 3029
+2021-10-05 14:43:57,642 INFO Step 6500/10000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00100; 60039/12848 tok/s;    967 sec
+2021-10-05 14:44:03,860 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:44:03,980 INFO number of examples: 3029
+2021-10-05 14:44:08,901 INFO Step 6600/10000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 59345/12771 tok/s;    978 sec
+2021-10-05 14:44:14,549 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:44:14,603 INFO number of examples: 3029
+2021-10-05 14:44:20,457 INFO Step 6700/10000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00100; 57548/12403 tok/s;    990 sec
+2021-10-05 14:44:26,602 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:44:26,693 INFO number of examples: 3029
+2021-10-05 14:44:34,055 INFO Step 6800/10000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00100; 49188/10559 tok/s;   1003 sec
+2021-10-05 14:44:39,497 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:44:39,582 INFO number of examples: 3029
+2021-10-05 14:44:47,396 INFO Step 6900/10000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00100; 50045/10716 tok/s;   1017 sec
+2021-10-05 14:44:51,210 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:44:51,337 INFO number of examples: 3029
+2021-10-05 14:44:58,499 INFO Step 7000/10000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 59692/12923 tok/s;   1028 sec
+2021-10-05 14:44:58,506 INFO MLE pre-trained model validation:
+2021-10-05 14:44:58,507 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:44:58,519 INFO number of examples: 534
+2021-10-05 14:45:34,762 INFO Validation metrics: Bleu: 0.9853,Correct answers 0.7451, State transitions score: 0.7796
+2021-10-05 14:45:34,765 INFO Validation perplexity: 1.07032
+2021-10-05 14:45:34,766 INFO Validation accuracy: 99.036
+2021-10-05 14:45:34,786 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_10_la_1.00_step_7000.pt
+2021-10-05 14:45:38,283 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:45:38,341 INFO number of examples: 3029
+2021-10-05 14:45:46,172 INFO Step 7100/10000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00100; 14058/3017 tok/s;   1076 sec
+2021-10-05 14:45:48,894 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:45:48,949 INFO number of examples: 3029
+2021-10-05 14:45:57,405 INFO Step 7200/10000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 59786/12863 tok/s;   1087 sec
+2021-10-05 14:45:59,509 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:45:59,638 INFO number of examples: 3029
+2021-10-05 14:46:08,597 INFO Step 7300/10000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00100; 59415/12795 tok/s;   1098 sec
+2021-10-05 14:46:10,160 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:46:10,214 INFO number of examples: 3029
+2021-10-05 14:46:19,707 INFO Step 7400/10000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 59587/12838 tok/s;   1109 sec
+2021-10-05 14:46:20,773 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:46:20,829 INFO number of examples: 3029
+2021-10-05 14:46:30,916 INFO Step 7500/10000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 59512/12818 tok/s;   1120 sec
+2021-10-05 14:46:31,401 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:46:31,459 INFO number of examples: 3029
+2021-10-05 14:46:41,994 INFO Step 7600/10000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 59653/12922 tok/s;   1131 sec
+2021-10-05 14:46:41,995 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:46:42,051 INFO number of examples: 3029
+2021-10-05 14:46:52,616 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:46:52,747 INFO number of examples: 3029
+2021-10-05 14:46:53,286 INFO Step 7700/10000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 58678/12749 tok/s;   1143 sec
+2021-10-05 14:47:03,344 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:47:03,406 INFO number of examples: 3029
+2021-10-05 14:47:04,443 INFO Step 7800/10000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 59161/12856 tok/s;   1154 sec
+2021-10-05 14:47:13,967 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:47:14,027 INFO number of examples: 3029
+2021-10-05 14:47:15,562 INFO Step 7900/10000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 59683/12882 tok/s;   1165 sec
+2021-10-05 14:47:24,490 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:47:24,549 INFO number of examples: 3029
+2021-10-05 14:47:26,561 INFO Step 8000/10000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 60162/12956 tok/s;   1176 sec
+2021-10-05 14:47:26,567 INFO MLE pre-trained model validation:
+2021-10-05 14:47:26,568 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:47:26,577 INFO number of examples: 534
+2021-10-05 14:48:02,995 INFO Validation metrics: Bleu: 0.9853,Correct answers 0.7610, State transitions score: 0.7928
+2021-10-05 14:48:02,999 INFO Validation perplexity: 1.06244
+2021-10-05 14:48:02,999 INFO Validation accuracy: 99.0777
+2021-10-05 14:48:03,022 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_10_la_1.00_step_8000.pt
+2021-10-05 14:48:11,693 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:48:11,848 INFO number of examples: 3029
+2021-10-05 14:48:14,488 INFO Step 8100/10000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 13968/3001 tok/s;   1224 sec
+2021-10-05 14:48:22,390 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:48:22,445 INFO number of examples: 3029
+2021-10-05 14:48:25,667 INFO Step 8200/10000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 59893/12812 tok/s;   1235 sec
+2021-10-05 14:48:32,982 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:48:33,043 INFO number of examples: 3029
+2021-10-05 14:48:36,790 INFO Step 8300/10000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 59489/12815 tok/s;   1246 sec
+2021-10-05 14:48:43,619 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:48:43,679 INFO number of examples: 3029
+2021-10-05 14:48:48,001 INFO Step 8400/10000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 59818/12801 tok/s;   1257 sec
+2021-10-05 14:48:54,232 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:48:54,292 INFO number of examples: 3029
+2021-10-05 14:48:59,220 INFO Step 8500/10000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00100; 59559/12817 tok/s;   1269 sec
+2021-10-05 14:49:04,860 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:49:04,983 INFO number of examples: 3029
+2021-10-05 14:49:10,461 INFO Step 8600/10000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 59158/12750 tok/s;   1280 sec
+2021-10-05 14:49:15,537 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:49:15,595 INFO number of examples: 3029
+2021-10-05 14:49:21,632 INFO Step 8700/10000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00100; 59878/12854 tok/s;   1291 sec
+2021-10-05 14:49:26,128 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:49:26,184 INFO number of examples: 3029
+2021-10-05 14:49:32,882 INFO Step 8800/10000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 59340/12706 tok/s;   1302 sec
+2021-10-05 14:49:36,711 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:49:36,769 INFO number of examples: 3029
+2021-10-05 14:49:44,010 INFO Step 8900/10000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00100; 59563/12895 tok/s;   1313 sec
+2021-10-05 14:49:47,322 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:49:47,450 INFO number of examples: 3029
+2021-10-05 14:49:55,210 INFO Step 9000/10000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 59843/12845 tok/s;   1325 sec
+2021-10-05 14:49:55,217 INFO MLE pre-trained model validation:
+2021-10-05 14:49:55,218 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:49:55,231 INFO number of examples: 534
+2021-10-05 14:50:31,539 INFO Validation metrics: Bleu: 0.9866,Correct answers 0.7665, State transitions score: 0.7996
+2021-10-05 14:50:31,543 INFO Validation perplexity: 1.04588
+2021-10-05 14:50:31,543 INFO Validation accuracy: 99.2321
+2021-10-05 14:50:31,558 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_10_la_1.00_step_9000.pt
+2021-10-05 14:50:34,442 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:50:34,501 INFO number of examples: 3029
+2021-10-05 14:50:42,914 INFO Step 9100/10000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00100; 14078/3029 tok/s;   1372 sec
+2021-10-05 14:50:45,014 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:50:45,072 INFO number of examples: 3029
+2021-10-05 14:50:54,052 INFO Step 9200/10000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 59701/12856 tok/s;   1383 sec
+2021-10-05 14:50:55,617 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:50:55,745 INFO number of examples: 3029
+2021-10-05 14:51:05,231 INFO Step 9300/10000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00100; 59223/12760 tok/s;   1395 sec
+2021-10-05 14:51:06,286 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:51:06,341 INFO number of examples: 3029
+2021-10-05 14:51:16,379 INFO Step 9400/10000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 59832/12887 tok/s;   1406 sec
+2021-10-05 14:51:16,861 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:51:16,920 INFO number of examples: 3029
+2021-10-05 14:51:27,473 INFO Step 9500/10000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 59572/12905 tok/s;   1417 sec
+2021-10-05 14:51:27,475 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:51:27,535 INFO number of examples: 3029
+2021-10-05 14:51:38,079 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:51:38,221 INFO number of examples: 3029
+2021-10-05 14:51:38,755 INFO Step 9600/10000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00100; 58731/12761 tok/s;   1428 sec
+2021-10-05 14:51:48,804 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:51:48,868 INFO number of examples: 3029
+2021-10-05 14:51:49,872 INFO Step 9700/10000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 59370/12901 tok/s;   1439 sec
+2021-10-05 14:51:59,381 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:51:59,436 INFO number of examples: 3029
+2021-10-05 14:52:00,980 INFO Step 9800/10000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 59746/12896 tok/s;   1450 sec
+2021-10-05 14:52:09,987 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:52:10,048 INFO number of examples: 3029
+2021-10-05 14:52:12,078 INFO Step 9900/10000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 59622/12839 tok/s;   1461 sec
+2021-10-05 14:52:20,436 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:52:20,490 INFO number of examples: 3029
+2021-10-05 14:52:23,067 INFO Step 10000/10000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 60923/13090 tok/s;   1472 sec
+2021-10-05 14:52:23,073 INFO MLE pre-trained model validation:
+2021-10-05 14:52:23,074 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:52:23,140 INFO number of examples: 534
+2021-10-05 14:52:59,025 INFO Validation metrics: Bleu: 0.9900,Correct answers 0.8088, State transitions score: 0.8361
+2021-10-05 14:52:59,029 INFO Validation perplexity: 1.04025
+2021-10-05 14:52:59,029 INFO Validation accuracy: 99.4408
+2021-10-05 14:52:59,044 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_10_la_1.00_step_10000.pt
+2021-10-05 14:53:02,885 INFO Running on device=`cuda` (device_id=0)
+2021-10-05 14:53:05,982 INFO Start training loop and validate every 1000 steps...
+2021-10-05 14:53:05,982 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:53:06,039 INFO number of examples: 3029
+2021-10-05 14:53:16,762 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:53:16,825 INFO number of examples: 3029
+2021-10-05 14:53:17,387 INFO Step 100/10000; acc:  63.77; ppl:  3.58; xent: 1.27; lr: 0.00100; 58401/12568 tok/s;     11 sec
+2021-10-05 14:53:27,314 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:53:27,372 INFO number of examples: 3029
+2021-10-05 14:53:28,513 INFO Step 200/10000; acc:  80.32; ppl:  1.83; xent: 0.60; lr: 0.00100; 59997/12896 tok/s;     23 sec
+2021-10-05 14:53:37,862 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:53:37,920 INFO number of examples: 3029
+2021-10-05 14:53:39,552 INFO Step 300/10000; acc:  81.30; ppl:  1.75; xent: 0.56; lr: 0.00100; 60028/12929 tok/s;     34 sec
+2021-10-05 14:53:48,404 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:53:48,460 INFO number of examples: 3029
+2021-10-05 14:53:50,660 INFO Step 400/10000; acc:  82.20; ppl:  1.70; xent: 0.53; lr: 0.00100; 60100/12912 tok/s;     45 sec
+2021-10-05 14:53:58,937 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:53:59,060 INFO number of examples: 3029
+2021-10-05 14:54:01,766 INFO Step 500/10000; acc:  82.83; ppl:  1.66; xent: 0.51; lr: 0.00100; 59607/12879 tok/s;     56 sec
+2021-10-05 14:54:09,552 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:54:09,606 INFO number of examples: 3029
+2021-10-05 14:54:12,773 INFO Step 600/10000; acc:  84.20; ppl:  1.60; xent: 0.47; lr: 0.00100; 59828/12966 tok/s;     67 sec
+2021-10-05 14:54:20,094 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:54:20,153 INFO number of examples: 3029
+2021-10-05 14:54:23,901 INFO Step 700/10000; acc:  86.66; ppl:  1.50; xent: 0.41; lr: 0.00100; 60334/12972 tok/s;     78 sec
+2021-10-05 14:54:30,612 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:54:30,677 INFO number of examples: 3029
+2021-10-05 14:54:34,932 INFO Step 800/10000; acc:  88.72; ppl:  1.43; xent: 0.36; lr: 0.00100; 60247/12977 tok/s;     89 sec
+2021-10-05 14:54:41,099 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:54:41,215 INFO number of examples: 3029
+2021-10-05 14:54:46,003 INFO Step 900/10000; acc:  89.92; ppl:  1.37; xent: 0.32; lr: 0.00100; 60047/12928 tok/s;    100 sec
+2021-10-05 14:54:51,617 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:54:51,676 INFO number of examples: 3029
+2021-10-05 14:54:56,989 INFO Step 1000/10000; acc:  90.68; ppl:  1.34; xent: 0.29; lr: 0.00100; 60643/13126 tok/s;    111 sec
+2021-10-05 14:54:56,996 INFO MLE pre-trained model validation:
+2021-10-05 14:54:56,997 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:54:57,006 INFO number of examples: 534
+/home/nitai/miniconda3/envs/SimQA-code/lib/python3.7/site-packages/onmt/translate/beam_search.py:209: UserWarning: An output with one or more elements was resized since it had shape [480], which does not match the required output shape [16, 30].This behavior is deprecated, and in a future PyTorch release outputs will not be resized unless they have zero elements. You can explicitly reuse an out tensor t by resizing it, inplace, to zero elements with t.resize_(0). (Triggered internally at  /pytorch/aten/src/ATen/native/Resize.cpp:23.)
+  torch.mul(self.topk_scores, length_penalty, out=self.topk_log_probs)
+/home/nitai/miniconda3/envs/SimQA-code/lib/python3.7/site-packages/torch/_tensor.py:575: UserWarning: floor_divide is deprecated, and will be removed in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values.
+To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor'). (Triggered internally at  /pytorch/aten/src/ATen/native/BinaryOps.cpp:467.)
+  return torch.floor_divide(self, other)
+/home/nitai/miniconda3/envs/SimQA-code/lib/python3.7/site-packages/onmt/translate/beam_search.py:209: UserWarning: An output with one or more elements was resized since it had shape [180], which does not match the required output shape [6, 30].This behavior is deprecated, and in a future PyTorch release outputs will not be resized unless they have zero elements. You can explicitly reuse an out tensor t by resizing it, inplace, to zero elements with t.resize_(0). (Triggered internally at  /pytorch/aten/src/ATen/native/Resize.cpp:23.)
+  torch.mul(self.topk_scores, length_penalty, out=self.topk_log_probs)
+2021-10-05 14:55:32,302 INFO Validation metrics: Bleu: 0.8871,Correct answers 0.1152, State transitions score: 0.1556
+2021-10-05 14:55:32,306 INFO Validation perplexity: 1.34063
+2021-10-05 14:55:32,306 INFO Validation accuracy: 90.6101
+2021-10-05 14:55:32,328 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_15_la_1.00_step_1000.pt
+2021-10-05 14:55:37,606 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:55:37,661 INFO number of examples: 3029
+2021-10-05 14:55:43,754 INFO Step 1100/10000; acc:  91.70; ppl:  1.29; xent: 0.26; lr: 0.00100; 14323/3067 tok/s;    158 sec
+2021-10-05 14:55:48,247 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:55:48,299 INFO number of examples: 3029
+2021-10-05 14:55:54,809 INFO Step 1200/10000; acc:  92.72; ppl:  1.26; xent: 0.23; lr: 0.00100; 60205/13007 tok/s;    169 sec
+2021-10-05 14:55:58,769 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:55:58,822 INFO number of examples: 3029
+2021-10-05 14:56:05,957 INFO Step 1300/10000; acc:  93.87; ppl:  1.22; xent: 0.20; lr: 0.00100; 59900/12863 tok/s;    180 sec
+2021-10-05 14:56:09,351 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:56:09,408 INFO number of examples: 3029
+2021-10-05 14:56:17,132 INFO Step 1400/10000; acc:  95.13; ppl:  1.17; xent: 0.16; lr: 0.00100; 59722/12792 tok/s;    191 sec
+2021-10-05 14:56:19,877 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:56:19,932 INFO number of examples: 3029
+2021-10-05 14:56:28,249 INFO Step 1500/10000; acc:  95.98; ppl:  1.14; xent: 0.13; lr: 0.00100; 60041/12932 tok/s;    202 sec
+2021-10-05 14:56:30,413 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:56:30,542 INFO number of examples: 3029
+2021-10-05 14:56:39,466 INFO Step 1600/10000; acc:  96.63; ppl:  1.12; xent: 0.11; lr: 0.00100; 59819/12878 tok/s;    213 sec
+2021-10-05 14:56:40,998 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:56:41,049 INFO number of examples: 3029
+2021-10-05 14:56:50,463 INFO Step 1700/10000; acc:  97.05; ppl:  1.10; xent: 0.10; lr: 0.00100; 60414/13040 tok/s;    224 sec
+2021-10-05 14:56:51,476 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:56:51,532 INFO number of examples: 3029
+2021-10-05 14:57:01,485 INFO Step 1800/10000; acc:  97.58; ppl:  1.08; xent: 0.08; lr: 0.00100; 60199/12979 tok/s;    236 sec
+2021-10-05 14:57:01,986 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:57:02,042 INFO number of examples: 3029
+2021-10-05 14:57:12,451 INFO Step 1900/10000; acc:  97.89; ppl:  1.07; xent: 0.07; lr: 0.00100; 60214/13006 tok/s;    246 sec
+2021-10-05 14:57:12,452 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:57:12,580 INFO number of examples: 3029
+2021-10-05 14:57:22,927 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:57:22,981 INFO number of examples: 3029
+2021-10-05 14:57:23,541 INFO Step 2000/10000; acc:  98.11; ppl:  1.06; xent: 0.06; lr: 0.00100; 60063/12926 tok/s;    258 sec
+2021-10-05 14:57:23,547 INFO MLE pre-trained model validation:
+2021-10-05 14:57:23,548 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:57:23,557 INFO number of examples: 534
+2021-10-05 14:57:59,337 INFO Validation metrics: Bleu: 0.9743,Correct answers 0.6238, State transitions score: 0.6631
+2021-10-05 14:57:59,341 INFO Validation perplexity: 1.06905
+2021-10-05 14:57:59,342 INFO Validation accuracy: 98.193
+2021-10-05 14:57:59,363 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_15_la_1.00_step_2000.pt
+2021-10-05 14:58:09,468 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:58:09,606 INFO number of examples: 3029
+2021-10-05 14:58:10,738 INFO Step 2100/10000; acc:  98.35; ppl:  1.05; xent: 0.05; lr: 0.00100; 14143/3040 tok/s;    305 sec
+2021-10-05 14:58:20,330 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:58:20,391 INFO number of examples: 3029
+2021-10-05 14:58:22,036 INFO Step 2200/10000; acc:  98.48; ppl:  1.05; xent: 0.05; lr: 0.00100; 58656/12633 tok/s;    316 sec
+2021-10-05 14:58:30,948 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:58:31,006 INFO number of examples: 3029
+2021-10-05 14:58:33,216 INFO Step 2300/10000; acc:  98.66; ppl:  1.05; xent: 0.04; lr: 0.00100; 59710/12828 tok/s;    327 sec
+2021-10-05 14:58:41,517 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:58:41,577 INFO number of examples: 3029
+2021-10-05 14:58:44,261 INFO Step 2400/10000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00100; 59929/12949 tok/s;    338 sec
+2021-10-05 14:58:52,025 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:58:52,162 INFO number of examples: 3029
+2021-10-05 14:58:55,293 INFO Step 2500/10000; acc:  98.90; ppl:  1.04; xent: 0.04; lr: 0.00100; 59693/12937 tok/s;    349 sec
+2021-10-05 14:59:02,616 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:59:02,667 INFO number of examples: 3029
+2021-10-05 14:59:06,419 INFO Step 2600/10000; acc:  99.00; ppl:  1.03; xent: 0.03; lr: 0.00100; 60351/12975 tok/s;    360 sec
+2021-10-05 14:59:13,146 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:59:13,203 INFO number of examples: 3029
+2021-10-05 14:59:17,475 INFO Step 2700/10000; acc:  99.05; ppl:  1.03; xent: 0.03; lr: 0.00100; 60107/12946 tok/s;    371 sec
+2021-10-05 14:59:23,654 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:59:23,714 INFO number of examples: 3029
+2021-10-05 14:59:28,513 INFO Step 2800/10000; acc:  99.17; ppl:  1.03; xent: 0.03; lr: 0.00100; 60229/12967 tok/s;    383 sec
+2021-10-05 14:59:34,114 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:59:34,166 INFO number of examples: 3029
+2021-10-05 14:59:39,495 INFO Step 2900/10000; acc:  99.19; ppl:  1.03; xent: 0.03; lr: 0.00100; 60660/13129 tok/s;    394 sec
+2021-10-05 14:59:44,530 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 14:59:44,656 INFO number of examples: 3029
+2021-10-05 14:59:50,553 INFO Step 3000/10000; acc:  99.23; ppl:  1.03; xent: 0.03; lr: 0.00100; 60578/12973 tok/s;    405 sec
+2021-10-05 14:59:50,560 INFO MLE pre-trained model validation:
+2021-10-05 14:59:50,561 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 14:59:50,570 INFO number of examples: 534
+2021-10-05 15:00:26,550 INFO Validation metrics: Bleu: 0.9805,Correct answers 0.6801, State transitions score: 0.7303
+2021-10-05 15:00:26,553 INFO Validation perplexity: 1.05193
+2021-10-05 15:00:26,554 INFO Validation accuracy: 98.8273
+2021-10-05 15:00:26,572 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_15_la_1.00_step_3000.pt
+2021-10-05 15:00:31,272 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:00:31,330 INFO number of examples: 3029
+2021-10-05 15:00:37,856 INFO Step 3100/10000; acc:  99.35; ppl:  1.02; xent: 0.02; lr: 0.00100; 14068/3040 tok/s;    452 sec
+2021-10-05 15:00:41,808 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:00:41,938 INFO number of examples: 3029
+2021-10-05 15:00:48,971 INFO Step 3200/10000; acc:  99.33; ppl:  1.02; xent: 0.02; lr: 0.00100; 60086/12903 tok/s;    463 sec
+2021-10-05 15:00:52,353 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:00:52,405 INFO number of examples: 3029
+2021-10-05 15:01:00,105 INFO Step 3300/10000; acc:  99.39; ppl:  1.02; xent: 0.02; lr: 0.00100; 59936/12838 tok/s;    474 sec
+2021-10-05 15:01:02,828 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:01:02,885 INFO number of examples: 3029
+2021-10-05 15:01:11,158 INFO Step 3400/10000; acc:  99.43; ppl:  1.02; xent: 0.02; lr: 0.00100; 60394/13008 tok/s;    485 sec
+2021-10-05 15:01:13,338 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:01:13,392 INFO number of examples: 3029
+2021-10-05 15:01:22,305 INFO Step 3500/10000; acc:  99.44; ppl:  1.02; xent: 0.02; lr: 0.00100; 60190/12958 tok/s;    496 sec
+2021-10-05 15:01:23,863 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:01:24,002 INFO number of examples: 3029
+2021-10-05 15:01:33,452 INFO Step 3600/10000; acc:  99.48; ppl:  1.02; xent: 0.02; lr: 0.00100; 59606/12865 tok/s;    507 sec
+2021-10-05 15:01:34,463 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:01:34,519 INFO number of examples: 3029
+2021-10-05 15:01:44,505 INFO Step 3700/10000; acc:  99.46; ppl:  1.02; xent: 0.02; lr: 0.00100; 60033/12943 tok/s;    519 sec
+2021-10-05 15:01:44,997 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:01:45,050 INFO number of examples: 3029
+2021-10-05 15:01:55,500 INFO Step 3800/10000; acc:  99.51; ppl:  1.02; xent: 0.02; lr: 0.00100; 60049/12970 tok/s;    530 sec
+2021-10-05 15:01:55,501 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:01:55,559 INFO number of examples: 3029
+2021-10-05 15:02:05,937 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:02:06,000 INFO number of examples: 3029
+2021-10-05 15:02:06,645 INFO Step 3900/10000; acc:  99.54; ppl:  1.02; xent: 0.02; lr: 0.00100; 59764/12861 tok/s;    541 sec
+2021-10-05 15:02:16,427 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:02:16,481 INFO number of examples: 3029
+2021-10-05 15:02:17,596 INFO Step 4000/10000; acc:  99.55; ppl:  1.02; xent: 0.02; lr: 0.00100; 60958/13102 tok/s;    552 sec
+2021-10-05 15:02:17,602 INFO MLE pre-trained model validation:
+2021-10-05 15:02:17,603 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 15:02:17,616 INFO number of examples: 534
+2021-10-05 15:02:53,935 INFO Validation metrics: Bleu: 0.9856,Correct answers 0.7770, State transitions score: 0.8027
+2021-10-05 15:02:53,939 INFO Validation perplexity: 1.03515
+2021-10-05 15:02:53,939 INFO Validation accuracy: 99.2697
+2021-10-05 15:02:53,959 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_15_la_1.00_step_4000.pt
+2021-10-05 15:03:03,529 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:03:03,588 INFO number of examples: 3029
+2021-10-05 15:03:05,234 INFO Step 4100/10000; acc:  99.60; ppl:  1.01; xent: 0.01; lr: 0.00100; 13910/2996 tok/s;    599 sec
+2021-10-05 15:03:14,166 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:03:14,305 INFO number of examples: 3029
+2021-10-05 15:03:16,518 INFO Step 4200/10000; acc:  99.60; ppl:  1.01; xent: 0.01; lr: 0.00100; 59159/12709 tok/s;    611 sec
+2021-10-05 15:03:24,799 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:03:53,168 INFO number of examples: 3029
+2021-10-05 15:03:55,931 INFO Step 4300/10000; acc:  99.58; ppl:  1.01; xent: 0.01; lr: 0.00100; 16795/3629 tok/s;    650 sec
+2021-10-05 15:04:03,697 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:04:03,752 INFO number of examples: 3029
+2021-10-05 15:04:06,893 INFO Step 4400/10000; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00100; 60071/13019 tok/s;    661 sec
+2021-10-05 15:04:14,185 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:04:14,243 INFO number of examples: 3029
+2021-10-05 15:04:17,978 INFO Step 4500/10000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00100; 60571/13023 tok/s;    672 sec
+2021-10-05 15:04:24,720 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:04:24,838 INFO number of examples: 3029
+2021-10-05 15:04:29,089 INFO Step 4600/10000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00100; 59815/12883 tok/s;    683 sec
+2021-10-05 15:04:35,273 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:04:35,332 INFO number of examples: 3029
+2021-10-05 15:04:40,126 INFO Step 4700/10000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00100; 60231/12968 tok/s;    694 sec
+2021-10-05 15:04:45,767 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:04:45,825 INFO number of examples: 3029
+2021-10-05 15:04:51,201 INFO Step 4800/10000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00100; 60157/13021 tok/s;    705 sec
+2021-10-05 15:04:56,234 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:04:56,287 INFO number of examples: 3029
+2021-10-05 15:05:02,174 INFO Step 4900/10000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00100; 61043/13073 tok/s;    716 sec
+2021-10-05 15:05:06,617 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:05:06,754 INFO number of examples: 3029
+2021-10-05 15:05:13,182 INFO Step 5000/10000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00100; 60454/13061 tok/s;    727 sec
+2021-10-05 15:05:13,189 INFO MLE pre-trained model validation:
+2021-10-05 15:05:13,190 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 15:05:13,202 INFO number of examples: 534
+2021-10-05 15:05:49,135 INFO Validation metrics: Bleu: 0.9886,Correct answers 0.7947, State transitions score: 0.8223
+2021-10-05 15:05:49,139 INFO Validation perplexity: 1.03541
+2021-10-05 15:05:49,139 INFO Validation accuracy: 99.4116
+2021-10-05 15:05:49,159 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_15_la_1.00_step_5000.pt
+2021-10-05 15:05:53,297 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:05:53,440 INFO number of examples: 3029
+2021-10-05 15:06:00,503 INFO Step 5100/10000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00100; 14111/3030 tok/s;    775 sec
+2021-10-05 15:06:03,856 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:06:03,909 INFO number of examples: 3029
+2021-10-05 15:06:11,567 INFO Step 5200/10000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00100; 60318/12920 tok/s;    786 sec
+2021-10-05 15:06:14,311 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:06:14,364 INFO number of examples: 3029
+2021-10-05 15:06:22,653 INFO Step 5300/10000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00100; 60214/12969 tok/s;    797 sec
+2021-10-05 15:06:24,804 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:06:24,861 INFO number of examples: 3029
+2021-10-05 15:06:33,760 INFO Step 5400/10000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00100; 60405/13004 tok/s;    808 sec
+2021-10-05 15:06:35,306 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:06:35,364 INFO number of examples: 3029
+2021-10-05 15:06:44,748 INFO Step 5500/10000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00100; 60472/13052 tok/s;    819 sec
+2021-10-05 15:06:45,760 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:06:45,886 INFO number of examples: 3029
+2021-10-05 15:06:55,852 INFO Step 5600/10000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00100; 59751/12882 tok/s;    830 sec
+2021-10-05 15:06:56,339 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:06:56,394 INFO number of examples: 3029
+2021-10-05 15:07:06,857 INFO Step 5700/10000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 59998/12959 tok/s;    841 sec
+2021-10-05 15:07:06,858 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:07:06,913 INFO number of examples: 3029
+2021-10-05 15:07:17,352 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:07:17,413 INFO number of examples: 3029
+2021-10-05 15:07:17,979 INFO Step 5800/10000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 59892/12889 tok/s;    852 sec
+2021-10-05 15:07:27,828 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:07:27,956 INFO number of examples: 3029
+2021-10-05 15:07:29,079 INFO Step 5900/10000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 60136/12926 tok/s;    863 sec
+2021-10-05 15:07:38,287 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:07:38,340 INFO number of examples: 3029
+2021-10-05 15:07:39,945 INFO Step 6000/10000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 60985/13135 tok/s;    874 sec
+2021-10-05 15:07:39,951 INFO MLE pre-trained model validation:
+2021-10-05 15:07:39,952 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 15:07:39,965 INFO number of examples: 534
+2021-10-05 15:08:15,908 INFO Validation metrics: Bleu: 0.9903,Correct answers 0.8021, State transitions score: 0.8298
+2021-10-05 15:08:15,912 INFO Validation perplexity: 1.03818
+2021-10-05 15:08:15,912 INFO Validation accuracy: 99.4283
+2021-10-05 15:08:15,930 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_15_la_1.00_step_6000.pt
+2021-10-05 15:08:24,935 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:08:25,081 INFO number of examples: 3029
+2021-10-05 15:08:27,267 INFO Step 6100/10000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 14106/3030 tok/s;    921 sec
+2021-10-05 15:08:35,512 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:08:35,568 INFO number of examples: 3029
+2021-10-05 15:08:38,247 INFO Step 6200/10000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 60289/13027 tok/s;    932 sec
+2021-10-05 15:08:46,024 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:08:46,077 INFO number of examples: 3029
+2021-10-05 15:08:49,238 INFO Step 6300/10000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 59915/12985 tok/s;    943 sec
+2021-10-05 15:08:56,526 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:08:56,583 INFO number of examples: 3029
+2021-10-05 15:09:00,345 INFO Step 6400/10000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 60456/12998 tok/s;    954 sec
+2021-10-05 15:09:07,053 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:09:07,111 INFO number of examples: 3029
+2021-10-05 15:09:11,364 INFO Step 6500/10000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 60308/12990 tok/s;    965 sec
+2021-10-05 15:09:17,528 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:09:17,645 INFO number of examples: 3029
+2021-10-05 15:09:22,441 INFO Step 6600/10000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 60011/12921 tok/s;    976 sec
+2021-10-05 15:09:28,080 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:09:28,145 INFO number of examples: 3029
+2021-10-05 15:09:33,526 INFO Step 6700/10000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 60101/13008 tok/s;    988 sec
+2021-10-05 15:09:38,616 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:09:38,670 INFO number of examples: 3029
+2021-10-05 15:09:44,579 INFO Step 6800/10000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 60604/12979 tok/s;    999 sec
+2021-10-05 15:09:49,065 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:09:49,122 INFO number of examples: 3029
+2021-10-05 15:09:55,584 INFO Step 6900/10000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 60477/13066 tok/s;   1010 sec
+2021-10-05 15:09:59,497 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:09:59,622 INFO number of examples: 3029
+2021-10-05 15:10:06,599 INFO Step 7000/10000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 60626/13018 tok/s;   1021 sec
+2021-10-05 15:10:06,606 INFO MLE pre-trained model validation:
+2021-10-05 15:10:06,607 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 15:10:06,616 INFO number of examples: 534
+2021-10-05 15:10:42,916 INFO Validation metrics: Bleu: 0.9922,Correct answers 0.8266, State transitions score: 0.8508
+2021-10-05 15:10:42,919 INFO Validation perplexity: 1.03211
+2021-10-05 15:10:42,919 INFO Validation accuracy: 99.566
+2021-10-05 15:10:42,938 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_15_la_1.00_step_7000.pt
+2021-10-05 15:10:46,468 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:10:46,527 INFO number of examples: 3029
+2021-10-05 15:10:54,166 INFO Step 7100/10000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 14029/3005 tok/s;   1068 sec
+2021-10-05 15:10:56,900 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:10:57,017 INFO number of examples: 3029
+2021-10-05 15:11:05,277 INFO Step 7200/10000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 60081/12940 tok/s;   1079 sec
+2021-10-05 15:11:07,426 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:11:07,480 INFO number of examples: 3029
+2021-10-05 15:11:16,353 INFO Step 7300/10000; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 60569/13040 tok/s;   1090 sec
+2021-10-05 15:11:17,877 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:11:17,939 INFO number of examples: 3029
+2021-10-05 15:11:27,342 INFO Step 7400/10000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 60462/13050 tok/s;   1101 sec
+2021-10-05 15:11:28,345 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:11:28,403 INFO number of examples: 3029
+2021-10-05 15:11:38,348 INFO Step 7500/10000; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 60286/12998 tok/s;   1112 sec
+2021-10-05 15:11:38,852 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:11:38,997 INFO number of examples: 3029
+2021-10-05 15:11:49,453 INFO Step 7600/10000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 59487/12849 tok/s;   1123 sec
+2021-10-05 15:11:49,454 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:11:49,511 INFO number of examples: 3029
+2021-10-05 15:11:59,922 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:11:59,979 INFO number of examples: 3029
+2021-10-05 15:12:00,546 INFO Step 7700/10000; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 60042/12921 tok/s;   1135 sec
+2021-10-05 15:12:10,400 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:12:10,457 INFO number of examples: 3029
+2021-10-05 15:12:11,588 INFO Step 7800/10000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 60456/12994 tok/s;   1146 sec
+2021-10-05 15:12:20,874 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:12:20,931 INFO number of examples: 3029
+2021-10-05 15:12:22,539 INFO Step 7900/10000; acc:  99.88; ppl:  1.01; xent: 0.01; lr: 0.00100; 60509/13032 tok/s;   1157 sec
+2021-10-05 15:12:31,237 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:12:31,353 INFO number of examples: 3029
+2021-10-05 15:12:33,520 INFO Step 8000/10000; acc:  99.89; ppl:  1.01; xent: 0.01; lr: 0.00100; 60795/13061 tok/s;   1168 sec
+2021-10-05 15:12:33,527 INFO MLE pre-trained model validation:
+2021-10-05 15:12:33,527 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 15:12:33,539 INFO number of examples: 534
+2021-10-05 15:13:09,791 INFO Validation metrics: Bleu: 0.9934,Correct answers 0.8413, State transitions score: 0.8606
+2021-10-05 15:13:09,795 INFO Validation perplexity: 1.02734
+2021-10-05 15:13:09,795 INFO Validation accuracy: 99.6453
+2021-10-05 15:13:09,816 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_15_la_1.00_step_8000.pt
+2021-10-05 15:13:18,239 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:13:18,298 INFO number of examples: 3029
+2021-10-05 15:13:20,976 INFO Step 8100/10000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00100; 13948/3014 tok/s;   1215 sec
+2021-10-05 15:13:28,715 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:13:28,836 INFO number of examples: 3029
+2021-10-05 15:13:31,957 INFO Step 8200/10000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00100; 59967/12996 tok/s;   1226 sec
+2021-10-05 15:13:39,244 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:13:39,299 INFO number of examples: 3029
+2021-10-05 15:13:42,990 INFO Step 8300/10000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 60863/13085 tok/s;   1237 sec
+2021-10-05 15:13:49,659 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:13:49,715 INFO number of examples: 3029
+2021-10-05 15:13:53,949 INFO Step 8400/10000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00100; 60638/13061 tok/s;   1248 sec
+2021-10-05 15:14:00,134 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:14:00,202 INFO number of examples: 3029
+2021-10-05 15:14:04,968 INFO Step 8500/10000; acc:  99.88; ppl:  1.01; xent: 0.00; lr: 0.00100; 60326/12988 tok/s;   1259 sec
+2021-10-05 15:14:10,588 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:14:10,728 INFO number of examples: 3029
+2021-10-05 15:14:16,179 INFO Step 8600/10000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 59423/12862 tok/s;   1270 sec
+2021-10-05 15:14:21,372 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:14:21,434 INFO number of examples: 3029
+2021-10-05 15:14:27,428 INFO Step 8700/10000; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 59551/12753 tok/s;   1281 sec
+2021-10-05 15:14:31,919 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:14:31,977 INFO number of examples: 3029
+2021-10-05 15:14:38,493 INFO Step 8800/10000; acc:  99.89; ppl:  1.01; xent: 0.01; lr: 0.00100; 60146/12995 tok/s;   1293 sec
+2021-10-05 15:14:42,478 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:14:42,532 INFO number of examples: 3029
+2021-10-05 15:14:49,570 INFO Step 8900/10000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00100; 60285/12945 tok/s;   1304 sec
+2021-10-05 15:14:52,915 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:14:53,041 INFO number of examples: 3029
+2021-10-05 15:15:00,631 INFO Step 9000/10000; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 60334/12923 tok/s;   1315 sec
+2021-10-05 15:15:00,638 INFO MLE pre-trained model validation:
+2021-10-05 15:15:00,639 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 15:15:00,651 INFO number of examples: 534
+2021-10-05 15:15:37,182 INFO Validation metrics: Bleu: 0.9932,Correct answers 0.8431, State transitions score: 0.8641
+2021-10-05 15:15:37,186 INFO Validation perplexity: 1.02657
+2021-10-05 15:15:37,186 INFO Validation accuracy: 99.6745
+2021-10-05 15:15:37,206 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_15_la_1.00_step_9000.pt
+2021-10-05 15:15:40,157 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:15:40,307 INFO number of examples: 3029
+2021-10-05 15:15:48,674 INFO Step 9100/10000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00100; 13894/2992 tok/s;   1363 sec
+2021-10-05 15:15:50,869 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:15:50,926 INFO number of examples: 3029
+2021-10-05 15:15:59,873 INFO Step 9200/10000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00100; 59907/12897 tok/s;   1374 sec
+2021-10-05 15:16:01,411 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:16:01,464 INFO number of examples: 3029
+2021-10-05 15:16:10,939 INFO Step 9300/10000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00100; 60042/12959 tok/s;   1385 sec
+2021-10-05 15:16:11,947 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:16:12,006 INFO number of examples: 3029
+2021-10-05 15:16:21,951 INFO Step 9400/10000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00100; 60250/12990 tok/s;   1396 sec
+2021-10-05 15:16:22,445 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:16:22,506 INFO number of examples: 3029
+2021-10-05 15:16:33,049 INFO Step 9500/10000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 59497/12851 tok/s;   1407 sec
+2021-10-05 15:16:33,050 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:16:33,177 INFO number of examples: 3029
+2021-10-05 15:16:43,594 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:16:43,655 INFO number of examples: 3029
+2021-10-05 15:16:44,229 INFO Step 9600/10000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00100; 59574/12821 tok/s;   1418 sec
+2021-10-05 15:16:54,132 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:16:54,192 INFO number of examples: 3029
+2021-10-05 15:16:55,308 INFO Step 9700/10000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00100; 60251/12951 tok/s;   1429 sec
+2021-10-05 15:17:04,584 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:17:04,647 INFO number of examples: 3029
+2021-10-05 15:17:06,316 INFO Step 9800/10000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00100; 60200/12966 tok/s;   1440 sec
+2021-10-05 15:17:15,156 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:17:15,268 INFO number of examples: 3029
+2021-10-05 15:17:17,454 INFO Step 9900/10000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00100; 59934/12876 tok/s;   1451 sec
+2021-10-05 15:17:25,615 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-05 15:17:25,692 INFO number of examples: 3029
+2021-10-05 15:17:28,401 INFO Step 10000/10000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00100; 60475/13067 tok/s;   1462 sec
+2021-10-05 15:17:28,408 INFO MLE pre-trained model validation:
+2021-10-05 15:17:28,409 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-05 15:17:28,422 INFO number of examples: 534
+2021-10-05 15:18:04,931 INFO Validation metrics: Bleu: 0.9939,Correct answers 0.8487, State transitions score: 0.8658
+2021-10-05 15:18:04,935 INFO Validation perplexity: 1.02961
+2021-10-05 15:18:04,935 INFO Validation accuracy: 99.6703
+2021-10-05 15:18:04,956 INFO Saving checkpoint /home/nitai/SimQA/checkpoints/MLE/v2/lookahead_ls_15_la_1.00_step_10000.pt
