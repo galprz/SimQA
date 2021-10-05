@@ -194,7 +194,7 @@ class SimMLETrainer(Trainer):
             :obj:`nmt.Statistics`: validation loss statistics
         """
         if self.lookahead:
-            self.optim._backup_and_load_cache()
+            self.optim._optimizer._backup_and_load_cache()
 
         valid_model = self.model
         if moving_average:
@@ -261,7 +261,7 @@ class SimMLETrainer(Trainer):
         valid_model.train()
 
         if self.lookahead:
-            self.optim._clear_and_load_backup()
+            self.optim._optimizer._clear_and_load_backup()
 
         return stats
 
