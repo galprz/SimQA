@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db0247c4-258a-4a62-a710-5b23ef8c83dc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/data/enrich_dummies.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_00.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_00.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train_mle_00.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_01.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_01.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train_mle_01.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_02.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_02.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train_mle_02.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_03.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_03.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train_mle_03.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_04.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_04.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train_mle_04.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_rl.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train_rl.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/v3/processed/test/tgt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/v3/processed/test/tgt.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/v3/processed/train/tgt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/v3/processed/train/tgt.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +41,29 @@
       <recent name="$PROJECT_DIR$/data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.generate_from_processed">
+  <component name="RunManager" selected="Python.enrich_dummies">
+    <configuration name="enrich_dummies" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SimQA" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/enrich_dummies.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="generate_from_processed" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SimQA" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -96,6 +110,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.enrich_dummies" />
         <item itemvalue="Python.generate_from_processed" />
         <item itemvalue="Python.train_mle" />
       </list>
@@ -116,6 +131,8 @@
       <workItem from="1634106072471" duration="650000" />
       <workItem from="1634106811828" duration="58000" />
       <workItem from="1634106881198" duration="58000" />
+      <workItem from="1634107109444" duration="4549000" />
+      <workItem from="1634129910010" duration="1284000" />
     </task>
     <servers />
   </component>
@@ -125,5 +142,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SimQA$generate_from_processed.coverage" NAME="generate_from_processed Coverage Results" MODIFIED="1634106736050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/SimQA$train_mle.coverage" NAME="train_mle Coverage Results" MODIFIED="1633412783553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SimQA$enrich_dummies.coverage" NAME="enrich_dummies Coverage Results" MODIFIED="1634131174286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
   </component>
 </project>
