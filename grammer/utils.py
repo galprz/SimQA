@@ -159,12 +159,7 @@ def state_trace_exact_match(state, pred_state):
 
 
 def execute_and_compute_state_score(pred_code, target_code):
-    # try:
-    #     answer, state = execute_simcode(target_code, True)
-    #     pred_answer, pred_state = execute_simcode(pred_code, True)
-    #     return state_trace_exact_match(state, pred_state)
-    # except Exception as e:
-    #     return -1000
+    """
     try:
         reward = 0.
         answer, state = execute_simcode(target_code, True)
@@ -191,6 +186,13 @@ def execute_and_compute_state_score(pred_code, target_code):
 
         return reward
 
+    except Exception as e:
+        return -1000
+    """
+    try:
+        answer, state = execute_simcode(target_code, True)
+        pred_answer, pred_state = execute_simcode(pred_code, True)
+        return state_trace_exact_match(state, pred_state)
     except Exception as e:
         return -1000
 

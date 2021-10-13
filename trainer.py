@@ -418,6 +418,7 @@ class SimStateScoreTrainer(Trainer):
         self.argmax_translation_builder = argmax_translation_builder
         self.tgt_vocab = tgt_vocab
         self.tgt_padding = tgt_padding_token
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
     def train(
         self,
@@ -509,15 +510,15 @@ class SimStateScoreTrainer(Trainer):
             src_action_adv = sorted(src_action_adv, key=lambda x: x[0].shape[0], reverse=True)
             src_data = [item[0] for item in src_action_adv]
             tgt_actions = [item[1] for item in src_action_adv]
-            advs = torch.FloatTensor([item[2] for item in src_action_adv]).to("cuda")
+            advs = torch.FloatTensor([item[2] for item in src_action_adv]).to(self.device)
             with torch.set_grad_enabled(True):
                 try:
                     self.model.train()
                     self.optim.zero_grad()
-                    src_lengths_eps = torch.tensor([src_tensor.shape[0] for src_tensor in src_data]).to("cuda")
+                    src_lengths_eps = torch.tensor([src_tensor.shape[0] for src_tensor in src_data]).to(self.device)
                     batch_size = src_lengths_eps.shape[0]
-                    src_eps = pad_sequence(src_data, padding_value=1, batch_first=True).to("cuda")
-                    tgt_eps = pad_sequence(tgt_actions, padding_value=1, batch_first=True).to("cuda")
+                    src_eps = pad_sequence(src_data, padding_value=1, batch_first=True).to(self.device)
+                    tgt_eps = pad_sequence(tgt_actions, padding_value=1, batch_first=True).to(self.device)
                     self.optim.zero_grad()
 
                     outputs, attns = self.model(

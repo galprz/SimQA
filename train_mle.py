@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
     parser.add_argument("--name", type=str, default="")
 
-    parser.add_argument("--mode", type=str, default="v1", choices=("v1, v2"))
+    parser.add_argument("--version", type=str, default="v1", choices=("v1, v2", "v3"))
 
     parser.add_argument("--train-batch-size", type=int, default=32)
     parser.add_argument("--valid-batch-size", type=int, default=16)
@@ -46,10 +46,10 @@ if __name__ == "__main__":
 
     opts = parser.parse_args()
 
-    vocab_data_file = f"data/{opts.mode}/processed/SimQA.vocab.pt"
-    train_data_file = f"data/{opts.mode}/processed/SimQA.train.0.pt"
-    valid_data_file = f"data/{opts.mode}/processed/SimQA.valid.0.pt"
-    embeddings_file = f"models/{opts.mode}/src.embeddings.pt"
+    vocab_data_file = f"data/{opts.version}/processed/SimQA.vocab.pt"
+    train_data_file = f"data/{opts.version}/processed/SimQA.train.0.pt"
+    valid_data_file = f"data/{opts.version}/processed/SimQA.valid.0.pt"
+    embeddings_file = f"models/{opts.version}/src.embeddings.pt"
 
     vocab_fields = torch.load(vocab_data_file)
 
@@ -138,7 +138,7 @@ if __name__ == "__main__":
         pool_factor=8192,
     )
 
-    saved_model = Path.cwd().joinpath(f"checkpoints/MLE/{opts.mode}")
+    saved_model = Path.cwd().joinpath(f"checkpoints/MLE/{opts.version}")
     saved_model.mkdir(exist_ok=True, parents=True)
     saved_mode_model = saved_model.joinpath(f"{opts.name}")
 

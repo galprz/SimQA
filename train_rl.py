@@ -71,7 +71,6 @@ def load_model(model_path: Union[str, Path], embeddings_path: Union[str, Path]):
     )
 
     model = onmt.models.model.NMTModel(encoder, decoder)
-    model
 
     # Specify the tgt word generator and loss computation module
     model.generator = nn.Sequential(nn.Linear(emb_size, len(tgt_vocab)), nn.LogSoftmax(dim=-1)).to(device)
@@ -87,9 +86,9 @@ def load_model(model_path: Union[str, Path], embeddings_path: Union[str, Path]):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog="Train RL")
 
-    parser.add_argument("--name", type=str, default="")
+    parser.add_argument("--version", type=str, default="")
 
-    parser.add_argument("--mode", type=str, default="v1", choices=("v1, v2"))
+    parser.add_argument("--mode", type=str, default="v1", choices=("v1, v2", "v3"))
     parser.add_argument("--model-path", type=str, required=True)
 
     parser.add_argument("--train-batch-size", type=int, default=16)
@@ -108,11 +107,11 @@ if __name__ == "__main__":
 
     writer = SummaryWriter(comment="-argmax")
 
-    vocab_data_file = f"data/{opts.mode}/processed/SimQA.vocab.pt"
-    train_data_file = f"data/{opts.mode}/processed/SimQA.train.0.pt"
-    valid_data_file = f"data/{opts.mode}/processed/SimQA.valid.0.pt"
+    vocab_data_file = f"data/{opts.version}/processed/SimQA.vocab.pt"
+    train_data_file = f"data/{opts.version}/processed/SimQA.train.0.pt"
+    valid_data_file = f"data/{opts.version}/processed/SimQA.valid.0.pt"
     model_path = f"{opts.model_path}"
-    embeddings_path = f"models/{opts.mode}/src.embeddings.pt"
+    embeddings_path = f"models/{opts.version}/src.embeddings.pt"
 
     vocab_fields = torch.load(vocab_data_file)
 
@@ -212,7 +211,7 @@ if __name__ == "__main__":
     state_score_matric = BleuAndStateScore(tgt_vocab, 0.8)
     metrics = [BleuScore(), CorrectAnswersScore(tgt_vocab)]
 
-    saved_model = Path.cwd().joinpath(f"checkpoints/RL/{opts.mode}")
+    saved_model = Path.cwd().joinpath(f"checkpoints/RL/{opts.version}")
     saved_model.mkdir(exist_ok=True, parents=True)
     saved_mode_model = saved_model.joinpath(f"{opts.name}")
 
