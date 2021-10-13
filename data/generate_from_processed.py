@@ -1,9 +1,8 @@
 import argparse
 import json
 import os
-import re
-import torch
 
+from utils import sort_by_indices
 from onmt.inputters.dataset_base import Dataset
 from onmt.inputters.datareader_base import DataReaderBase
 from torchtext.data.example import Example
@@ -24,7 +23,7 @@ class Reader(DataReaderBase):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", type=str, default="train", choices=("train", "test"))
+    parser.add_argument("--mode", type=str, default="test", choices=("train", "test"))
     parser.add_argument("--version", type=str, default="v3", choices=("v1", "v2", "v3"))
     opts = parser.parse_args()
 
@@ -42,7 +41,7 @@ if __name__ == "__main__":
         readers=nb_samples * [reader],
         data=[(str(i), x) for i, x in enumerate(data)],
         dirs=[i for i in range(nb_samples)],
-        sort_key=None,
+        sort_key=sort_by_indices,
         corpus_id=opts.mode,
     )
 
