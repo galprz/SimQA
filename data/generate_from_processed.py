@@ -24,7 +24,7 @@ class Reader(DataReaderBase):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", type=str, default="test", choices=("train", "test"))
+    parser.add_argument("--mode", type=str, default="train", choices=("train", "test"))
     parser.add_argument("--version", type=str, default="v3", choices=("v1", "v2", "v3"))
     opts = parser.parse_args()
 

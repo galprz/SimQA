@@ -88,7 +88,7 @@ if __name__ == "__main__":
 
     parser.add_argument("--version", type=str, default="")
 
-    parser.add_argument("--mode", type=str, default="v1", choices=("v1, v2", "v3"))
+    parser.add_argument("--mode", type=str, default="v1", choices=("v1", "v2", "v3"))
     parser.add_argument("--model-path", type=str, required=True)
 
     parser.add_argument("--train-batch-size", type=int, default=16)
