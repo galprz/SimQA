@@ -1,6 +1,6 @@
 *.pyc_
 *.idea/
-__pycache__/
+*__pycache__/
+.idea/workspace.xml
 checkpoints/
-grammer/__pycache_/
 runs/

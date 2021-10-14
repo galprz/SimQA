@@ -616,7 +616,7 @@ class SimStateScoreTrainer(Trainer):
                         counter += 1
                     preds.append(pred_sent)
                     targets.append(trans.gold_sent)
-                avg_reward /= counter
+                avg_reward = avg_reward / counter if counter != 0 else -1000
                 self.avg_score = avg_reward
                 for metric in self.metrics:
                     metric.update(preds, targets)
