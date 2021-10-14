@@ -1,4 +1,5 @@
 *.pyc_
+*.idea/workspace.xml
 __pycache__/
 checkpoints/
 runs/
