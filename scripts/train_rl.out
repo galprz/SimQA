@@ -1,0 +1,20 @@
+hello from Python 3.7.11 in /home/nitai/miniconda3/envs/SimQA-code/bin/python
+running train_mle.py experiments
+2021-10-14 14:12:47,464 INFO Running on device=`cuda` (device_id=0)
+usage: Train RL [-h] [--version VERSION] [--mode {v1,v2,v3}] --model-path
+                MODEL_PATH [--train-batch-size TRAIN_BATCH_SIZE]
+                [--valid-batch-size VALID_BATCH_SIZE]
+                [--train-steps TRAIN_STEPS] [--valid-steps VALID_STEPS]
+                [--learning-rate LEARNING_RATE]
+                [--max-grad-norm MAX_GRAD_NORM] [--report-every REPORT_EVERY]
+                [--save-every SAVE_EVERY]
+Train RL: error: unrecognized arguments: --name baseline
+2021-10-14 14:12:49,947 INFO Running on device=`cuda` (device_id=0)
+usage: Train RL [-h] [--version VERSION] [--mode {v1,v2,v3}] --model-path
+                MODEL_PATH [--train-batch-size TRAIN_BATCH_SIZE]
+                [--valid-batch-size VALID_BATCH_SIZE]
+                [--train-steps TRAIN_STEPS] [--valid-steps VALID_STEPS]
+                [--learning-rate LEARNING_RATE]
+                [--max-grad-norm MAX_GRAD_NORM] [--report-every REPORT_EVERY]
+                [--save-every SAVE_EVERY]
+Train RL: error: unrecognized arguments: --name lookahead
