@@ -56,7 +56,7 @@ def random_single_aug(curr_vars: set):
         return [var1, "="] + x + y + z + [";"]
 
 
-def random_augs(max_nb_augs: int = 10):
+def random_augs(max_nb_augs: int = 2):
 
     vars_set = set()
 
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", type=str, default="test", choices=("train", "test"))
     parser.add_argument("--version", type=str, default="v3", choices=("v1", "v2", "v3"))
-    parser.add_argument("--max-nb-augs", type=int, default=10)
+    parser.add_argument("--max-nb-augs", type=int, default=2)
     opts = parser.parse_args()
 
     processed_tgt_file = os.path.join(BASE_DIR, f"{opts.version}/processed/{opts.mode}/tgt.txt")

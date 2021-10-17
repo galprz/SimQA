@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="db0247c4-258a-4a62-a710-5b23ef8c83dc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_00.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train_mle_00.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_01.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train_mle_01.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_02.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train_mle_02.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_03.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train_mle_03.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_04.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train_mle_04.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/enrich_dummies.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/enrich_dummies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/v3/processed/test/tgt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/v3/processed/test/tgt.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/v3/processed/train/tgt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/v3/processed/train/tgt.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +42,7 @@
       <recent name="$PROJECT_DIR$/data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.generate_from_processed">
+  <component name="RunManager" selected="Python.enrich_dummies">
     <configuration name="enrich_dummies" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SimQA" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -113,8 +111,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.generate_from_processed" />
         <item itemvalue="Python.enrich_dummies" />
+        <item itemvalue="Python.generate_from_processed" />
         <item itemvalue="Python.train_mle" />
       </list>
     </recent_temporary>
@@ -139,6 +137,7 @@
       <workItem from="1634131394096" duration="149000" />
       <workItem from="1634132041235" duration="33000" />
       <workItem from="1634136999674" duration="117000" />
+      <workItem from="1634459599332" duration="345000" />
     </task>
     <servers />
   </component>
@@ -146,8 +145,8 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SimQA$generate_from_processed.coverage" NAME="generate_from_processed Coverage Results" MODIFIED="1634131425126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/SimQA$train_mle.coverage" NAME="train_mle Coverage Results" MODIFIED="1633412783553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/SimQA$enrich_dummies.coverage" NAME="enrich_dummies Coverage Results" MODIFIED="1634131174286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/SimQA$enrich_dummies.coverage" NAME="enrich_dummies Coverage Results" MODIFIED="1634459942307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/SimQA$generate_from_processed.coverage" NAME="generate_from_processed Coverage Results" MODIFIED="1634131425126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
   </component>
 </project>
