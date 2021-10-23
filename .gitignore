@@ -3,4 +3,5 @@
 *__pycache__/
 .idea/workspace.xml
 checkpoints/
+grammer/__pycache__/
 runs/

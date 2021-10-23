@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db0247c4-258a-4a62-a710-5b23ef8c83dc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/train_both.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkpoints/MLE/v3/baseline_step_10000.pt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkpoints/MLE/v3/lookahead_ls_15_la_1.00_step_10000.pt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_00.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_01.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_02.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_03.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_mle_04.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_rl.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_rl.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train_rl.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +165,7 @@
       <workItem from="1634132041235" duration="33000" />
       <workItem from="1634136999674" duration="117000" />
       <workItem from="1634459599332" duration="345000" />
-      <workItem from="1634905909247" duration="5826000" />
+      <workItem from="1634905909247" duration="5947000" />
     </task>
     <servers />
   </component>
