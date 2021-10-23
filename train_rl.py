@@ -99,6 +99,7 @@ if __name__ == "__main__":
 
     parser.add_argument("--learning-rate", type=float, default=5e-4)
     parser.add_argument("--max-grad-norm", type=float, default=2.0)
+    parser.add_argument("--reward-gamma", type=float, default=0.5)
 
     parser.add_argument("--report-every", type=int, default=10)
     parser.add_argument("--save-every", type=int, default=1000)
@@ -224,7 +225,7 @@ if __name__ == "__main__":
         translation_builder=builder,
         valid_translator=argmax_valid_translator,
         valid_builder=valid_builder,
-        reward_function=partial(blue_and_same_state_score, gamma=0.5),
+        reward_function=partial(blue_and_same_state_score, gamma=opts.reward_gamma),
         model_saver=onmt.models.model_saver.ModelSaver(
             base_path=str(saved_mode_model), model=model, model_opt=vars(opts), fields=vocab_fields, optim=optim
         ),

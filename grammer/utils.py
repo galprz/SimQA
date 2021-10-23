@@ -3,6 +3,7 @@ from collections import Counter
 from enum import Enum
 from typing import List, Tuple
 import re
+import math
 
 from antlr4 import InputStream, ParseTreeWalker
 from io import StringIO
@@ -192,7 +193,12 @@ def execute_and_compute_state_score(pred_code, target_code):
     try:
         answer, state = execute_simcode(target_code, True)
         pred_answer, pred_state = execute_simcode(pred_code, True)
+
+        # FIXME: Gal's code
         return state_trace_exact_match(state, pred_state)
+
+        # return 1000. * math.isclose(answer, pred_answer, abs_tol=0.001)
+
     except Exception as e:
         return -1000
 
