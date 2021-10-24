@@ -1,0 +1,254 @@
+hello from Python 3.7.11 in /home/nitai/miniconda3/envs/SimQA-code/bin/python
+running train_mle.py experiments
+2021-10-24 12:11:31,693 INFO Running on device=`cuda` (device_id=0)
+2021-10-24 12:11:35,041 INFO Start training loop and validate every 100 steps...
+2021-10-24 12:11:35,041 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-24 12:11:35,050 INFO number of examples: 534
+2021-10-24 12:11:50,704 INFO Validation metrics: Bleu: 0.9816,Correct answers 0.7217, State transitions score: 0.7562
+2021-10-24 12:11:50,706 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-24 12:11:50,759 INFO number of examples: 3029
+/home/nitai/miniconda3/envs/SimQA-code/lib/python3.7/site-packages/onmt/translate/beam_search.py:209: UserWarning: An output with one or more elements was resized since it had shape [512], which does not match the required output shape [16, 32].This behavior is deprecated, and in a future PyTorch release outputs will not be resized unless they have zero elements. You can explicitly reuse an out tensor t by resizing it, inplace, to zero elements with t.resize_(0). (Triggered internally at  /pytorch/aten/src/ATen/native/Resize.cpp:23.)
+  torch.mul(self.topk_scores, length_penalty, out=self.topk_log_probs)
+/home/nitai/miniconda3/envs/SimQA-code/lib/python3.7/site-packages/torch/_tensor.py:575: UserWarning: floor_divide is deprecated, and will be removed in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values.
+To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor'). (Triggered internally at  /pytorch/aten/src/ATen/native/BinaryOps.cpp:467.)
+  return torch.floor_divide(self, other)
+2021-10-24 12:12:02,896 INFO Training step 2
+2021-10-24 12:12:20,704 INFO Training step 4
+2021-10-24 12:12:36,290 INFO Training step 6
+2021-10-24 12:12:49,961 INFO Training step 8
+2021-10-24 12:13:07,718 INFO Training step 10
+2021-10-24 12:13:26,852 INFO Training step 12
+2021-10-24 12:13:44,779 INFO Training step 14
+2021-10-24 12:14:02,444 INFO Training step 16
+2021-10-24 12:14:21,402 INFO Training step 18
+2021-10-24 12:14:35,266 INFO Training step 20
+2021-10-24 12:14:51,621 INFO Training step 22
+2021-10-24 12:15:11,071 INFO Training step 24
+2021-10-24 12:15:31,356 INFO Training step 26
+2021-10-24 12:15:44,946 INFO Training step 28
+2021-10-24 12:16:03,002 INFO Training step 30
+2021-10-24 12:16:17,657 INFO Training step 32
+2021-10-24 12:16:36,321 INFO Training step 34
+2021-10-24 12:16:54,923 INFO Training step 36
+2021-10-24 12:17:10,725 INFO Training step 38
+2021-10-24 12:17:27,158 INFO Training step 40
+2021-10-24 12:17:43,262 INFO Training step 42
+2021-10-24 12:18:03,186 INFO Training step 44
+2021-10-24 12:18:21,265 INFO Training step 46
+2021-10-24 12:18:34,064 INFO Training step 48
+/home/nitai/miniconda3/envs/SimQA-code/lib/python3.7/site-packages/onmt/translate/beam_search.py:209: UserWarning: An output with one or more elements was resized since it had shape [160], which does not match the required output shape [5, 32].This behavior is deprecated, and in a future PyTorch release outputs will not be resized unless they have zero elements. You can explicitly reuse an out tensor t by resizing it, inplace, to zero elements with t.resize_(0). (Triggered internally at  /pytorch/aten/src/ATen/native/Resize.cpp:23.)
+  torch.mul(self.topk_scores, length_penalty, out=self.topk_log_probs)
+2021-10-24 12:18:52,786 INFO Training step 50
+2021-10-24 12:19:09,439 INFO Training step 52
+2021-10-24 12:19:25,751 INFO Training step 54
+2021-10-24 12:19:45,112 INFO Training step 56
+2021-10-24 12:19:57,752 INFO Training step 58
+2021-10-24 12:20:17,799 INFO Training step 60
+2021-10-24 12:20:34,827 INFO Training step 62
+2021-10-24 12:20:49,691 INFO Training step 64
+2021-10-24 12:21:05,120 INFO Training step 66
+2021-10-24 12:21:15,680 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-24 12:21:15,733 INFO number of examples: 3029
+2021-10-24 12:21:18,682 INFO Training step 68
+2021-10-24 12:21:33,835 INFO Training step 70
+2021-10-24 12:21:44,985 INFO Training step 72
+2021-10-24 12:21:59,148 INFO Training step 74
+2021-10-24 12:22:12,483 INFO Training step 76
+2021-10-24 12:22:31,190 INFO Training step 78
+2021-10-24 12:22:48,672 INFO Training step 80
+2021-10-24 12:23:04,437 INFO Training step 82
+2021-10-24 12:23:18,654 INFO Training step 84
+2021-10-24 12:23:37,396 INFO Training step 86
+2021-10-24 12:23:57,597 INFO Training step 88
+2021-10-24 12:24:12,029 INFO Training step 90
+2021-10-24 12:24:30,473 INFO Training step 92
+2021-10-24 12:24:50,298 INFO Training step 94
+2021-10-24 12:25:09,237 INFO Training step 96
+2021-10-24 12:25:28,072 INFO Training step 98
+2021-10-24 12:25:45,941 INFO Training step 100
+2021-10-24 12:25:45,943 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-24 12:25:45,954 INFO number of examples: 534
+2021-10-24 12:26:01,703 INFO Validation metrics: Bleu: 0.9855,Correct answers 0.7614, State transitions score: 0.7939
+2021-10-24 12:26:17,869 INFO Training step 102
+2021-10-24 12:26:34,542 INFO Training step 104
+2021-10-24 12:26:53,436 INFO Training step 106
+2021-10-24 12:27:10,299 INFO Training step 108
+2021-10-24 12:27:28,520 INFO Training step 110
+2021-10-24 12:27:46,733 INFO Training step 112
+2021-10-24 12:28:06,031 INFO Training step 114
+2021-10-24 12:29:08,241 INFO Training step 116
+2021-10-24 12:29:25,871 INFO Training step 118
+2021-10-24 12:29:43,394 INFO Training step 120
+2021-10-24 12:29:58,884 INFO Training step 122
+2021-10-24 12:30:13,085 INFO Training step 124
+2021-10-24 12:30:29,735 INFO Training step 126
+2021-10-24 12:30:49,185 INFO Training step 128
+2021-10-24 12:31:07,211 INFO Training step 130
+2021-10-24 12:31:19,888 INFO Training step 132
+2021-10-24 12:31:38,342 INFO Training step 134
+2021-10-24 12:31:44,363 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-24 12:31:44,414 INFO number of examples: 3029
+2021-10-24 12:31:54,178 INFO Training step 136
+2021-10-24 12:32:15,403 INFO Training step 138
+2021-10-24 12:32:31,841 INFO Training step 140
+2021-10-24 12:32:50,905 INFO Training step 142
+2021-10-24 12:33:06,051 INFO Training step 144
+2021-10-24 12:33:23,394 INFO Training step 146
+2021-10-24 12:33:42,885 INFO Training step 148
+2021-10-24 12:34:00,734 INFO Training step 150
+2021-10-24 12:34:17,989 INFO Training step 152
+2021-10-24 12:34:33,202 INFO Training step 154
+2021-10-24 12:34:48,754 INFO Training step 156
+2021-10-24 12:35:08,314 INFO Training step 158
+2021-10-24 12:35:25,811 INFO Training step 160
+2021-10-24 12:35:43,398 INFO Training step 162
+2021-10-24 12:36:00,183 INFO Training step 164
+2021-10-24 12:36:15,876 INFO Training step 166
+2021-10-24 12:36:32,699 INFO Training step 168
+2021-10-24 12:36:52,301 INFO Training step 170
+2021-10-24 12:37:11,649 INFO Training step 172
+2021-10-24 12:37:27,245 INFO Training step 174
+2021-10-24 12:37:38,337 INFO Training step 176
+2021-10-24 12:37:55,254 INFO Training step 178
+2021-10-24 12:38:16,183 INFO Training step 180
+2021-10-24 12:38:32,571 INFO Training step 182
+2021-10-24 12:38:46,881 INFO Training step 184
+2021-10-24 12:39:04,827 INFO Training step 186
+2021-10-24 12:39:22,301 INFO Training step 188
+2021-10-24 12:39:40,198 INFO Training step 190
+2021-10-24 12:39:56,070 INFO Training step 192
+2021-10-24 12:40:14,889 INFO Training step 194
+2021-10-24 12:40:33,330 INFO Training step 196
+2021-10-24 12:40:49,919 INFO Training step 198
+2021-10-24 12:41:03,979 INFO Training step 200
+2021-10-24 12:41:03,981 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-24 12:41:03,990 INFO number of examples: 534
+2021-10-24 12:41:19,823 INFO Validation metrics: Bleu: 0.9863,Correct answers 0.7719, State transitions score: 0.8019
+2021-10-24 12:41:26,273 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-24 12:41:26,320 INFO number of examples: 3029
+2021-10-24 12:41:32,996 INFO Training step 202
+2021-10-24 12:41:48,344 INFO Training step 204
+2021-10-24 12:42:01,631 INFO Training step 206
+2021-10-24 12:42:20,502 INFO Training step 208
+2021-10-24 12:42:37,158 INFO Training step 210
+2021-10-24 12:42:52,789 INFO Training step 212
+2021-10-24 12:43:11,066 INFO Training step 214
+2021-10-24 12:43:23,816 INFO Training step 216
+2021-10-24 12:43:45,439 INFO Training step 218
+2021-10-24 12:44:03,923 INFO Training step 220
+2021-10-24 12:44:21,967 INFO Training step 222
+2021-10-24 12:44:34,855 INFO Training step 224
+2021-10-24 12:44:54,036 INFO Training step 226
+2021-10-24 12:45:11,274 INFO Training step 228
+2021-10-24 12:45:27,831 INFO Training step 230
+2021-10-24 12:45:45,395 INFO Training step 232
+2021-10-24 12:46:03,707 INFO Training step 234
+2021-10-24 12:46:20,016 INFO Training step 236
+2021-10-24 12:46:38,937 INFO Training step 238
+2021-10-24 12:46:57,195 INFO Training step 240
+2021-10-24 12:47:14,607 INFO Training step 242
+2021-10-24 12:47:28,568 INFO Training step 244
+2021-10-24 12:47:44,745 INFO Training step 246
+2021-10-24 12:48:01,559 INFO Training step 248
+2021-10-24 12:48:16,826 INFO Training step 250
+2021-10-24 12:48:29,544 INFO Training step 252
+2021-10-24 12:48:45,766 INFO Training step 254
+2021-10-24 12:49:00,485 INFO Training step 256
+2021-10-24 12:49:37,051 INFO Training step 258
+2021-10-24 12:49:57,395 INFO Training step 260
+2021-10-24 12:50:12,557 INFO Training step 262
+2021-10-24 12:50:33,047 INFO Training step 264
+2021-10-24 12:50:48,942 INFO Training step 266
+2021-10-24 12:51:07,685 INFO Training step 268
+2021-10-24 12:51:10,632 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-24 12:51:10,686 INFO number of examples: 3029
+2021-10-24 12:51:26,313 INFO Training step 270
+2021-10-24 12:51:44,337 INFO Training step 272
+2021-10-24 12:51:59,097 INFO Training step 274
+2021-10-24 12:52:17,817 INFO Training step 276
+2021-10-24 12:52:31,259 INFO Training step 278
+2021-10-24 12:52:51,151 INFO Training step 280
+2021-10-24 12:53:07,105 INFO Training step 282
+2021-10-24 12:53:27,679 INFO Training step 284
+2021-10-24 12:53:46,409 INFO Training step 286
+2021-10-24 12:54:01,265 INFO Training step 288
+2021-10-24 12:54:20,949 INFO Training step 290
+2021-10-24 12:54:40,366 INFO Training step 292
+2021-10-24 12:54:54,279 INFO Training step 294
+2021-10-24 12:55:14,301 INFO Training step 296
+2021-10-24 12:55:29,281 INFO Training step 298
+2021-10-24 12:55:47,152 INFO Training step 300
+2021-10-24 12:55:47,153 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-24 12:55:47,162 INFO number of examples: 534
+2021-10-24 12:56:03,099 INFO Validation metrics: Bleu: 0.9857,Correct answers 0.7615, State transitions score: 0.7954
+2021-10-24 12:56:22,029 INFO Training step 302
+2021-10-24 12:56:42,075 INFO Training step 304
+2021-10-24 12:56:56,579 INFO Training step 306
+2021-10-24 12:57:14,768 INFO Training step 308
+2021-10-24 12:57:31,723 INFO Training step 310
+2021-10-24 12:57:46,202 INFO Training step 312
+2021-10-24 12:58:01,869 INFO Training step 314
+2021-10-24 12:58:15,177 INFO Training step 316
+2021-10-24 12:58:32,593 INFO Training step 318
+2021-10-24 12:58:49,567 INFO Training step 320
+2021-10-24 12:59:04,212 INFO Training step 322
+2021-10-24 12:59:18,111 INFO Training step 324
+2021-10-24 12:59:30,925 INFO Training step 326
+2021-10-24 12:59:42,646 INFO Training step 328
+2021-10-24 12:59:59,048 INFO Training step 330
+2021-10-24 13:00:17,095 INFO Training step 332
+2021-10-24 13:00:29,978 INFO Training step 334
+2021-10-24 13:00:45,665 INFO Training step 336
+2021-10-24 13:00:59,512 INFO Training step 338
+2021-10-24 13:00:59,512 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-24 13:00:59,673 INFO number of examples: 3029
+2021-10-24 13:01:16,559 INFO Training step 340
+2021-10-24 13:01:32,584 INFO Training step 342
+2021-10-24 13:01:48,946 INFO Training step 344
+2021-10-24 13:02:02,525 INFO Training step 346
+2021-10-24 13:02:15,166 INFO Training step 348
+2021-10-24 13:02:28,445 INFO Training step 350
+2021-10-24 13:02:41,837 INFO Training step 352
+2021-10-24 13:02:56,689 INFO Training step 354
+2021-10-24 13:03:15,860 INFO Training step 356
+2021-10-24 13:03:28,842 INFO Training step 358
+2021-10-24 13:03:42,291 INFO Training step 360
+2021-10-24 13:03:58,789 INFO Training step 362
+2021-10-24 13:04:14,602 INFO Training step 364
+2021-10-24 13:04:30,695 INFO Training step 366
+2021-10-24 13:04:45,653 INFO Training step 368
+2021-10-24 13:05:04,333 INFO Training step 370
+2021-10-24 13:05:23,905 INFO Training step 372
+2021-10-24 13:05:36,779 INFO Training step 374
+2021-10-24 13:05:53,414 INFO Training step 376
+2021-10-24 13:06:04,308 INFO Training step 378
+2021-10-24 13:06:25,748 INFO Training step 380
+2021-10-24 13:06:40,314 INFO Training step 382
+2021-10-24 13:06:51,934 INFO Training step 384
+2021-10-24 13:07:05,695 INFO Training step 386
+2021-10-24 13:07:19,295 INFO Training step 388
+2021-10-24 13:07:37,798 INFO Training step 390
+2021-10-24 13:08:05,045 INFO Training step 392
+2021-10-24 13:08:42,327 INFO Training step 394
+2021-10-24 13:10:24,129 INFO Training step 396
+2021-10-24 13:12:13,462 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-24 13:12:13,513 INFO number of examples: 3029
+2021-10-24 13:13:37,940 INFO Training step 398
+2021-10-24 13:19:23,606 INFO Training step 400
+2021-10-24 13:19:23,609 INFO Loading dataset from data/v2/processed/SimQA.valid.0.pt
+2021-10-24 13:19:23,621 INFO number of examples: 534
+2021-10-24 13:19:44,169 INFO Validation metrics: Bleu: 0.4276,Correct answers 0.5655, State transitions score: 0.5903
+2021-10-24 13:23:52,881 INFO Training step 402
+2021-10-24 13:27:10,842 INFO Training step 404
+2021-10-24 13:27:54,997 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-24 13:27:55,161 INFO number of examples: 3029
+2021-10-24 13:30:55,879 INFO Training step 406
+2021-10-24 13:34:36,093 INFO Training step 408
+2021-10-24 13:36:56,798 INFO Training step 410
+2021-10-24 13:39:59,285 INFO Training step 412
+2021-10-24 13:43:05,754 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-24 13:43:05,809 INFO number of examples: 3029
+2021-10-24 13:50:05,507 INFO Training step 414
+2021-10-24 13:58:10,957 INFO Loading dataset from data/v2/processed/SimQA.train.0.pt
+2021-10-24 13:58:11,010 INFO number of examples: 3029
+slurmstepd: error: *** JOB 67203431 ON isl-titan CANCELLED AT 2021-10-24T13:59:52 ***
