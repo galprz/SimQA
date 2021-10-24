@@ -89,10 +89,13 @@ def aug_floor_div_assignment(state: str):
 
 
 def aug_vars_assignment(state: str):
-    print(state)
     var, x = state.split("=")
 
-    ex1, ex2 = re.split("[" + "|".join(MATH_OPERATORS) + "]", x)
+    for op in MATH_OPERATORS:
+        try:
+            ex1, ex2 = x.split(op)
+        except Exception:
+            pass
 
     aug1 = f" {var} = {ex1} + 0 "
     aug2 = state
@@ -131,9 +134,9 @@ def augment_tgt(tgt: str):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", type=str, default="test", choices=("train", "test"))
+    parser.add_argument("--mode", type=str, default="train", choices=("train", "test"))
     parser.add_argument("--version", type=str, default="v3", choices=("v1", "v2", "v3"))
-    parser.add_argument("--max-nb-augs", type=int, default=2)
+    parser.add_argument("--shuffle", action="store_true", default=False)
     opts = parser.parse_args()
 
     processed_src_file = os.path.join(BASE_DIR, f"{opts.version}/processed/{opts.mode}/src.txt")
@@ -152,10 +155,14 @@ if __name__ == "__main__":
         new_srcs.append(src)
         new_tgts.append(tgt)
 
-        aug_tgt = augment_tgt(tgt)
+        aug_tgt = augment_tgt(tgt) + "\n"
 
         new_srcs.append(src)
         new_tgts.append(aug_tgt)
+
+    x = list(zip(new_srcs, new_tgts))
+    random.shuffle(x)
+    new_srcs, new_tgts = zip(*x)
 
     with open(processed_src_file, "w") as f:
         f.writelines(new_srcs)
