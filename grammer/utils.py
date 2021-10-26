@@ -195,9 +195,9 @@ def execute_and_compute_state_score(pred_code, target_code):
         pred_answer, pred_state = execute_simcode(pred_code, True)
 
         # FIXME: Gal's code
-        return state_trace_exact_match(state, pred_state)
+        # return state_trace_exact_match(state, pred_state)
 
-        # return 1000. * math.isclose(answer, pred_answer, abs_tol=0.001)
+        return 1000. * math.isclose(answer, pred_answer, abs_tol=0.001)
 
     except Exception as e:
         return -1000
