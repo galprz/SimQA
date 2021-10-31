@@ -88,7 +88,8 @@ if __name__ == "__main__":
 
     parser.add_argument("--name", type=str, default="")
 
-    parser.add_argument("--version", type=str, default="v1", choices=("v1", "v2", "v3"))
+    parser.add_argument("--train-version", type=str, default="v2", choices=("v1", "v2", "v3"))
+    parser.add_argument("--valid-version", type=str, default="v3", choices=("v1", "v2", "v3"))
     parser.add_argument("--model-path", type=str, required=True)
 
     parser.add_argument("--train-batch-size", type=int, default=16)
@@ -108,11 +109,11 @@ if __name__ == "__main__":
 
     writer = SummaryWriter(comment="-argmax")
 
-    vocab_data_file = f"data/{opts.version}/processed/SimQA.vocab.pt"
-    train_data_file = f"data/{opts.version}/processed/SimQA.train.0.pt"
-    valid_data_file = f"data/{opts.version}/processed/SimQA.valid.0.pt"
+    vocab_data_file = f"data/{opts.train_version}/processed/SimQA.vocab.pt"
+    train_data_file = f"data/{opts.train_version}/processed/SimQA.train.0.pt"
+    valid_data_file = f"data/{opts.valid_version}/processed/SimQA.valid.0.pt"
     model_path = f"{opts.model_path}"
-    embeddings_path = f"models/{opts.version}/src.embeddings.pt"
+    embeddings_path = f"models/{opts.train_version}/src.embeddings.pt"
 
     vocab_fields = torch.load(vocab_data_file)
 
@@ -212,7 +213,7 @@ if __name__ == "__main__":
     state_score_matric = BleuAndStateScore(tgt_vocab, 0.8)
     metrics = [BleuScore(), CorrectAnswersScore(tgt_vocab)]
 
-    saved_model = Path.cwd().joinpath(f"checkpoints/RL/{opts.version}")
+    saved_model = Path.cwd().joinpath(f"checkpoints/RL")
     saved_model.mkdir(exist_ok=True, parents=True)
     saved_mode_model = saved_model.joinpath(f"{opts.name}")
 
