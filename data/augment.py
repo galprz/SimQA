@@ -134,7 +134,7 @@ def augment_tgt(tgt: str):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", type=str, default="train", choices=("train", "test"))
+    parser.add_argument("--mode", type=str, default="test", choices=("train", "test"))
     parser.add_argument("--version", type=str, default="v3", choices=("v1", "v2", "v3"))
     parser.add_argument("--shuffle", action="store_true", default=False)
     opts = parser.parse_args()
@@ -152,8 +152,8 @@ if __name__ == "__main__":
     for src, tgt in zip(processed_src, processed_tgt):
 
         # add original src and tgt
-        new_srcs.append(src)
-        new_tgts.append(tgt)
+        # new_srcs.append(src)
+        # new_tgts.append(tgt)
 
         aug_tgt = augment_tgt(tgt) + "\n"
 
