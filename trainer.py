@@ -556,8 +556,9 @@ class SimStateScoreTrainer(Trainer):
                 valid_stats = self.validate(
                     valid_iter, src_vocab, moving_average=self.moving_average, stats_cls=stats_cls
                 )
-            if step == 600:
+            if train_steps > 0 and step >= train_steps:
                 break
+
         if self.model_saver is not None:
             self.model_saver.save(step, moving_average=self.moving_average)
         return total_stats, all_metrics
