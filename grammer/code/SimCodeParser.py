@@ -3,10 +3,11 @@
 from antlr4 import *
 from io import StringIO
 import sys
+
 if sys.version_info[1] > 5:
-	from typing import TextIO
+    from typing import TextIO
 else:
-	from typing.io import TextIO
+    from typing.io import TextIO
 
 
 def serializedATN():
@@ -31,9 +32,9 @@ def serializedATN():
         buf.write("\3\2\2\2\b;\3\2\2\2\n=\3\2\2\2\fG\3\2\2\2\16V\3\2\2\2")
         buf.write("\20b\3\2\2\2\22p\3\2\2\2\24r\3\2\2\2\26\u0095\3\2\2\2")
         buf.write("\30\u0097\3\2\2\2\32\u0099\3\2\2\2\34\u009b\3\2\2\2\36")
-        buf.write("\u009d\3\2\2\2 \u009f\3\2\2\2\"%\5\6\4\2#%\5\4\3\2$\"")
-        buf.write("\3\2\2\2$#\3\2\2\2%&\3\2\2\2&\'\7\2\2\3\'\3\3\2\2\2()")
-        buf.write("\7\"\2\2)*\b\3\1\2*\5\3\2\2\2+,\7\3\2\2,-\7\4\2\2-.\7")
+        buf.write('\u009d\3\2\2\2 \u009f\3\2\2\2"%\5\6\4\2#%\5\4\3\2$"')
+        buf.write("\3\2\2\2$#\3\2\2\2%&\3\2\2\2&'\7\2\2\3'\3\3\2\2\2()")
+        buf.write('\7"\2\2)*\b\3\1\2*\5\3\2\2\2+,\7\3\2\2,-\7\4\2\2-.\7')
         buf.write("\f\2\2./\7\r\2\2/\61\5\32\16\2\60\62\5\b\5\2\61\60\3\2")
         buf.write("\2\2\62\63\3\2\2\2\63\61\3\2\2\2\63\64\3\2\2\2\64\65\3")
         buf.write("\2\2\2\65\66\5\34\17\2\66\7\3\2\2\2\67<\5\24\13\28<\5")
@@ -76,29 +77,83 @@ def serializedATN():
         return buf.getvalue()
 
 
-class SimCodeParser ( Parser ):
+class SimCodeParser(Parser):
 
     grammarFileName = "SimCode.g4"
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
-    decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
+    decisionsToDFA = [DFA(ds, i) for i, ds in enumerate(atn.decisionToState)]
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "'0'", "';'", 
-                     "'.'", "'('", "')'", "'{'", "'}'", "','", "'='", "'*'", 
-                     "'+'", "'-'", "'//'", "'/'", "'<'", "'<='", "'>'", 
-                     "'>='", "'=='", "'!='", "':'" ]
+    literalNames = [
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "'0'",
+        "';'",
+        "'.'",
+        "'('",
+        "')'",
+        "'{'",
+        "'}'",
+        "','",
+        "'='",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'//'",
+        "'/'",
+        "'<'",
+        "'<='",
+        "'>'",
+        "'>='",
+        "'=='",
+        "'!='",
+        "':'",
+    ]
 
-    symbolicNames = [ "<INVALID>", "FUNC", "SIMULATION_KEYWORD", "IF", "ELSE", 
-                      "REPEAT", "RETURN", "ZERO", "SCOL", "DOT", "OPEN_PAR", 
-                      "CLOSE_PAR", "OPEN_CURLY_PAR", "CLOSE_CURLY_PAR", 
-                      "COMMA", "ASSIGN", "STAR", "PLUS", "MINUS", "INT_DIV", 
-                      "DIV", "LT", "LT_EQ", "GT", "GT_EQ", "EQ", "NOT_EQ1", 
-                      "COLON", "NUMERIC_LITERAL", "POSITIVE_INT", "IDENTIFIER", 
-                      "SPACES", "UNEXPECTED_CHAR", "DIGIT" ]
+    symbolicNames = [
+        "<INVALID>",
+        "FUNC",
+        "SIMULATION_KEYWORD",
+        "IF",
+        "ELSE",
+        "REPEAT",
+        "RETURN",
+        "ZERO",
+        "SCOL",
+        "DOT",
+        "OPEN_PAR",
+        "CLOSE_PAR",
+        "OPEN_CURLY_PAR",
+        "CLOSE_CURLY_PAR",
+        "COMMA",
+        "ASSIGN",
+        "STAR",
+        "PLUS",
+        "MINUS",
+        "INT_DIV",
+        "DIV",
+        "LT",
+        "LT_EQ",
+        "GT",
+        "GT_EQ",
+        "EQ",
+        "NOT_EQ1",
+        "COLON",
+        "NUMERIC_LITERAL",
+        "POSITIVE_INT",
+        "IDENTIFIER",
+        "SPACES",
+        "UNEXPECTED_CHAR",
+        "DIGIT",
+    ]
 
     RULE_parse = 0
     RULE_error = 1
@@ -117,59 +172,68 @@ class SimCodeParser ( Parser ):
     RULE_identifier = 14
     RULE_negative_int = 15
 
-    ruleNames =  [ "parse", "error", "simulation_fn", "exp", "return_stmt", 
-                   "repeat_stmt", "if_stmt", "comperation_operator", "condition_expression", 
-                   "assignment_stmt", "numeric_expression", "operator", 
-                   "open_code_block", "close_code_block", "identifier", 
-                   "negative_int" ]
+    ruleNames = [
+        "parse",
+        "error",
+        "simulation_fn",
+        "exp",
+        "return_stmt",
+        "repeat_stmt",
+        "if_stmt",
+        "comperation_operator",
+        "condition_expression",
+        "assignment_stmt",
+        "numeric_expression",
+        "operator",
+        "open_code_block",
+        "close_code_block",
+        "identifier",
+        "negative_int",
+    ]
 
     EOF = Token.EOF
-    FUNC=1
-    SIMULATION_KEYWORD=2
-    IF=3
-    ELSE=4
-    REPEAT=5
-    RETURN=6
-    ZERO=7
-    SCOL=8
-    DOT=9
-    OPEN_PAR=10
-    CLOSE_PAR=11
-    OPEN_CURLY_PAR=12
-    CLOSE_CURLY_PAR=13
-    COMMA=14
-    ASSIGN=15
-    STAR=16
-    PLUS=17
-    MINUS=18
-    INT_DIV=19
-    DIV=20
-    LT=21
-    LT_EQ=22
-    GT=23
-    GT_EQ=24
-    EQ=25
-    NOT_EQ1=26
-    COLON=27
-    NUMERIC_LITERAL=28
-    POSITIVE_INT=29
-    IDENTIFIER=30
-    SPACES=31
-    UNEXPECTED_CHAR=32
-    DIGIT=33
+    FUNC = 1
+    SIMULATION_KEYWORD = 2
+    IF = 3
+    ELSE = 4
+    REPEAT = 5
+    RETURN = 6
+    ZERO = 7
+    SCOL = 8
+    DOT = 9
+    OPEN_PAR = 10
+    CLOSE_PAR = 11
+    OPEN_CURLY_PAR = 12
+    CLOSE_CURLY_PAR = 13
+    COMMA = 14
+    ASSIGN = 15
+    STAR = 16
+    PLUS = 17
+    MINUS = 18
+    INT_DIV = 19
+    DIV = 20
+    LT = 21
+    LT_EQ = 22
+    GT = 23
+    GT_EQ = 24
+    EQ = 25
+    NOT_EQ1 = 26
+    COLON = 27
+    NUMERIC_LITERAL = 28
+    POSITIVE_INT = 29
+    IDENTIFIER = 30
+    SPACES = 31
+    UNEXPECTED_CHAR = 32
+    DIGIT = 33
 
-    def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
+    def __init__(self, input: TokenStream, output: TextIO = sys.stdout):
         super().__init__(input, output)
         self.checkVersion("4.8")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
-
-
-
     class ParseContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -177,32 +241,27 @@ class SimCodeParser ( Parser ):
             return self.getToken(SimCodeParser.EOF, 0)
 
         def simulation_fn(self):
-            return self.getTypedRuleContext(SimCodeParser.Simulation_fnContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.Simulation_fnContext, 0)
 
         def error(self):
-            return self.getTypedRuleContext(SimCodeParser.ErrorContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.ErrorContext, 0)
 
         def getRuleIndex(self):
             return SimCodeParser.RULE_parse
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterParse" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterParse"):
                 listener.enterParse(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitParse" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitParse"):
                 listener.exitParse(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitParse" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitParse"):
                 return visitor.visitParse(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def parse(self):
 
@@ -234,13 +293,11 @@ class SimCodeParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ErrorContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self._UNEXPECTED_CHAR = None # Token
+            self._UNEXPECTED_CHAR = None  # Token
 
         def UNEXPECTED_CHAR(self):
             return self.getToken(SimCodeParser.UNEXPECTED_CHAR, 0)
@@ -248,22 +305,19 @@ class SimCodeParser ( Parser ):
         def getRuleIndex(self):
             return SimCodeParser.RULE_error
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterError" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterError"):
                 listener.enterError(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitError" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitError"):
                 listener.exitError(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitError" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitError"):
                 return visitor.visitError(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def error(self):
 
@@ -274,8 +328,10 @@ class SimCodeParser ( Parser ):
             self.state = 38
             localctx._UNEXPECTED_CHAR = self.match(SimCodeParser.UNEXPECTED_CHAR)
 
-            raise RuntimeError("UNEXPECTED_CHAR=" + (None if localctx._UNEXPECTED_CHAR is None else localctx._UNEXPECTED_CHAR.text));
-               
+            raise RuntimeError(
+                "UNEXPECTED_CHAR=" + (None if localctx._UNEXPECTED_CHAR is None else localctx._UNEXPECTED_CHAR.text)
+            )
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -284,10 +340,8 @@ class SimCodeParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Simulation_fnContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -304,45 +358,39 @@ class SimCodeParser ( Parser ):
             return self.getToken(SimCodeParser.CLOSE_PAR, 0)
 
         def open_code_block(self):
-            return self.getTypedRuleContext(SimCodeParser.Open_code_blockContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.Open_code_blockContext, 0)
 
         def close_code_block(self):
-            return self.getTypedRuleContext(SimCodeParser.Close_code_blockContext,0)
+            return self.getTypedRuleContext(SimCodeParser.Close_code_blockContext, 0)
 
-
-        def exp(self, i:int=None):
+        def exp(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(SimCodeParser.ExpContext)
             else:
-                return self.getTypedRuleContext(SimCodeParser.ExpContext,i)
-
+                return self.getTypedRuleContext(SimCodeParser.ExpContext, i)
 
         def getRuleIndex(self):
             return SimCodeParser.RULE_simulation_fn
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSimulation_fn" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterSimulation_fn"):
                 listener.enterSimulation_fn(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSimulation_fn" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitSimulation_fn"):
                 listener.exitSimulation_fn(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitSimulation_fn" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitSimulation_fn"):
                 return visitor.visitSimulation_fn(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def simulation_fn(self):
 
         localctx = SimCodeParser.Simulation_fnContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_simulation_fn)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 41
@@ -355,16 +403,30 @@ class SimCodeParser ( Parser ):
             self.match(SimCodeParser.CLOSE_PAR)
             self.state = 45
             self.open_code_block()
-            self.state = 47 
+            self.state = 47
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
                 self.state = 46
                 self.exp()
-                self.state = 49 
+                self.state = 49
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SimCodeParser.IF) | (1 << SimCodeParser.REPEAT) | (1 << SimCodeParser.RETURN) | (1 << SimCodeParser.IDENTIFIER))) != 0)):
+                if not (
+                    (
+                        ((_la) & ~0x3F) == 0
+                        and (
+                            (1 << _la)
+                            & (
+                                (1 << SimCodeParser.IF)
+                                | (1 << SimCodeParser.REPEAT)
+                                | (1 << SimCodeParser.RETURN)
+                                | (1 << SimCodeParser.IDENTIFIER)
+                            )
+                        )
+                        != 0
+                    )
+                ):
                     break
 
             self.state = 51
@@ -377,48 +439,39 @@ class SimCodeParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ExpContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def assignment_stmt(self):
-            return self.getTypedRuleContext(SimCodeParser.Assignment_stmtContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.Assignment_stmtContext, 0)
 
         def if_stmt(self):
-            return self.getTypedRuleContext(SimCodeParser.If_stmtContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.If_stmtContext, 0)
 
         def repeat_stmt(self):
-            return self.getTypedRuleContext(SimCodeParser.Repeat_stmtContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.Repeat_stmtContext, 0)
 
         def return_stmt(self):
-            return self.getTypedRuleContext(SimCodeParser.Return_stmtContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.Return_stmtContext, 0)
 
         def getRuleIndex(self):
             return SimCodeParser.RULE_exp
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExp" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterExp"):
                 listener.enterExp(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExp" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitExp"):
                 listener.exitExp(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitExp" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitExp"):
                 return visitor.visitExp(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def exp(self):
 
@@ -459,10 +512,8 @@ class SimCodeParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Return_stmtContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -473,15 +524,13 @@ class SimCodeParser ( Parser ):
             return self.getToken(SimCodeParser.SCOL, 0)
 
         def identifier(self):
-            return self.getTypedRuleContext(SimCodeParser.IdentifierContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.IdentifierContext, 0)
 
         def POSITIVE_INT(self):
             return self.getToken(SimCodeParser.POSITIVE_INT, 0)
 
         def negative_int(self):
-            return self.getTypedRuleContext(SimCodeParser.Negative_intContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.Negative_intContext, 0)
 
         def ZERO(self):
             return self.getToken(SimCodeParser.ZERO, 0)
@@ -492,22 +541,19 @@ class SimCodeParser ( Parser ):
         def getRuleIndex(self):
             return SimCodeParser.RULE_return_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterReturn_stmt" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterReturn_stmt"):
                 listener.enterReturn_stmt(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitReturn_stmt" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitReturn_stmt"):
                 listener.exitReturn_stmt(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitReturn_stmt" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitReturn_stmt"):
                 return visitor.visitReturn_stmt(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def return_stmt(self):
 
@@ -553,10 +599,8 @@ class SimCodeParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Repeat_stmtContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -570,52 +614,45 @@ class SimCodeParser ( Parser ):
             return self.getToken(SimCodeParser.CLOSE_PAR, 0)
 
         def open_code_block(self):
-            return self.getTypedRuleContext(SimCodeParser.Open_code_blockContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.Open_code_blockContext, 0)
 
         def close_code_block(self):
-            return self.getTypedRuleContext(SimCodeParser.Close_code_blockContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.Close_code_blockContext, 0)
 
         def POSITIVE_INT(self):
             return self.getToken(SimCodeParser.POSITIVE_INT, 0)
 
         def identifier(self):
-            return self.getTypedRuleContext(SimCodeParser.IdentifierContext,0)
+            return self.getTypedRuleContext(SimCodeParser.IdentifierContext, 0)
 
-
-        def exp(self, i:int=None):
+        def exp(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(SimCodeParser.ExpContext)
             else:
-                return self.getTypedRuleContext(SimCodeParser.ExpContext,i)
-
+                return self.getTypedRuleContext(SimCodeParser.ExpContext, i)
 
         def getRuleIndex(self):
             return SimCodeParser.RULE_repeat_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterRepeat_stmt" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterRepeat_stmt"):
                 listener.enterRepeat_stmt(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitRepeat_stmt" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitRepeat_stmt"):
                 listener.exitRepeat_stmt(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitRepeat_stmt" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitRepeat_stmt"):
                 return visitor.visitRepeat_stmt(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def repeat_stmt(self):
 
         localctx = SimCodeParser.Repeat_stmtContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_repeat_stmt)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 69
@@ -640,16 +677,30 @@ class SimCodeParser ( Parser ):
             self.match(SimCodeParser.CLOSE_PAR)
             self.state = 76
             self.open_code_block()
-            self.state = 78 
+            self.state = 78
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
                 self.state = 77
                 self.exp()
-                self.state = 80 
+                self.state = 80
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SimCodeParser.IF) | (1 << SimCodeParser.REPEAT) | (1 << SimCodeParser.RETURN) | (1 << SimCodeParser.IDENTIFIER))) != 0)):
+                if not (
+                    (
+                        ((_la) & ~0x3F) == 0
+                        and (
+                            (1 << _la)
+                            & (
+                                (1 << SimCodeParser.IF)
+                                | (1 << SimCodeParser.REPEAT)
+                                | (1 << SimCodeParser.RETURN)
+                                | (1 << SimCodeParser.IDENTIFIER)
+                            )
+                        )
+                        != 0
+                    )
+                ):
                     break
 
             self.state = 82
@@ -662,10 +713,8 @@ class SimCodeParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class If_stmtContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -676,52 +725,45 @@ class SimCodeParser ( Parser ):
             return self.getToken(SimCodeParser.OPEN_PAR, 0)
 
         def condition_expression(self):
-            return self.getTypedRuleContext(SimCodeParser.Condition_expressionContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.Condition_expressionContext, 0)
 
         def CLOSE_PAR(self):
             return self.getToken(SimCodeParser.CLOSE_PAR, 0)
 
         def open_code_block(self):
-            return self.getTypedRuleContext(SimCodeParser.Open_code_blockContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.Open_code_blockContext, 0)
 
         def close_code_block(self):
-            return self.getTypedRuleContext(SimCodeParser.Close_code_blockContext,0)
+            return self.getTypedRuleContext(SimCodeParser.Close_code_blockContext, 0)
 
-
-        def exp(self, i:int=None):
+        def exp(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(SimCodeParser.ExpContext)
             else:
-                return self.getTypedRuleContext(SimCodeParser.ExpContext,i)
-
+                return self.getTypedRuleContext(SimCodeParser.ExpContext, i)
 
         def getRuleIndex(self):
             return SimCodeParser.RULE_if_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterIf_stmt" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterIf_stmt"):
                 listener.enterIf_stmt(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitIf_stmt" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitIf_stmt"):
                 listener.exitIf_stmt(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitIf_stmt" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitIf_stmt"):
                 return visitor.visitIf_stmt(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def if_stmt(self):
 
         localctx = SimCodeParser.If_stmtContext(self, self._ctx, self.state)
         self.enterRule(localctx, 12, self.RULE_if_stmt)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 84
@@ -734,16 +776,30 @@ class SimCodeParser ( Parser ):
             self.match(SimCodeParser.CLOSE_PAR)
             self.state = 88
             self.open_code_block()
-            self.state = 90 
+            self.state = 90
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
                 self.state = 89
                 self.exp()
-                self.state = 92 
+                self.state = 92
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SimCodeParser.IF) | (1 << SimCodeParser.REPEAT) | (1 << SimCodeParser.RETURN) | (1 << SimCodeParser.IDENTIFIER))) != 0)):
+                if not (
+                    (
+                        ((_la) & ~0x3F) == 0
+                        and (
+                            (1 << _la)
+                            & (
+                                (1 << SimCodeParser.IF)
+                                | (1 << SimCodeParser.REPEAT)
+                                | (1 << SimCodeParser.RETURN)
+                                | (1 << SimCodeParser.IDENTIFIER)
+                            )
+                        )
+                        != 0
+                    )
+                ):
                     break
 
             self.state = 94
@@ -756,10 +812,8 @@ class SimCodeParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Comperation_operatorContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -784,33 +838,46 @@ class SimCodeParser ( Parser ):
         def getRuleIndex(self):
             return SimCodeParser.RULE_comperation_operator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterComperation_operator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterComperation_operator"):
                 listener.enterComperation_operator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitComperation_operator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitComperation_operator"):
                 listener.exitComperation_operator(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitComperation_operator" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitComperation_operator"):
                 return visitor.visitComperation_operator(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def comperation_operator(self):
 
         localctx = SimCodeParser.Comperation_operatorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_comperation_operator)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 96
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SimCodeParser.LT) | (1 << SimCodeParser.LT_EQ) | (1 << SimCodeParser.GT) | (1 << SimCodeParser.GT_EQ) | (1 << SimCodeParser.EQ) | (1 << SimCodeParser.NOT_EQ1))) != 0)):
+            if not (
+                (
+                    ((_la) & ~0x3F) == 0
+                    and (
+                        (1 << _la)
+                        & (
+                            (1 << SimCodeParser.LT)
+                            | (1 << SimCodeParser.LT_EQ)
+                            | (1 << SimCodeParser.GT)
+                            | (1 << SimCodeParser.GT_EQ)
+                            | (1 << SimCodeParser.EQ)
+                            | (1 << SimCodeParser.NOT_EQ1)
+                        )
+                    )
+                    != 0
+                )
+            ):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -823,23 +890,19 @@ class SimCodeParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Condition_expressionContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def identifier(self, i:int=None):
+        def identifier(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(SimCodeParser.IdentifierContext)
             else:
-                return self.getTypedRuleContext(SimCodeParser.IdentifierContext,i)
-
+                return self.getTypedRuleContext(SimCodeParser.IdentifierContext, i)
 
         def comperation_operator(self):
-            return self.getTypedRuleContext(SimCodeParser.Comperation_operatorContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.Comperation_operatorContext, 0)
 
         def POSITIVE_INT(self):
             return self.getToken(SimCodeParser.POSITIVE_INT, 0)
@@ -848,8 +911,7 @@ class SimCodeParser ( Parser ):
             return self.getToken(SimCodeParser.NUMERIC_LITERAL, 0)
 
         def negative_int(self):
-            return self.getTypedRuleContext(SimCodeParser.Negative_intContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.Negative_intContext, 0)
 
         def ZERO(self):
             return self.getToken(SimCodeParser.ZERO, 0)
@@ -857,22 +919,19 @@ class SimCodeParser ( Parser ):
         def getRuleIndex(self):
             return SimCodeParser.RULE_condition_expression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCondition_expression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterCondition_expression"):
                 listener.enterCondition_expression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCondition_expression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitCondition_expression"):
                 listener.exitCondition_expression(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitCondition_expression" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitCondition_expression"):
                 return visitor.visitCondition_expression(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def condition_expression(self):
 
@@ -881,7 +940,7 @@ class SimCodeParser ( Parser ):
         try:
             self.state = 110
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 8, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 98
@@ -922,7 +981,6 @@ class SimCodeParser ( Parser ):
                 self.identifier()
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -931,16 +989,13 @@ class SimCodeParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Assignment_stmtContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def identifier(self):
-            return self.getTypedRuleContext(SimCodeParser.IdentifierContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.IdentifierContext, 0)
 
         def ASSIGN(self):
             return self.getToken(SimCodeParser.ASSIGN, 0)
@@ -949,28 +1004,24 @@ class SimCodeParser ( Parser ):
             return self.getToken(SimCodeParser.SCOL, 0)
 
         def numeric_expression(self):
-            return self.getTypedRuleContext(SimCodeParser.Numeric_expressionContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.Numeric_expressionContext, 0)
 
         def getRuleIndex(self):
             return SimCodeParser.RULE_assignment_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAssignment_stmt" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAssignment_stmt"):
                 listener.enterAssignment_stmt(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAssignment_stmt" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAssignment_stmt"):
                 listener.exitAssignment_stmt(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitAssignment_stmt" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitAssignment_stmt"):
                 return visitor.visitAssignment_stmt(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def assignment_stmt(self):
 
@@ -995,39 +1046,34 @@ class SimCodeParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Numeric_expressionContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def identifier(self, i:int=None):
+        def identifier(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(SimCodeParser.IdentifierContext)
             else:
-                return self.getTypedRuleContext(SimCodeParser.IdentifierContext,i)
-
+                return self.getTypedRuleContext(SimCodeParser.IdentifierContext, i)
 
         def operator(self):
-            return self.getTypedRuleContext(SimCodeParser.OperatorContext,0)
+            return self.getTypedRuleContext(SimCodeParser.OperatorContext, 0)
 
-
-        def POSITIVE_INT(self, i:int=None):
+        def POSITIVE_INT(self, i: int = None):
             if i is None:
                 return self.getTokens(SimCodeParser.POSITIVE_INT)
             else:
                 return self.getToken(SimCodeParser.POSITIVE_INT, i)
 
-        def NUMERIC_LITERAL(self, i:int=None):
+        def NUMERIC_LITERAL(self, i: int = None):
             if i is None:
                 return self.getTokens(SimCodeParser.NUMERIC_LITERAL)
             else:
                 return self.getToken(SimCodeParser.NUMERIC_LITERAL, i)
 
         def negative_int(self):
-            return self.getTypedRuleContext(SimCodeParser.Negative_intContext,0)
-
+            return self.getTypedRuleContext(SimCodeParser.Negative_intContext, 0)
 
         def ZERO(self):
             return self.getToken(SimCodeParser.ZERO, 0)
@@ -1035,32 +1081,29 @@ class SimCodeParser ( Parser ):
         def getRuleIndex(self):
             return SimCodeParser.RULE_numeric_expression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNumeric_expression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNumeric_expression"):
                 listener.enterNumeric_expression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNumeric_expression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNumeric_expression"):
                 listener.exitNumeric_expression(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitNumeric_expression" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitNumeric_expression"):
                 return visitor.visitNumeric_expression(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def numeric_expression(self):
 
         localctx = SimCodeParser.Numeric_expressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 20, self.RULE_numeric_expression)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 147
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,12,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 12, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 117
@@ -1079,7 +1122,7 @@ class SimCodeParser ( Parser ):
                 self.operator()
                 self.state = 123
                 _la = self._input.LA(1)
-                if not(_la==SimCodeParser.NUMERIC_LITERAL or _la==SimCodeParser.POSITIVE_INT):
+                if not (_la == SimCodeParser.NUMERIC_LITERAL or _la == SimCodeParser.POSITIVE_INT):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1136,7 +1179,7 @@ class SimCodeParser ( Parser ):
                 self.operator()
                 self.state = 139
                 _la = self._input.LA(1)
-                if not(_la==SimCodeParser.NUMERIC_LITERAL or _la==SimCodeParser.POSITIVE_INT):
+                if not (_la == SimCodeParser.NUMERIC_LITERAL or _la == SimCodeParser.POSITIVE_INT):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1169,7 +1212,6 @@ class SimCodeParser ( Parser ):
 
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1178,10 +1220,8 @@ class SimCodeParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class OperatorContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1203,33 +1243,45 @@ class SimCodeParser ( Parser ):
         def getRuleIndex(self):
             return SimCodeParser.RULE_operator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOperator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterOperator"):
                 listener.enterOperator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOperator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitOperator"):
                 listener.exitOperator(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitOperator" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitOperator"):
                 return visitor.visitOperator(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def operator(self):
 
         localctx = SimCodeParser.OperatorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 22, self.RULE_operator)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 149
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SimCodeParser.STAR) | (1 << SimCodeParser.PLUS) | (1 << SimCodeParser.MINUS) | (1 << SimCodeParser.INT_DIV) | (1 << SimCodeParser.DIV))) != 0)):
+            if not (
+                (
+                    ((_la) & ~0x3F) == 0
+                    and (
+                        (1 << _la)
+                        & (
+                            (1 << SimCodeParser.STAR)
+                            | (1 << SimCodeParser.PLUS)
+                            | (1 << SimCodeParser.MINUS)
+                            | (1 << SimCodeParser.INT_DIV)
+                            | (1 << SimCodeParser.DIV)
+                        )
+                    )
+                    != 0
+                )
+            ):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1242,10 +1294,8 @@ class SimCodeParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Open_code_blockContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1255,22 +1305,19 @@ class SimCodeParser ( Parser ):
         def getRuleIndex(self):
             return SimCodeParser.RULE_open_code_block
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOpen_code_block" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterOpen_code_block"):
                 listener.enterOpen_code_block(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOpen_code_block" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitOpen_code_block"):
                 listener.exitOpen_code_block(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitOpen_code_block" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitOpen_code_block"):
                 return visitor.visitOpen_code_block(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def open_code_block(self):
 
@@ -1288,10 +1335,8 @@ class SimCodeParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Close_code_blockContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1301,22 +1346,19 @@ class SimCodeParser ( Parser ):
         def getRuleIndex(self):
             return SimCodeParser.RULE_close_code_block
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterClose_code_block" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterClose_code_block"):
                 listener.enterClose_code_block(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitClose_code_block" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitClose_code_block"):
                 listener.exitClose_code_block(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitClose_code_block" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitClose_code_block"):
                 return visitor.visitClose_code_block(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def close_code_block(self):
 
@@ -1334,10 +1376,8 @@ class SimCodeParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class IdentifierContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1347,22 +1387,19 @@ class SimCodeParser ( Parser ):
         def getRuleIndex(self):
             return SimCodeParser.RULE_identifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterIdentifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterIdentifier"):
                 listener.enterIdentifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitIdentifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitIdentifier"):
                 listener.exitIdentifier(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitIdentifier" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitIdentifier"):
                 return visitor.visitIdentifier(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def identifier(self):
 
@@ -1380,17 +1417,15 @@ class SimCodeParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Negative_intContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def MINUS(self):
             return self.getToken(SimCodeParser.MINUS, 0)
 
-        def DIGIT(self, i:int=None):
+        def DIGIT(self, i: int = None):
             if i is None:
                 return self.getTokens(SimCodeParser.DIGIT)
             else:
@@ -1399,42 +1434,39 @@ class SimCodeParser ( Parser ):
         def getRuleIndex(self):
             return SimCodeParser.RULE_negative_int
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNegative_int" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNegative_int"):
                 listener.enterNegative_int(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNegative_int" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNegative_int"):
                 listener.exitNegative_int(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitNegative_int" ):
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitNegative_int"):
                 return visitor.visitNegative_int(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def negative_int(self):
 
         localctx = SimCodeParser.Negative_intContext(self, self._ctx, self.state)
         self.enterRule(localctx, 30, self.RULE_negative_int)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 157
             self.match(SimCodeParser.MINUS)
-            self.state = 159 
+            self.state = 159
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
                 self.state = 158
                 self.match(SimCodeParser.DIGIT)
-                self.state = 161 
+                self.state = 161
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==SimCodeParser.DIGIT):
+                if not (_la == SimCodeParser.DIGIT):
                     break
 
         except RecognitionException as re:
@@ -1444,8 +1476,3 @@ class SimCodeParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
-
-
-
-

@@ -5,16 +5,14 @@ from grammer.src.SimCodeParser import SimCodeParser
 
 
 class BlockType(Enum):
-    NotInBlock=1,
-    IfBlock=2,
-    WhileBlock=3,
-    Assignment=4
-    Return=5
-
+    NotInBlock = (1,)
+    IfBlock = (2,)
+    WhileBlock = (3,)
+    Assignment = 4
+    Return = 5
 
 
 class SimExecutionBlockListener(SimCodeListener):
-
     def enterReturn_stmt(self, ctx: SimCodeParser.Return_stmtContext):
         super().enterReturn_stmt(ctx)
         if self._current_block == BlockType.NotInBlock:
@@ -45,7 +43,7 @@ class SimExecutionBlockListener(SimCodeListener):
 
     def enterIf_stmt(self, ctx: SimCodeParser.If_stmtContext):
         if self._current_block == BlockType.NotInBlock:
-            self._current_block=BlockType.IfBlock
+            self._current_block = BlockType.IfBlock
             self._blocks.append(ctx.getText())
         super().enterIf_stmt(ctx)
 
@@ -54,7 +52,7 @@ class SimExecutionBlockListener(SimCodeListener):
         if self._current_block == BlockType.IfBlock:
             self._current_block = BlockType.NotInBlock
 
-    def enterAssignment_stmt(self, ctx:SimCodeParser.Assignment_stmtContext):
+    def enterAssignment_stmt(self, ctx: SimCodeParser.Assignment_stmtContext):
         if self._current_block == BlockType.NotInBlock:
             self._current_block = BlockType.Assignment
             self._blocks.append(ctx.getText())

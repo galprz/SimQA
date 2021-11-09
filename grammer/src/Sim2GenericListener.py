@@ -3,6 +3,7 @@ import random
 from grammer.src.SimCodeListener import SimCodeListener
 from grammer.src.SimCodeParser import SimCodeParser
 
+
 class Sim2GenericListener(SimCodeListener):
     def __init__(self):
         super(Sim2GenericListener, self).__init__()
@@ -25,9 +26,12 @@ class Sim2GenericListener(SimCodeListener):
         return converted_var
 
     def _convert_identifiers(self, children):
-        if children is None: return []
-        return [self._convert_var(item.getText()) if type(item) is SimCodeParser.IdentifierContext
-                      else item.getText() for item in children]
+        if children is None:
+            return []
+        return [
+            self._convert_var(item.getText()) if type(item) is SimCodeParser.IdentifierContext else item.getText()
+            for item in children
+        ]
 
     def enterRepeat_stmt(self, ctx: SimCodeParser.Repeat_stmtContext):
         txt = "".join(self._convert_identifiers(ctx.children[:5]))
@@ -53,8 +57,13 @@ class Sim2GenericListener(SimCodeListener):
         super().enterReturn_stmt(ctx)
 
     def enterAssignment_stmt(self, ctx: SimCodeParser.Assignment_stmtContext):
-        if len(ctx.children) < 3: return
-        txt = "".join(self._convert_identifiers(ctx.children[:2])) + "".join(self._convert_identifiers(ctx.children[2].children)) + ctx.children[3].getText()
+        if len(ctx.children) < 3:
+            return
+        txt = (
+            "".join(self._convert_identifiers(ctx.children[:2]))
+            + "".join(self._convert_identifiers(ctx.children[2].children))
+            + ctx.children[3].getText()
+        )
         self._generated_code += txt
         super().enterAssignment_stmt(ctx)
 

@@ -3,6 +3,7 @@ from typing import List
 from grammer.src.SimCodeListener import SimCodeListener
 from grammer.src.SimCodeParser import SimCodeParser
 
+
 class Sim2PythonListener(SimCodeListener):
     def __init__(self, add_traces=False):
         self.reset_state()
@@ -58,7 +59,7 @@ class Sim2PythonListener(SimCodeListener):
         for i in range(self._indent_level):
             self._generated_code += "\t"
         self._generated_code += line
-        if self.add_traces and self.vars != [] and line[:3] != "for" and  line[:2] != "if" :
+        if self.add_traces and self.vars != [] and line[:3] != "for" and line[:2] != "if":
             self._generated_code += "\n"
             for i in range(self._indent_level):
                 self._generated_code += "\t"

@@ -3,6 +3,7 @@ from typing import List
 from grammer.src.SimCodeListener import SimCodeListener
 from grammer.src.SimCodeParser import SimCodeParser
 
+
 class SimPrinterListener(SimCodeListener):
     def __init__(self):
         self.reset_state()

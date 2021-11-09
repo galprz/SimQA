@@ -1,17 +1,47 @@
 # SimQA
-This is the code for the SimQA paper
-# Dataset
-This paper use a unique dataset that was labeled by chemists.
-You need to extract the zip file to the root folder to run the scripts
-download the zip from here
-https://drive.google.com/drive/folders/16XJkKMJj-cPqw_msczG1VZ7fOPOwgKnh?usp=sharing
-# The MLE model
-To run re-train the mle models run the train mle v1/v2 scripts
-To train & evaluate the model using the  reinforcement-learning algorithm and the Q semantic + syntactic reward
-download the pre-trained model from here: 
-https://drive.google.com/file/d/1z3wrQZe0V5HSXSiXyiIza36w-2zf6mmB/view?usp=sharing
-and put it in the root folder of the project.
-Then run the following command:
+This is the code for the SimQA paper.
+
+## Installations Guide
+1. Install an environment manager. Recommeneded: [Miniconda3](https://docs.conda.io/en/latest/miniconda.html).
+   Here is a [Getting Started](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html#starting-conda) guide.
+2. Clone the repo:
+   ```sh
+   git clone https://github.com/nitaifingerhut/SimQA.git
+   cd SimQA
+   ```
+3. Create a new environment from environment.yml (you can change the environment name in the file)
+   ```sh
+   conda env update -f environment.yml
+   conda activate SimQA-code
+   ```
+4. On **MacOS**, run: 
+    ```shell
+    conda install nomkl
+    ```
+   
+## Dataset
+This paper uses a unique dataset that was labeled by chemists, and it's located in `data` directory.
+
+## The MLE model
+To re-train the MLE models, run:
+```shell
+python train_mle.py 
 ```
-python train_rl --data_version=v1
+Arguments:
+1. `--mode` Version of the data (v1/v2).
+2. `--train-batch-size` Batch size for training.
+3. `--valid-batch-size` Batch size for validation.
+4. `--train-steps` Number of training steps.
+5. `--valid-steps` Number of steps between evaluations on the validation set.
+6. `--learning-rate` Model's learning rate.
+7. `--max-grad-norm` Maximal gradients norm. Gradient above this threshold will be clipped.
+8. `--report-every` Number of steps between reports.
+9. `--save-every` Number of steps between saving models.
+
+Saved models will be under `checkpoints/MLE_<mode>_step_<i * save-every>`, for `0 <= i < <train-steps> // <save-every>`.
+
+## The RL model
+To train and evaluate the model using the reinforcement-learning algorithm and the Q semantic + syntactic reward, run:
+```shell
+python train_rl.py --data_version=v1
 ```
