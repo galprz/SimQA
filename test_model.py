@@ -7,7 +7,7 @@ import torch.nn as nn
 
 from functools import partial
 from metrics import BleuScore, CorrectAnswersScore, BleuAndStateScore
-from onmt.utils.loss import NMTLossCompute
+# from onmt.utils.loss import NMTLossCompute
 from pathlib import Path
 from reward import blue_and_same_state_score
 from tensorboardX import SummaryWriter
@@ -128,7 +128,7 @@ if __name__ == "__main__":
     argmax_model = load_model(model_path=model_path, embeddings_path=embeddings_path)
     freeze_model(model=argmax_model)
     argmax_model.eval()
-
+    #
     # model = load_model(model_path=model_path, embeddings_path=embeddings_path)
     #
     # loss = onmt.utils.loss.NMTLossCompute(
