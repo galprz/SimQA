@@ -239,6 +239,7 @@ if __name__ == "__main__":
         metrics=metrics,
         score_fn=state_score_matric,
     )
+    print("this is when we test !")
     # stats = trainer.train(
     #     train_iter=train_iter,
     #     src_vocab=src_vocab,
