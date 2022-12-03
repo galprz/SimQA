@@ -110,7 +110,7 @@ if __name__ == "__main__":
     writer = SummaryWriter(comment="-argmax")
 
     vocab_data_file = f"data/{opts.train_version}/processed/SimQA.vocab.pt"
-    train_data_file = f"data/{opts.train_version}/processed/SimQA.train.0.pt"
+    train_data_file = f"data/{opts.train_version}/processed/SimQA.test.0.pt"
     valid_data_file = f"data/{opts.valid_version}/processed/SimQA.valid.0.pt"
     model_path = f"{opts.model_path}"
     embeddings_path = f"models/{opts.train_version}/src.embeddings.pt"

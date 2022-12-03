@@ -654,6 +654,7 @@ class SimStateScoreTrainer(Trainer):
         test_model.eval() #TODO : check if this function changes anything in the model
 
         with torch.no_grad():
+            print("at least we are in")
             if stats_cls is None:
                 stats = onmt.utils.Statistics()
             else:
