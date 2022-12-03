@@ -240,11 +240,11 @@ if __name__ == "__main__":
         score_fn=state_score_matric,
     )
     print("this is when we test !")
-    # stats = trainer.train(
-    #     train_iter=train_iter,
-    #     src_vocab=src_vocab,
-    #     train_steps=opts.train_steps,
-    #     valid_iter=valid_iter,
-    #     valid_steps=opts.valid_steps,
-    #     save_checkpoint_steps=opts.save_every,
-    # )
+    stats = trainer.test(
+        train_iter=train_iter,
+        src_vocab=src_vocab,
+        train_steps=opts.train_steps,
+        valid_iter=valid_iter,
+        valid_steps=opts.valid_steps,
+        save_checkpoint_steps=opts.save_every,
+    )
