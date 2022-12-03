@@ -1,6 +1,6 @@
 import random
 from heapq import heappush, nlargest
-
+from tqdm import tqdm
 from onmt.trainer import Trainer
 from onmt.translate import GreedySearch
 from onmt.utils.logging import logger
@@ -662,7 +662,7 @@ class SimStateScoreTrainer(Trainer):
             for metric in self.metrics:
                 metric.reset()
 
-            for batch in test_iter:
+            for batch in tqdm(test_iter):
                 src, src_lengths = batch.src if isinstance(batch.src, tuple) else (batch.src, None)
                 tgt = batch.tgt
 
