@@ -129,11 +129,11 @@ if __name__ == "__main__":
     freeze_model(model=argmax_model)
     argmax_model.eval()
 
-    # model = load_model(model_path=model_path, embeddings_path=embeddings_path)
-    #
-    # loss = onmt.utils.loss.NMTLossCompute(
-    #     criterion=nn.NLLLoss(ignore_index=tgt_padding, reduction="sum"), generator=model.generator
-    # )
+    model = load_model(model_path=model_path, embeddings_path=embeddings_path)
+
+    loss = onmt.utils.loss.NMTLossCompute(
+        criterion=nn.NLLLoss(ignore_index=tgt_padding, reduction="sum"), generator=model.generator
+    )
     # torch_optimizer = torch.optim.Adam(model.parameters(), lr=opts.learning_rate)
     # optim = onmt.utils.optimizers.Optimizer(
     #     torch_optimizer, learning_rate=opts.learning_rate, max_grad_norm=opts.max_grad_norm
