@@ -634,7 +634,7 @@ class SimStateScoreTrainer(Trainer):
         # Set model back to training mode.
         valid_model.train()
 
-    def test(self, test_iter, src_vocab,=None, stats_cls=None):
+    def test(self, test_iter, src_vocab, stats_cls=None):
         """testing model.
                     test_iter: validate data iterator
                 Returns:
@@ -704,7 +704,7 @@ class SimStateScoreTrainer(Trainer):
                 param.data = param_data
 
         # Set model back to training mode.
-        valid_model.train()
+        test_model.train()
 
 class SimStateScoreTrainerV2(Trainer):
     def __init__(
