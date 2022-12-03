@@ -134,111 +134,111 @@ if __name__ == "__main__":
     loss = onmt.utils.loss.NMTLossCompute(
         criterion=nn.NLLLoss(ignore_index=tgt_padding, reduction="sum"), generator=model.generator
     )
-    # torch_optimizer = torch.optim.Adam(model.parameters(), lr=opts.learning_rate)
-    # optim = onmt.utils.optimizers.Optimizer(
-    #     torch_optimizer, learning_rate=opts.learning_rate, max_grad_norm=opts.max_grad_norm
-    # )
-    #
-    # train_iter = onmt.inputters.inputter.DatasetLazyIter(
-    #     dataset_paths=[train_data_file],
-    #     fields=vocab_fields,
-    #     batch_size=opts.train_batch_size,
-    #     batch_size_multiple=1,
-    #     batch_size_fn=None,
-    #     device=device,
-    #     is_train=True,
-    #     repeat=True,
-    #     pool_factor=8192,
-    # )
-    #
-    # valid_iter = onmt.inputters.inputter.DatasetLazyIter(
-    #     dataset_paths=[valid_data_file],
-    #     fields=vocab_fields,
-    #     batch_size=opts.valid_batch_size,
-    #     batch_size_multiple=1,
-    #     batch_size_fn=None,
-    #     device=device,
-    #     is_train=False,
-    #     repeat=False,
-    #     pool_factor=8192,
-    # )
-    # report_manager = onmt.utils.ReportMgr(
-    #     report_every=50,
-    #     # tensorboard_writer=writer
-    # )
-    #
-    # src_reader = onmt.inputters.str2reader["text"]
-    # tgt_reader = onmt.inputters.str2reader["text"]
-    # scorer = onmt.translate.GNMTGlobalScorer(alpha=0.7, beta=0.0, length_penalty="avg", coverage_penalty="none")
-    #
-    # argmax_translator = onmt.translate.Translator(
-    #     model=argmax_model,
-    #     fields=vocab_fields,
-    #     src_reader=src_reader,
-    #     tgt_reader=tgt_reader,
-    #     global_scorer=scorer,
-    #     gpu=device_id,
-    #     beam_size=1,
-    # )
-    #
-    # translator = onmt.translate.Translator(
-    #     model=model,
-    #     fields=vocab_fields,
-    #     src_reader=src_reader,
-    #     tgt_reader=tgt_reader,
-    #     global_scorer=scorer,
-    #     gpu=device_id,
-    #     n_best=8,
-    #     beam_size=32,
-    # )
-    # argmax_valid_translator = onmt.translate.Translator(
-    #     model=model,
-    #     fields=vocab_fields,
-    #     src_reader=src_reader,
-    #     tgt_reader=tgt_reader,
-    #     global_scorer=scorer,
-    #     gpu=device_id,
-    #     beam_size=1,
-    # )
-    # argmax_builder = onmt.translate.TranslationBuilder(
-    #     data=torch.load(train_data_file), fields=vocab_fields, has_tgt=True
-    # )
-    #
-    # valid_builder = onmt.translate.TranslationBuilder(
-    #     data=torch.load(train_data_file), fields=vocab_fields, has_tgt=True
-    # )  # FIXME
-    # builder = onmt.translate.TranslationBuilder(
-    #     data=torch.load(train_data_file), fields=vocab_fields, has_tgt=True, n_best=8
-    # )
-    # state_score_matric = BleuAndStateScore(tgt_vocab, 0.8)
-    # metrics = [BleuScore(), CorrectAnswersScore(tgt_vocab)]
-    #
-    # saved_model = Path.cwd().joinpath(f"checkpoints/RL")
-    # saved_model.mkdir(exist_ok=True, parents=True)
-    # saved_mode_model = saved_model.joinpath(f"{opts.name}")
-    #
-    # trainer = SimStateScoreTrainer(
-    #     argmax_model=argmax_model,
-    #     model=model,
-    #     argmax_translator=argmax_translator,
-    #     translator=translator,
-    #     argmax_translation_builder=argmax_builder,
-    #     translation_builder=builder,
-    #     valid_translator=argmax_valid_translator,
-    #     valid_builder=valid_builder,
-    #     reward_function=partial(blue_and_same_state_score, gamma=opts.reward_gamma),
-    #     model_saver=onmt.models.model_saver.ModelSaver(
-    #         base_path=str(saved_mode_model), model=model, model_opt=vars(opts), fields=vocab_fields, optim=optim
-    #     ),
-    #     train_loss=loss,
-    #     valid_loss=loss,
-    #     optim=torch_optimizer,
-    #     tgt_vocab=tgt_vocab,
-    #     tgt_padding_token=tgt_padding,
-    #     report_manager=report_manager,
-    #     metrics=metrics,
-    #     score_fn=state_score_matric,
-    # )
+    torch_optimizer = torch.optim.Adam(model.parameters(), lr=opts.learning_rate)
+    optim = onmt.utils.optimizers.Optimizer(
+        torch_optimizer, learning_rate=opts.learning_rate, max_grad_norm=opts.max_grad_norm
+    )
+
+    train_iter = onmt.inputters.inputter.DatasetLazyIter(
+        dataset_paths=[train_data_file],
+        fields=vocab_fields,
+        batch_size=opts.train_batch_size,
+        batch_size_multiple=1,
+        batch_size_fn=None,
+        device=device,
+        is_train=True,
+        repeat=True,
+        pool_factor=8192,
+    )
+
+    valid_iter = onmt.inputters.inputter.DatasetLazyIter(
+        dataset_paths=[valid_data_file],
+        fields=vocab_fields,
+        batch_size=opts.valid_batch_size,
+        batch_size_multiple=1,
+        batch_size_fn=None,
+        device=device,
+        is_train=False,
+        repeat=False,
+        pool_factor=8192,
+    )
+    report_manager = onmt.utils.ReportMgr(
+        report_every=50,
+        # tensorboard_writer=writer
+    )
+
+    src_reader = onmt.inputters.str2reader["text"]
+    tgt_reader = onmt.inputters.str2reader["text"]
+    scorer = onmt.translate.GNMTGlobalScorer(alpha=0.7, beta=0.0, length_penalty="avg", coverage_penalty="none")
+
+    argmax_translator = onmt.translate.Translator(
+        model=argmax_model,
+        fields=vocab_fields,
+        src_reader=src_reader,
+        tgt_reader=tgt_reader,
+        global_scorer=scorer,
+        gpu=device_id,
+        beam_size=1,
+    )
+
+    translator = onmt.translate.Translator(
+        model=model,
+        fields=vocab_fields,
+        src_reader=src_reader,
+        tgt_reader=tgt_reader,
+        global_scorer=scorer,
+        gpu=device_id,
+        n_best=8,
+        beam_size=32,
+    )
+    argmax_valid_translator = onmt.translate.Translator(
+        model=model,
+        fields=vocab_fields,
+        src_reader=src_reader,
+        tgt_reader=tgt_reader,
+        global_scorer=scorer,
+        gpu=device_id,
+        beam_size=1,
+    )
+    argmax_builder = onmt.translate.TranslationBuilder(
+        data=torch.load(train_data_file), fields=vocab_fields, has_tgt=True
+    )
+
+    valid_builder = onmt.translate.TranslationBuilder(
+        data=torch.load(train_data_file), fields=vocab_fields, has_tgt=True
+    )  # FIXME
+    builder = onmt.translate.TranslationBuilder(
+        data=torch.load(train_data_file), fields=vocab_fields, has_tgt=True, n_best=8
+    )
+    state_score_matric = BleuAndStateScore(tgt_vocab, 0.8)
+    metrics = [BleuScore(), CorrectAnswersScore(tgt_vocab)]
+
+    saved_model = Path.cwd().joinpath(f"checkpoints/RL")
+    saved_model.mkdir(exist_ok=True, parents=True)
+    saved_mode_model = saved_model.joinpath(f"{opts.name}")
+
+    trainer = SimStateScoreTrainer(
+        argmax_model=argmax_model,
+        model=model,
+        argmax_translator=argmax_translator,
+        translator=translator,
+        argmax_translation_builder=argmax_builder,
+        translation_builder=builder,
+        valid_translator=argmax_valid_translator,
+        valid_builder=valid_builder,
+        reward_function=partial(blue_and_same_state_score, gamma=opts.reward_gamma),
+        model_saver=onmt.models.model_saver.ModelSaver(
+            base_path=str(saved_mode_model), model=model, model_opt=vars(opts), fields=vocab_fields, optim=optim
+        ),
+        train_loss=loss,
+        valid_loss=loss,
+        optim=torch_optimizer,
+        tgt_vocab=tgt_vocab,
+        tgt_padding_token=tgt_padding,
+        report_manager=report_manager,
+        metrics=metrics,
+        score_fn=state_score_matric,
+    )
     # stats = trainer.train(
     #     train_iter=train_iter,
     #     src_vocab=src_vocab,
