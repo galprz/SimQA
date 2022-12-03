@@ -147,7 +147,7 @@ if __name__ == "__main__":
         batch_size_fn=None,
         device=device,
         is_train=True,
-        repeat=True,
+        repeat=False, # TODO : change to false
         pool_factor=8192,
     )
 
