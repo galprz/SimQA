@@ -634,12 +634,13 @@ class SimStateScoreTrainer(Trainer):
         # Set model back to training mode.
         valid_model.train()
 
-    def test(self, test_iter, src_vocab, moving_average=None, stats_cls=None):
+    def test(self, test_iter, src_vocab,=None, stats_cls=None):
         """testing model.
                     test_iter: validate data iterator
                 Returns:
                     :obj:`nmt.Statistics`: validation loss statistics
                 """
+        moving_average = self.moving_average
         test_model = self.model
         if moving_average:
             # swap model params w/ moving average
