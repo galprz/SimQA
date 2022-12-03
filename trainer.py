@@ -684,7 +684,7 @@ class SimStateScoreTrainer(Trainer):
                 preds = []
                 avg_reward = 0
                 counter = 0
-                for trans in tqdm(translations):
+                for trans in translations:
                     max_score = 0
                     pred_sent = trans.pred_sents[0]
                     reward = self.reward_function(trans.gold_sent, pred_sent)
