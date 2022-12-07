@@ -611,7 +611,8 @@ class SimStateScoreTrainer(Trainer):
                 counter = 0
                 for trans in translations:
                     max_score = 0
-                    pred_sent = trans.pred_sents[1]
+                    print(trans)
+                    pred_sent = trans.pred_sents[0]
                     reward = self.reward_function(trans.gold_sent, pred_sent)
                     if reward >= 0:
                         avg_reward += reward
