@@ -1,4 +1,7 @@
 from abc import ABC, abstractmethod
+
+import numpy as np
+
 from grammer.utils import convert_tokens_to_code, execute_simcode, state_trace_exact_match
 from nltk.translate.bleu_score import corpus_bleu, SmoothingFunction
 
@@ -64,6 +67,32 @@ class CorrectAnswersScore(Metric):
 
     def __str__(self):
         return f"Correct answers %.4f, State transitions score: %.4f" % self.eval()
+
+class MSEScore(Metric):
+    def __init__(self):
+        super().__init__()
+
+    def reset(self):
+        self._n_batches = 0
+        self._mse_scores_sum = 0
+
+    def update(self, predictions, targets):
+        """
+        preds need to have dimension of batch_size, number_of_tokens
+        targets need to have dimension of batch_size, number_of_tokens
+        """
+        self._n_batches += 1
+        refs = np.array([[target] for target in targets])
+        preds = np.array(predictions)
+        # bscore = corpus_bleu(refs, candidates, smoothing_function=sf.method1, weights=(0.5, 0.5))
+        mse_score = (np.square(refs - preds)).mean(axis=0)
+        self._mse_scores_sum += mse_score
+
+    def eval(self):
+        return self._mse_scores_sum / self._n_batches
+
+    def __str__(self):
+        return f"MSE: %.4f" % self.eval()
 
 
 class BleuScore(Metric):
