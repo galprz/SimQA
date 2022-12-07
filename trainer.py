@@ -604,14 +604,14 @@ class SimStateScoreTrainer(Trainer):
                     batch=batch, src_vocabs=[src_vocab], attn_debug=False
                 )
                 translations = self.valid_builder.from_batch(trans_batch)
-                print(translations)
+                # print(translations)
                 targets = []
                 preds = []
                 avg_reward = 0
                 counter = 0
                 for trans in translations:
                     max_score = 0
-                    pred_sent = trans.pred_sents[0]
+                    pred_sent = trans.pred_sents[1]
                     reward = self.reward_function(trans.gold_sent, pred_sent)
                     if reward >= 0:
                         avg_reward += reward

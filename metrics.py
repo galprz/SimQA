@@ -87,7 +87,8 @@ class MSEScore(Metric):
         # print(preds)
         # print(refs)
         # bscore = corpus_bleu(refs, candidates, smoothing_function=sf.method1, weights=(0.5, 0.5))
-        mse_score = (np.square(np.array(refs - preds))).mean()
+        se = np.square(np.array(refs - preds))
+        mse_score = se.mean()
         self._mse_scores_sum += mse_score
 
     def eval(self):
