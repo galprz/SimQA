@@ -17,7 +17,6 @@ from typing import Union
 logging.basicConfig(format="%(asctime)-15s %(levelname)s %(message)s", level=logging.INFO)
 logger = logging.getLogger()
 
-
 device = "cuda" if torch.cuda.is_available() else "cpu"
 device_id = 0 if torch.cuda.is_available() else -1
 logger.info(f"Running on device=`{device}` (device_id={device_id})")
@@ -116,6 +115,8 @@ if __name__ == "__main__":
     embeddings_path = f"models/{opts.train_version}/src.embeddings.pt"
 
     vocab_fields = torch.load(vocab_data_file)
+    print(vocab_fields)
+    exit(0)
 
     src_text_field = vocab_fields["src"].base_field
     src_vocab = src_text_field.vocab
@@ -211,7 +212,7 @@ if __name__ == "__main__":
         data=torch.load(train_data_file), fields=vocab_fields, has_tgt=True, n_best=8
     )
     state_score_matric = BleuAndStateScore(tgt_vocab, 0.8)
-    metrics = [MSEScore()]#[BleuScore(), CorrectAnswersScore(tgt_vocab)]
+    metrics = [MSEScore()]  # [BleuScore(), CorrectAnswersScore(tgt_vocab)]
 
     saved_model = Path.cwd().joinpath(f"checkpoints/RL")
     saved_model.mkdir(exist_ok=True, parents=True)
@@ -248,6 +249,5 @@ if __name__ == "__main__":
     #     save_checkpoint_steps=opts.save_every,
     # )
 
-    stats = trainer.validate(valid_iter, src_vocab )
+    stats = trainer.validate(valid_iter, src_vocab)
     print(stats)
-
