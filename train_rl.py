@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 
 from functools import partial
-from metrics import BleuScore, CorrectAnswersScore, BleuAndStateScore,MSEScore
+from metrics import BleuScore, CorrectAnswersScore, BleuAndStateScore, MSEScore
 from onmt.utils.loss import NMTLossCompute
 from pathlib import Path
 from reward import blue_and_same_state_score
