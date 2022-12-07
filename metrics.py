@@ -84,10 +84,10 @@ class MSEScore(Metric):
         self._n_batches += 1
         refs = np.array([[target] for target in targets])
         preds = np.array(predictions)
-        print(type(preds))
-        print(type(refs))
+        print(preds)
+        print(refs)
         # bscore = corpus_bleu(refs, candidates, smoothing_function=sf.method1, weights=(0.5, 0.5))
-        mse_score = (np.square(refs - preds)).mean(axis=0)
+        mse_score = (np.square(np.array(refs - preds))).mean()
         self._mse_scores_sum += mse_score
 
     def eval(self):
