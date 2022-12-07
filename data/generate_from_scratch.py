@@ -5,7 +5,7 @@ import re
 import torch
 from tqdm import tqdm
 
-from grammer.tokenizer import SimCodeTokenizer
+import grammer.tokenizer
 from onmt.inputters.dataset_base import Dataset
 from onmt.inputters.datareader_base import DataReaderBase
 from torchtext.data.utils import get_tokenizer
@@ -98,7 +98,7 @@ if __name__ == "__main__":
 
     # context_tokenizer = get_tokenizer(tokenizer="toktok", language='en')
     context_tokenizer = Tokenizer()
-    sim_qa_tokenizer = SimCodeTokenizer()
+    sim_qa_tokenizer = grammer.tokenizer.SimCodeTokenizer()
 
     reader = Reader()
 
