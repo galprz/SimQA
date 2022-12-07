@@ -3,6 +3,7 @@ import json
 import os
 import re
 import torch
+from tqdm import tqdm
 
 from grammer.tokenizer import SimCodeTokenizer
 from onmt.inputters.dataset_base import Dataset
@@ -123,7 +124,7 @@ if __name__ == "__main__":
 
     ############### HACK
     ds.examples = []
-    for i, x in enumerate(data):
+    for i, x in tqdm(enumerate(data)):
         ex = Example()
         ex.__setattr__("src", [context_tokenizer(x["context"])])
         ex.__setattr__("tgt", [sim_qa_tokenizer.tokenize(x["correct_answer"])])
