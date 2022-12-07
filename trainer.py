@@ -604,6 +604,7 @@ class SimStateScoreTrainer(Trainer):
                     batch=batch, src_vocabs=[src_vocab], attn_debug=False
                 )
                 translations = self.valid_builder.from_batch(trans_batch)
+                print(translations)
                 targets = []
                 preds = []
                 avg_reward = 0
