@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db0247c4-258a-4a62-a710-5b23ef8c83dc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_rl.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_rl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/generate_from_scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/generate_from_scratch.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +39,7 @@
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.train_rl">
+  <component name="RunManager" selected="Python.generate_from_scratch">
     <configuration name="augment" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SimQA" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -84,7 +84,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="train_rl" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="generate_from_scratch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SimQA" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -92,13 +92,13 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train_rl.py" />
-      <option name="PARAMETERS" value="--train-version v2 --valid-version v3 --model-path checkpoints/MLE/v2/baseline_step_10000.pt --train-steps 1000 --valid-steps 250 --report-every 10 --save-every 100 --reward-gamma 0.5 --name baseline" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/generate_from_scratch.py" />
+      <option name="PARAMETERS" value="--version=v1 --mode=test" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -109,11 +109,11 @@
     <list>
       <item itemvalue="Python.augment" />
       <item itemvalue="Python.generate_from_processed" />
-      <item itemvalue="Python.train_rl" />
+      <item itemvalue="Python.generate_from_scratch" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.train_rl" />
+        <item itemvalue="Python.generate_from_scratch" />
         <item itemvalue="Python.generate_from_processed" />
         <item itemvalue="Python.augment" />
       </list>
@@ -129,7 +129,7 @@
       <updated>1635687802863</updated>
       <workItem from="1635687805821" duration="3413000" />
       <workItem from="1636447808196" duration="2219000" />
-      <workItem from="1670450764633" duration="4534000" />
+      <workItem from="1670450764633" duration="5318000" />
     </task>
     <servers />
   </component>
@@ -145,7 +145,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/train_rl.py</url>
-          <line>249</line>
+          <line>251</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
