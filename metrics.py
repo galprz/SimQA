@@ -59,6 +59,7 @@ class MSEScore(Metric):
                 # print(e)
                 pass
         self.accumulated_MSE = np.mean(self.errors)
+        print(self.errors.size)
 
     def eval(self):
         return np.mean(self.errors)
