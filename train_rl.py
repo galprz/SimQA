@@ -239,13 +239,6 @@ if __name__ == "__main__":
         metrics=metrics,
         score_fn=state_score_matric,
     )
-<<<<<<< HEAD
-    print("this is when we test !")
-    stats = trainer.test(test_iter=train_iter,
-                         src_vocab=src_vocab)
-    print(stats)
-=======
->>>>>>> 813e48b (testing commit)
     # stats = trainer.train(
     #     train_iter=train_iter,
     #     src_vocab=src_vocab,
@@ -254,7 +247,5 @@ if __name__ == "__main__":
     #     valid_steps=opts.valid_steps,
     #     save_checkpoint_steps=opts.save_every,
     # )
-<<<<<<< HEAD
-=======
+
     stats = trainer.validate(valid_iter,src_vocab)
->>>>>>> 813e48b (testing commit)
