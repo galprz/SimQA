@@ -35,37 +35,35 @@ class Metric(ABC):
 
 
 class MSEScore(Metric):
-    def __init__(self):
+    def __init__(self, tgt_vocab):
         super().__init__()
-        self.accumulated_MSE = 0
-        self.errors = np.array([])
         self.reset()
 
     def reset(self):
-        # self.errors = np.array([])
-        # self.accumulated_MSE = 0
-        pass
+        self.mse = 0
+        self._number_of_batches = 0
 
     def update(self, preds, targets):
+        self._number_of_batches += 1
+        scores = 0
+        running_squared_error = 0
         for pred_seq, tgt_seq in zip(preds, targets):
             pred_code = convert_tokens_to_code(pred_seq)
             target_code = convert_tokens_to_code(tgt_seq)
             try:
                 answer, _ = execute_simcode(target_code, True)
                 pred_answer, _ = execute_simcode(pred_code, True)
-                print(f"right_answer is {answer} predicted{pred_answer} appending {(answer-pred_answer)**2}")
-                np.append(self.errors, (answer-pred_answer)**2)
+                running_squared_error += (answer-pred_answer)**2 if round(float(answer), 6) == round(float(pred_answer), 6) else 0
             except Exception as e:
-                # print(e)
                 pass
-        self.accumulated_MSE = np.mean(self.errors)
-        print("number of examples"+str(self.errors.size))
+        self.mse += running_squared_error / len(preds)
 
     def eval(self):
-        return np.mean(self.errors)
+        return self.mse / self._number_of_batches
 
     def __str__(self):
-        return f"evaluation is at score: %.4f" % self.eval()
+        return f"MSE score: %.4f" % self.eval()
+
 
 
 class CorrectAnswersScore(Metric):
