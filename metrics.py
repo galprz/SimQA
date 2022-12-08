@@ -54,7 +54,8 @@ class MSEScore(Metric):
                 pred_answer, _ = execute_simcode(pred_code, True)
                 np.append(self.errors, [(answer-pred_answer)**2])
             except Exception as e:
-                print(e)
+                # print(e)
+                pass
         self.accumulated_MSE = np.mean(self.errors)
 
     def eval(self):

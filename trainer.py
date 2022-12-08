@@ -591,7 +591,7 @@ class SimStateScoreTrainer(Trainer):
             for metric in self.metrics:
                 metric.reset()
 
-            for batch in valid_iter:
+            for batch in tqdm(valid_iter):
                 src, src_lengths = batch.src if isinstance(batch.src, tuple) else (batch.src, None)
                 tgt = batch.tgt
 
