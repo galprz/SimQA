@@ -53,7 +53,7 @@ class MSEScore(Metric):
             try:
                 answer, _ = execute_simcode(target_code, True)
                 pred_answer, _ = execute_simcode(pred_code, True)
-                print("appending "+str((answer-pred_answer)**2))
+                print(f"right_answer is {answer} predicted{pred_answer} appending {(answer-pred_answer)**2}")
                 np.append(self.errors, [(answer-pred_answer)**2])
             except Exception as e:
                 # print(e)
