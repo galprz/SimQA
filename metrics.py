@@ -35,7 +35,7 @@ class Metric(ABC):
 
 
 class MSEScore(Metric):
-    def __init__(self, tgt_vocab):
+    def __init__(self):
         super().__init__()
         self.reset()
 
