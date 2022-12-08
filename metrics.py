@@ -56,8 +56,8 @@ class MSEScore(Metric):
                 running_squared_error += (answer-pred_answer)**2 if round(float(answer), 6) == round(float(pred_answer), 6) else 0
             except Exception as e:
                 pass
-        self.mse += running_squared_error / len(preds)
-        print(self.mse)
+            self.mse += running_squared_error / len(preds)
+            print(self.mse)
 
     def eval(self):
         return self.mse / self._number_of_batches
