@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 
 from functools import partial
-from metrics import BleuScore, CorrectAnswersScore, BleuAndStateScore
+from metrics import BleuScore, CorrectAnswersScore, BleuAndStateScore, MSEScore
 from onmt.utils.loss import NMTLossCompute
 from pathlib import Path
 from reward import blue_and_same_state_score
@@ -211,7 +211,7 @@ if __name__ == "__main__":
         data=torch.load(train_data_file), fields=vocab_fields, has_tgt=True, n_best=8
     )
     state_score_matric = BleuAndStateScore(tgt_vocab, 0.8)
-    metrics = [BleuScore(), CorrectAnswersScore(tgt_vocab)]
+    metrics = [MSEScore()]
 
     saved_model = Path.cwd().joinpath(f"checkpoints/RL")
     saved_model.mkdir(exist_ok=True, parents=True)
@@ -239,10 +239,13 @@ if __name__ == "__main__":
         metrics=metrics,
         score_fn=state_score_matric,
     )
+<<<<<<< HEAD
     print("this is when we test !")
     stats = trainer.test(test_iter=train_iter,
                          src_vocab=src_vocab)
     print(stats)
+=======
+>>>>>>> 813e48b (testing commit)
     # stats = trainer.train(
     #     train_iter=train_iter,
     #     src_vocab=src_vocab,
@@ -251,3 +254,7 @@ if __name__ == "__main__":
     #     valid_steps=opts.valid_steps,
     #     save_checkpoint_steps=opts.save_every,
     # )
+<<<<<<< HEAD
+=======
+    stats = trainer.validate(valid_iter,src_vocab)
+>>>>>>> 813e48b (testing commit)

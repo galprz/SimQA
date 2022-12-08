@@ -35,11 +35,10 @@ class Metric(ABC):
 
 
 class MSEScore(Metric):
-    def __init__(self, tgt_vocab):
+    def __init__(self):
         super().__init__()
         self.accumulated_MSE = 0
         self.errors = np.array([])
-        self._tgt_vocab = tgt_vocab
         self.reset()
 
     def reset(self):
