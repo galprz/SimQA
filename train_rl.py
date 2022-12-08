@@ -17,7 +17,6 @@ from typing import Union
 logging.basicConfig(format="%(asctime)-15s %(levelname)s %(message)s", level=logging.INFO)
 logger = logging.getLogger()
 
-
 device = "cuda" if torch.cuda.is_available() else "cpu"
 device_id = 0 if torch.cuda.is_available() else -1
 logger.info(f"Running on device=`{device}` (device_id={device_id})")
@@ -147,7 +146,7 @@ if __name__ == "__main__":
         batch_size_fn=None,
         device=device,
         is_train=True,
-        repeat=False, # TODO : change to false
+        repeat=False,  # TODO : change to false
         pool_factor=8192,
     )
 
@@ -248,4 +247,5 @@ if __name__ == "__main__":
     #     save_checkpoint_steps=opts.save_every,
     # )
 
-    stats = trainer.validate(valid_iter,src_vocab)
+    stats = trainer.validate(valid_iter, src_vocab)
+    print(stats)
