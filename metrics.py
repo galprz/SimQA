@@ -53,11 +53,11 @@ class MSEScore(Metric):
             try:
                 answer, _ = execute_simcode(target_code, True)
                 pred_answer, _ = execute_simcode(pred_code, True)
-                running_squared_error += (answer-pred_answer)**2 if round(float(answer), 6) == round(float(pred_answer), 6) else 0
+                running_squared_error += (answer-pred_answer)**2
             except Exception as e:
                 pass
-            self.mse += running_squared_error / len(preds)
-            print(self.mse)
+        self.mse += running_squared_error / len(preds)
+        print(self.mse)
 
     def eval(self):
         return self.mse / self._number_of_batches
