@@ -42,8 +42,9 @@ class MSEScore(Metric):
         self.reset()
 
     def reset(self):
-        self.errors = np.array([])
-        self.accumulated_MSE = 0
+        # self.errors = np.array([])
+        # self.accumulated_MSE = 0
+        pass
 
     def update(self, preds, targets):
         for pred_seq, tgt_seq in zip(preds, targets):
