@@ -12,7 +12,7 @@ class SimCodeTokenizer:
         self.stoi = vocab.stoi
 
     def tokenize(self, sim_code):
-        sim_code = wrap_body(normalize_sim_code(sim_code))
+        sim_code = wrap_body(str(normalize_sim_code(sim_code)))
         chars = InputStream(sim_code)
         lexar = SimCodeLexer(chars)
         tokens = CommonTokenStream(lexar)
