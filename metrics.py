@@ -57,6 +57,7 @@ class MSEScore(Metric):
             except Exception as e:
                 pass
         self.mse += running_squared_error / len(preds)
+        print(self.mse)
 
     def eval(self):
         return self.mse / self._number_of_batches
