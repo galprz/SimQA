@@ -5,6 +5,7 @@ import numpy as np
 from grammer.utils import convert_tokens_to_code, execute_simcode, state_trace_exact_match
 from nltk.translate.bleu_score import corpus_bleu, SmoothingFunction
 
+
 sf = SmoothingFunction()
 
 
@@ -51,7 +52,7 @@ class MSEScore(Metric):
             try:
                 answer, _ = execute_simcode(target_code, True)
                 pred_answer, _ = execute_simcode(pred_code, True)
-                np.append(self.errors, [(answer - pred_answer) ** 2])
+                np.append(self.errors, [(answer-pred_answer)**2])
             except Exception as e:
                 # print(e)
                 pass
@@ -59,6 +60,9 @@ class MSEScore(Metric):
 
     def eval(self):
         return np.mean(self.errors)
+
+    def __str__(self):
+        return f"evaluation is at score: %.4f" % self.eval()
 
 
 class CorrectAnswersScore(Metric):
