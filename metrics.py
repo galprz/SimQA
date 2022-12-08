@@ -1,4 +1,7 @@
 from abc import ABC, abstractmethod
+
+import numpy as np
+
 from grammer.utils import convert_tokens_to_code, execute_simcode, state_trace_exact_match
 from nltk.translate.bleu_score import corpus_bleu, SmoothingFunction
 
@@ -29,6 +32,37 @@ class Metric(ABC):
     @abstractmethod
     def eval(self):
         raise NotImplementedError()
+
+
+class MSEScore(Metric):
+    def __init__(self, tgt_vocab):
+        super().__init__()
+        self.accumulated_MSE = 0
+        self.errors = np.array([])
+        self._tgt_vocab = tgt_vocab
+        self.reset()
+
+    def reset(self):
+        self.errors = np.array([])
+        self.accumulated_MSE = 0
+
+    def update(self, preds, targets):
+        for pred_seq, tgt_seq in zip(preds, targets):
+            pred_code = convert_tokens_to_code(pred_seq)
+            target_code = convert_tokens_to_code(tgt_seq)
+            try:
+                answer, _ = execute_simcode(target_code, True)
+                pred_answer, _ = execute_simcode(pred_code, True)
+                np.append(self.errors, [(answer-pred_answer)**2])
+            except Exception as e:
+                print(e)
+        self.accumulated_MSE = np.mean(self.errors)
+
+    def eval(self):
+        return np.mean(self.errors)
+
+    def __str__(self):
+        return f"Correct answers %.4f, State transitions score: %.4f" % self.eval()
 
 
 class CorrectAnswersScore(Metric):

@@ -1,6 +1,7 @@
 import random
+import time
 from heapq import heappush, nlargest
-
+from tqdm import tqdm
 from onmt.trainer import Trainer
 from onmt.translate import GreedySearch
 from onmt.utils.logging import logger
@@ -634,6 +635,80 @@ class SimStateScoreTrainer(Trainer):
         # Set model back to training mode.
         valid_model.train()
 
+    def test(self, test_iter, src_vocab, stats_cls=None):
+        """testing model.
+                    test_iter: validate data iterator
+                Returns:
+                    :obj:`nmt.Statistics`: validation loss statistics
+                """
+        moving_average = self.moving_average
+        test_model = self.model
+        if moving_average:
+            # swap model params w/ moving average
+            # (and keep the original parameters)
+            model_params_data = []
+            for avg, param in zip(self.moving_average, test_model.parameters()):
+                model_params_data.append(param.data)
+                param.data = avg.data.half() if self.optim._fp16 == "legacy" else avg.data
+
+        # Set model in validating mode.
+        test_model.eval() #TODO : check if this function changes anything in the model
+
+        with torch.no_grad():
+            # print("at least we are in")
+            if stats_cls is None:
+                stats = onmt.utils.Statistics()
+            else:
+                stats = stats_cls()
+            # reset metric
+            for metric in self.metrics:
+                metric.reset()
+
+            for batch in tqdm(test_iter):
+                src, src_lengths = batch.src if isinstance(batch.src, tuple) else (batch.src, None)
+                tgt = batch.tgt
+
+                # F-prop through the model.
+                start = time.time()
+                outputs, attns = test_model(src, tgt, src_lengths, with_align=self.with_align)
+                end = time.time()
+                print("this line took "+str(end - start))
+                # Compute loss.
+                _, batch_stats = self.valid_loss(batch, outputs, attns)
+
+                trans_batch = self.valid_translator.translate_batch(
+                    batch=batch, src_vocabs=[src_vocab], attn_debug=False
+                )
+                translations = self.valid_builder.from_batch(trans_batch)
+                targets = []
+                preds = []
+                avg_reward = 0
+                counter = 0
+                for trans in translations:
+                    max_score = 0
+                    pred_sent = trans.pred_sents[0]
+                    reward = self.reward_function(trans.gold_sent, pred_sent)
+                    if reward >= 0:
+                        avg_reward += reward
+                        counter += 1
+                    preds.append(pred_sent)
+                    targets.append(trans.gold_sent)
+                avg_reward = avg_reward / counter if counter != 0 else -1000
+                self.avg_score = avg_reward
+                for metric in self.metrics:
+                    metric.update(preds, targets)
+
+                # Update statistics.
+                stats.update(batch_stats)
+            # if avg_score > self.avg_score:
+            metrics_txt = ",".join(f"{metric}" for metric in self.metrics)
+            logger.info(f"Validation metrics: {metrics_txt}")
+        if moving_average:
+            for param_data, param in zip(model_params_data, self.model.parameters()):
+                param.data = param_data
+
+        # Set model back to training mode.
+        test_model.train()
 
 class SimStateScoreTrainerV2(Trainer):
     def __init__(
