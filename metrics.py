@@ -1,10 +1,10 @@
+import csv
 from abc import ABC, abstractmethod
 
 import numpy as np
 
 from grammer.utils import convert_tokens_to_code, execute_simcode, state_trace_exact_match
 from nltk.translate.bleu_score import corpus_bleu, SmoothingFunction
-
 
 sf = SmoothingFunction()
 
@@ -37,6 +37,8 @@ class Metric(ABC):
 class MSEScore(Metric):
     def __init__(self):
         super().__init__()
+        with open('results', 'wb') as myfile:
+            self.wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
         self.reset()
 
     def reset(self):
@@ -50,6 +52,7 @@ class MSEScore(Metric):
         running_squared_error = 0
         running_exact_answer = 0
         running_correct_answer_value = 0
+        entries = []
         for pred_seq, tgt_seq in zip(preds, targets):
             pred_code = convert_tokens_to_code(pred_seq)
             target_code = convert_tokens_to_code(tgt_seq)
@@ -57,21 +60,20 @@ class MSEScore(Metric):
                 answer, _ = execute_simcode(target_code, True)
                 pred_answer, _ = execute_simcode(pred_code, True)
                 running_correct_answer_value += answer
-                running_squared_error += (answer-pred_answer)**2
+                running_squared_error += (answer - pred_answer) ** 2
                 running_exact_answer += 1 if round(float(answer), 6) == round(float(pred_answer), 6) else 0
+                self.wr.writerow([pred_answer, answer])
             except Exception as e:
                 pass
         self.mse += running_squared_error / len(preds)
         self.exact_answer += running_exact_answer / len(preds)
         self.correct_average += running_correct_answer_value / len(preds)
-        # print(self.mse)
 
     def eval(self):
-        return self.mse / self._number_of_batches, self.exact_answer / self._number_of_batches , self.correct_average / self._number_of_batches
+        return self.mse / self._number_of_batches, self.exact_answer / self._number_of_batches, self.correct_average / self._number_of_batches
 
     def __str__(self):
         return f"MSE score: %.4f, exact answer percentage %.4f, correct answer average is %.4f" % self.eval()
-
 
 
 class CorrectAnswersScore(Metric):
