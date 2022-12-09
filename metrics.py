@@ -37,8 +37,6 @@ class Metric(ABC):
 class MSEScore(Metric):
     def __init__(self):
         super().__init__()
-        with open('results', 'wb') as myfile:
-            self.wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
         self.reset()
 
     def reset(self):
@@ -53,21 +51,24 @@ class MSEScore(Metric):
         running_exact_answer = 0
         running_correct_answer_value = 0
         entries = []
-        for pred_seq, tgt_seq in zip(preds, targets):
-            pred_code = convert_tokens_to_code(pred_seq)
-            target_code = convert_tokens_to_code(tgt_seq)
-            try:
-                answer, _ = execute_simcode(target_code, True)
-                pred_answer, _ = execute_simcode(pred_code, True)
-                running_correct_answer_value += answer
-                running_squared_error += (answer - pred_answer) ** 2
-                running_exact_answer += 1 if round(float(answer), 6) == round(float(pred_answer), 6) else 0
-                self.wr.writerow([pred_answer, answer])
-            except Exception as e:
-                pass
-        self.mse += running_squared_error / len(preds)
-        self.exact_answer += running_exact_answer / len(preds)
-        self.correct_average += running_correct_answer_value / len(preds)
+        with open('results', 'wb') as myfile:
+            wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
+            for pred_seq, tgt_seq in zip(preds, targets):
+                pred_code = convert_tokens_to_code(pred_seq)
+                target_code = convert_tokens_to_code(tgt_seq)
+                try:
+                    answer, _ = execute_simcode(target_code, True)
+                    pred_answer, _ = execute_simcode(pred_code, True)
+                    running_correct_answer_value += answer
+                    running_squared_error += (answer - pred_answer) ** 2
+                    running_exact_answer += 1 if round(float(answer), 6) == round(float(pred_answer), 6) else 0
+
+                    wr.writerow([pred_answer, answer])
+                except Exception as e:
+                    pass
+            self.mse += running_squared_error / len(preds)
+            self.exact_answer += running_exact_answer / len(preds)
+            self.correct_average += running_correct_answer_value / len(preds)
 
     def eval(self):
         return self.mse / self._number_of_batches, self.exact_answer / self._number_of_batches, self.correct_average / self._number_of_batches
