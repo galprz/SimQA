@@ -64,6 +64,7 @@ class MSEScore(Metric):
                     running_exact_answer += 1 if round(float(answer), 6) == round(float(pred_answer), 6) else 0
 
                     wr.writerow([pred_answer, answer])
+                    print("writing "+str([pred_answer, answer]))
                 except Exception as e:
                     pass
             self.mse += running_squared_error / len(preds)
