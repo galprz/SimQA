@@ -1,3 +1,4 @@
+import csv
 import random
 import time
 from heapq import heappush, nlargest
@@ -622,7 +623,9 @@ class SimStateScoreTrainer(Trainer):
                 self.avg_score = avg_reward
                 for metric in self.metrics:
                     err = metric.update(preds, targets, batch)
-                print(err)
+                with open('results.csv', 'w') as f:
+                    write = csv.writer(f)
+                    write.writerows(err)
 
                 # Update statistics.
                 stats.update(batch_stats)
