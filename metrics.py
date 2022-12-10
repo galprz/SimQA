@@ -45,31 +45,30 @@ class MSEScore(Metric):
         self.exact_answer = 0
         self.correct_average = 0
 
-    def update(self, preds, targets):
+    def update(self, preds, targets, batch):
         self._number_of_batches += 1
         running_squared_error = 0
         running_exact_answer = 0
         running_correct_answer_value = 0
-        entries = []
-        with open('results', 'wb') as myfile:
-            wr = csv.writer(myfile)
-            for pred_seq, tgt_seq in zip(preds, targets):
-                pred_code = convert_tokens_to_code(pred_seq)
-                target_code = convert_tokens_to_code(tgt_seq)
-                try:
-                    answer, _ = execute_simcode(target_code, True)
-                    pred_answer, _ = execute_simcode(pred_code, True)
-                    running_correct_answer_value += answer
-                    running_squared_error += (answer - pred_answer) ** 2
-                    running_exact_answer += 1 if round(float(answer), 6) == round(float(pred_answer), 6) else 0
+        errors = []
+        for pred_seq, tgt_seq in zip(preds, targets):
+            pred_code = convert_tokens_to_code(pred_seq)
+            target_code = convert_tokens_to_code(tgt_seq)
+            try:
+                answer, _ = execute_simcode(target_code, True)
+                pred_answer, _ = execute_simcode(pred_code, True)
+                running_correct_answer_value += answer
+                running_squared_error += (answer - pred_answer) ** 2
+                running_exact_answer += 1 if round(float(answer), 6) == round(float(pred_answer), 6) else 0
 
-                    wr.writerow([pred_answer, answer])
-                    print("squared error is "+str((answer - pred_answer) ** 2))
-                except Exception as e:
-                    pass
-            self.mse += running_squared_error / len(preds)
-            self.exact_answer += running_exact_answer / len(preds)
-            self.correct_average += running_correct_answer_value / len(preds)
+                print("squared error is " + str((answer - pred_answer) ** 2))
+                errors.append([pred_seq, pred_answer, (answer - pred_answer) ** 2])
+            except Exception as e:
+                pass
+        self.mse += running_squared_error / len(preds)
+        self.exact_answer += running_exact_answer / len(preds)
+        self.correct_average += running_correct_answer_value / len(preds)
+        print(batch, errors)
 
     def eval(self):
         return self.mse / self._number_of_batches, self.exact_answer / self._number_of_batches, self.correct_average / self._number_of_batches
