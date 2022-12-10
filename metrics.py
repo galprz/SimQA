@@ -62,13 +62,14 @@ class MSEScore(Metric):
                 running_exact_answer += 1 if round(float(answer), 6) == round(float(pred_answer), 6) else 0
 
                 print("squared error is " + str((answer - pred_answer) ** 2))
-                errors.append([pred_seq, pred_answer, (answer - pred_answer) ** 2])
+                errors.append(["pred", pred_answer, "correct", answer, "squared_error", (answer - pred_answer) ** 2,
+                              "pred_seq", pred_seq,"target_code",target_code ])
             except Exception as e:
                 pass
         self.mse += running_squared_error / len(preds)
         self.exact_answer += running_exact_answer / len(preds)
         self.correct_average += running_correct_answer_value / len(preds)
-        print(batch, errors)
+        return errors
 
     def eval(self):
         return self.mse / self._number_of_batches, self.exact_answer / self._number_of_batches, self.correct_average / self._number_of_batches
