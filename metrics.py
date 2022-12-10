@@ -52,7 +52,7 @@ class MSEScore(Metric):
         running_correct_answer_value = 0
         entries = []
         with open('results', 'wb') as myfile:
-            wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
+            wr = csv.writer(myfile)
             for pred_seq, tgt_seq in zip(preds, targets):
                 pred_code = convert_tokens_to_code(pred_seq)
                 target_code = convert_tokens_to_code(tgt_seq)
@@ -64,7 +64,7 @@ class MSEScore(Metric):
                     running_exact_answer += 1 if round(float(answer), 6) == round(float(pred_answer), 6) else 0
 
                     wr.writerow([pred_answer, answer])
-                    print("writing "+str([pred_answer, answer]))
+                    print("squared error is "+str((answer - pred_answer) ** 2))
                 except Exception as e:
                     pass
             self.mse += running_squared_error / len(preds)
