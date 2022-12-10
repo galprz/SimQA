@@ -623,7 +623,7 @@ class SimStateScoreTrainer(Trainer):
                 self.avg_score = avg_reward
                 for metric in self.metrics:
                     err = metric.update(preds, targets, batch)
-                with open('results.csv', 'w') as f:
+                with open('results.csv', 'a') as f:
                     write = csv.writer(f)
                     write.writerows(err)
 
