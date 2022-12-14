@@ -63,7 +63,7 @@ class MSEScore(Metric):
 
                 print("squared error is " + str((answer - pred_answer) ** 2))
                 errors.append(["pred", pred_answer, "correct", answer, "squared_error", (answer - pred_answer) ** 2,
-                              "pred_seq", pred_code,"target_code",target_code ])
+                               "pred_seq", pred_code, "target_code", target_code])
             except Exception as e:
                 pass
         self.mse += running_squared_error / len(preds)
